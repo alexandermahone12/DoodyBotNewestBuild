@@ -10,7 +10,10 @@ module.exports = {
 
 
         const embed = new Discord.MessageEmbed()
-        .setTitle(`${member.username}'s avatar`)
+        .setTitle("Avatar!")
+        .addFields(
+            {name: `${member.username}'s avatar`, value: ""},
+        )
         .setImage(avatar)
         .setColor("RANDOM")
 
