@@ -9,7 +9,7 @@ module.exports = {
         }
         else{
             let name = message.author.username;
-            message.channel.send(`${name} said ${message}`);
+            message.channel.send(`${name} said ${wantedmessage}`);
         }
 
     }
