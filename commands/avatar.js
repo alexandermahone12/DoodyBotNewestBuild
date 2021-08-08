@@ -6,7 +6,7 @@ module.exports = {
     execute(message, args, cmd, client, Discord) {
         let member = message.mentions.users.first() || message.author
 
-        let avatar = member.displayAvatarURL({size: 1070})
+        let avatar = member.displayAvatarURL({size: 2000})
 
 
         const embed = new Discord.MessageEmbed()
