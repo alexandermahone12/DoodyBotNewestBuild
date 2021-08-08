@@ -4,8 +4,12 @@ module.exports = {
     description: "says hi",
     execute(message, args, cmd, client, Discord) {
 
-        message.channel.send('Bot made by Doody using javascript, python, ytdl-core and the discord API module.')
+        const commandsEmbed = new Discord.MessageEmbed()
+        .setColor('#0000')
+        .setDescription('Bot made by Doody using [javascript](https://www.javascript.com/), [python](https://www.python.org/), [ytdl-core](https://www.npmjs.com/package/ytdl-core) and the discord API module.')
+        message.channel.send(commandsEmbed);
+
+    }
 
     }
  
-}
