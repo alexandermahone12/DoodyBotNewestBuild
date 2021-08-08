@@ -4,15 +4,15 @@ module.exports = {
     execute(message, args, cmd, client, Discord) {
         if(message.member.permissions.has("ADMINISTRATOR")){
             if (!args.length){
-                return message.channel.send('ADMIN PANEL. PLEASE ENTER ARGUMENT AFTER COMMAND.');
+                return message.channel.send('Admin command. please enter argument after command!');
             }else if(args[0] === 'panel'){
                 const commandsEmbed = new Discord.MessageEmbed()
                 .setColor('#0000')
-                .setTitle('ADMINpanel(can only be used by admins)')
+                .setTitle('admin panel')
                 .addFields(
                     {name: "/admin panel", value: "shows the admin panel"},
-                    {name: "/admin textchannel", value: "creates a text channel /ABUSING THIS COMMAND WILL RESULT IN A PERMENANT BAN"},
-                    {name: "/admin voicechannel", value: "creates a voice channel /ABUSING THIS COMMAND WILL RESULT IN A PERMENANT BAN"},
+                    {name: "/admin textchannel", value: "creates a text channel"},
+                    {name: "/admin voicechannel", value: "creates a voice channel"},
                 )
                 message.channel.send(commandsEmbed);
             }else if(args[0] === 'textchannel') {

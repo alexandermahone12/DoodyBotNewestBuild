@@ -12,7 +12,12 @@ module.exports = {
             if (wantedtime<1){
                 console.log('Time entered less than one min')
                 return message.channel.send('The time has to be more than one min')
-            }else{
+            
+            }else if (wantedtime < 100){
+                console.log('Time entered more than 100 min')
+                return message.channel.send('The time has to be less than 100 mins')
+            }
+            else{
                 console.log(`voice channel created for ${args} mins`)
                 message.guild.channels.create("tempvoicechannel", { type: 'voice' }).then(c => {
                 message.reply(`A voice channel has been created for ${args} mins`)
