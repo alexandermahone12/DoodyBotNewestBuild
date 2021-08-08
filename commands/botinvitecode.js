@@ -5,8 +5,8 @@ module.exports = {
     execute(message, args, cmd, client, Discord) {
         const commandsEmbed = new Discord.MessageEmbed()
         .setColor('#0000')
-        .setTitle('Click here to add DoodyBot to your server!')
-        .setLink('https://discord.com/oauth2/authorize?client_id=858809681518002187&scope=bot&permissions=8589934591')
+        .setTitle('Add DoodyBot to your server!')
+        .setDescription('[Click here!](https://discord.com/oauth2/authorize?client_id=858809681518002187&scope=bot&permissions=8589934591)')
         message.channel.send(commandsEmbed);
 
     }
