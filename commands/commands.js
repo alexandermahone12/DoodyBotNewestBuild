@@ -12,7 +12,7 @@ module.exports = {
         .addFields(
             {name: "Command one:", value: "/clear: Clears 1-100 messages (only certain roles can use this)"},
             {name: "Command two:", value: "/invite: Creates and sends an invite link to the chat"},
-            {name: "Command three:", value: "/say_hi: Says hi"},
+            {name: "Command three:", value: "/hi: Says hi"},
             {name: "Command four:", value: "/commands: Shows the list of commands that you can use"},
             {name: "Command five:", value: "/play: plays a song into the vc"},
             {name: "Command six:", value: "/skip: skips the current queued song"},
