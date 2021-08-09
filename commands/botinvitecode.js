@@ -7,7 +7,7 @@ module.exports = {
         .setColor('#0000')
         .setTitle('Add DoodyBot to your server!')
         .setDescription('[Click here!](https://discord.com/oauth2/authorize?client_id=858809681518002187&scope=bot&permissions=8589934591)')
-        .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+        .setFooter('DoodyBot version 1.1', 'https://i.postimg.cc/zftSmvqt/shadow.png');
         message.channel.send(commandsEmbed);
 
     }
