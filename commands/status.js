@@ -8,7 +8,7 @@ module.exports = {
         const commandsEmbed = new Discord.MessageEmbed()
         .setColor('#0000')
         .setURL("https://doodybot2021.wixsite.com/doodybot")
-        .setTitle('Update 1.1 Features and Bug fixes')
+        .setTitle('Version 1.1 Features and Bug fixes')
         .addFields(
             {name: "Bugs:", value: "The music player command was removed, isaid command was removed, marryme commmand was removed, member commands was removed, goodbye command was removed, mute & unmute commands are being improved, admin panel was removed."},
             {name: "Features:", value: "New website![click here](https://doodybot2021.wixsite.com/doodybot). Avatar command was enhanced, Doodybot is not out of the BETA phase, DoodyBot is being hosted on a heroku server, Meaning doodybot is online 24/7"},
