@@ -26,7 +26,7 @@ module.exports = {
             
         )
         .setImage('https://i.postimg.cc/zftSmvqt/shadow.png')
-        .setFooter('Thank you for using DoodyBot ;)')
+        .setFooter('DoodyBot version 1.1', 'https://i.postimg.cc/zftSmvqt/shadow.png');
         message.channel.send(commandsEmbed);
     }   
     
