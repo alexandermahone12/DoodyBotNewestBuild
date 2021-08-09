@@ -12,6 +12,7 @@ module.exports = {
     
             await message.channel.messages.fetch({limit: args[0]}).then(messages =>{
                 message.channel.bulkDelete(messages);
+                message.channel.send(`I cleared ${args} messages!`);
             })
         }else {
             message.channel.send("You can't send this command because you do not have the required presmisssions!")
