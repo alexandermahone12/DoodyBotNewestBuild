@@ -22,10 +22,10 @@ module.exports = {
     
     
             }else if(args[0] === 'red'){
+                let role = message.guild.roles.find(r => r.name === "redcolor")
                 if(!role){
                     return message.channel.send('Error: Red role not found, to fix this problem create a role name redcolor .')
                 }
-                let role = message.guild.roles.find(r => r.name === "redcolor");
                 member.roles.add(role)
             }
 
