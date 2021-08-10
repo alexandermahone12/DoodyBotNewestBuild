@@ -16,8 +16,9 @@ module.exports = {
                 var role = message.member.roles.cache.find(role => role.name === "Red");
                 if (!role){
                     return message.channel.send(`Role ${args} does not exist, to fix this problem create a role named Red`)
-                }else{
-                    message.member.guild.roles.add(role);
+                }
+                message.member.guild.roles.add(role);
+
                 }
             }
         }
