@@ -22,6 +22,15 @@ module.exports = {
                     message.channel.send('Youve been given the role red!');
                 }
 
+            }else if(args[0] === 'purple'){
+                var role = message.member.guild.roles.cache.find(role => role.name === "purplecolor");
+                if(!role){
+                    return message.channel.send("This command failed because a 'purplecolor' role wasn't created")
+                }else{
+                    console.log('Role given')
+                    message.member.roles.add(role);
+                    message.channel.send('Youve been given the role purple!');
+                }
             }
         }
     }

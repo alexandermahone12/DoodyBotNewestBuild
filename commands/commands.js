@@ -1,6 +1,6 @@
 module.exports = {
 
-    name: 'commands',
+    name: 'help',
     description: "Shows a list of the available commands!",
     execute(message, args, cmd, client, Discord) {
         console.log("Working");
