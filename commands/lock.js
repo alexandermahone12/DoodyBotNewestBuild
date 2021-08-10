@@ -6,7 +6,7 @@ module.exports = {
         if(message.member.permissions.has("ADMINISTRATOR")){
             const role2 = message.guild.roles.cache.find(role => role.name === 'member') 
             message.channel.updateOverwrite(role2,{ 'SEND_MESSAGES': false}) 
-            message.channel.send("locked **${message.channel.name}**!")
+            message.channel.send(`locked **${message.channel.name}**`)
     
         }
     }
