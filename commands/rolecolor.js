@@ -13,7 +13,7 @@ module.exports = {
                 message.channel.send(commandsEmbed);
 
             }else if(args[0] === 'red'){
-                var role = message.member.guild.roles.cache.find(role => role.name === "Red");
+                var role = message.member.guild.roles.cache.find(role => role.name === "redcolor");
                 console.log('Role given')
                 message.member.guild.roles.add(role);
 
