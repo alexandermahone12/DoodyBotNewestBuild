@@ -29,9 +29,9 @@ module.exports = {
                         })
                     });
                     client.on('messageReactionAdd', async (reaction, user) => {
-                        if (reaction.partial) { 
+                        if (reaction.partial) { //this whole section just checks if the reaction is partial
                             try {
-                                await reaction.fetch();
+                                await reaction.fetch(); //fetches reaction because not every reaction is stored in the cache
                             } catch (error) {
                                 console.error('Fetching message failed: ', error);
                                 return;
@@ -40,18 +40,17 @@ module.exports = {
                         if (!user.bot) {
                             if (reaction.emoji.id == "<:redcolor:874703436241838202>") { //if the user reacted with the right emoji
                     
-                                const role = message.reaction.message.guild.roles.cache.find(r => r.name === 'redcolor'); //finds role you want to assign (you could also user .name instead of .id)
+                                const role = reaction.message.guild.roles.cache.find(r => r.name === "redcolor"); //finds role you want to assign (you could also user .name instead of .id)
                     
-                                const { guild } = message.reaction.message //store the guild of the reaction in variable
+                                const { guild } = reaction.message //store the guild of the reaction in variable
                     
-                                const member = message.guild.members.cache.find(member => member.id === user.id); //find the member who reacted (because user and member are seperate things)
+                                const member = guild.members.cache.find(member => member.id === user.id); //find the member who reacted (because user and member are seperate things)
                     
-                                message.member.roles.add(role); //assign selected role to member
+                                member.roles.add(role); //assign selected role to member
                     
                             }
                         }
                     })
-                    
                 }).catch((err)=>{
                     throw err;
                 });
