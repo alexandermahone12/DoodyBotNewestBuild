@@ -14,8 +14,13 @@ module.exports = {
 
             }else if(args[0] === 'red'){
                 var role = message.member.guild.roles.cache.find(role => role.name === "redcolor");
-                console.log('Role given')
-                message.member.roles.add(role);
+                if(!role){
+                    return message.channel.send("This command failed because a 'redcolor' role wasn't created")
+                }else{
+                    console.log('Role given')
+                    message.member.roles.add(role);
+                    message.channel.send('Youve been given the role red!');
+                }
 
             }
         }
