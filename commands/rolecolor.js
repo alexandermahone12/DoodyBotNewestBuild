@@ -13,8 +13,13 @@ module.exports = {
                 message.channel.send(commandsEmbed);
 
             }else if(args[0] === 'red'){
-                var role = message.member.roles.cache.find(role => role.name === "Red");
-                message.member.guild.roles.add(role);
+                var role = member.guild.roles.cache.find(role => role.name === "Red");
+                if (!role){
+                    return message.channel.send(`Role ${args} does not exist, to fix this problem create a role named Red`)
+                }else{
+                    console.log('Role given')
+                    message.member.guild.roles.add(role);
+                }
 
             }
         }
