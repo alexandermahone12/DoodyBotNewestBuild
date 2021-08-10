@@ -21,6 +21,12 @@ module.exports = {
                     msg.react('<:redcolor:874703436241838202>');
                     msg.react('<:greencolor:874703023031586836>');
                     message.delete();
+                    client.on("messageReactionAdd", (reaction, Member) => {
+                        if(Member.bot) return;
+                        reaction.message.reactions.cache.map(x=>{
+                            if(x._emoji.name != reaction._emoji.name&&x.users.cache.has(Member.id)) x.users.remove(Member.id)
+                        })
+                    });
                 }).catch((err)=>{
                     throw err;
                 });
