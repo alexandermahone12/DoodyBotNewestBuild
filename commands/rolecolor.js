@@ -26,7 +26,7 @@ module.exports = {
                 if(!role){
                     return message.channel.send('Error: Red role not found, to fix this problem create a role name redcolor .')
                 }
-                member.roles.add(role)
+                message.member.roles.add(role)
             }
 
         }
