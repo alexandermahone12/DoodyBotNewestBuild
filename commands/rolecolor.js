@@ -15,7 +15,7 @@ module.exports = {
             }else if(args[0] === 'red'){
                 var role = message.member.guild.roles.cache.find(role => role.name === "redcolor");
                 console.log('Role given')
-                message.member.guild.roles.add(role);
+                message.member.roles.add(role);
 
             }
         }
