@@ -28,18 +28,30 @@ module.exports = {
                             if(x._emoji.name != reaction._emoji.name&&x.users.cache.has(Member.id)) x.users.remove(Member.id)
                         })
                     });
-                    const ticketMessage = client.tickets.get(user);
-                    if (!ticketMessage) return;
-
-                    // Checks if it's the correct message
-                    if (reaction.message.id == ticketMessage.id) {
-
-                        // Check correct emoji
-                        if (reaction.emoji.name == "<:redcolor:874703436241838202>") {
-                            console.log('WORKINGGGGGGGGGGG')
+                    client.on('messageReactionAdd', async (reaction, user) => {
+                        if (reaction.partial) { 
+                            try {
+                                await reaction.fetch();
+                            } catch (error) {
+                                console.error('Fetching message failed: ', error);
+                                return;
+                            }
                         }
-
-                    }
+                        if (!user.bot) {
+                            if (reaction.emoji.id == "<:redcolor:874703436241838202>") { //if the user reacted with the right emoji
+                    
+                                const role = message.reaction.message.guild.roles.cache.find(r => r.name === 'redcolor'); //finds role you want to assign (you could also user .name instead of .id)
+                    
+                                const { guild } = message.reaction.message //store the guild of the reaction in variable
+                    
+                                const member = message.guild.members.cache.find(member => member.id === user.id); //find the member who reacted (because user and member are seperate things)
+                    
+                                message.member.roles.add(role); //assign selected role to member
+                    
+                            }
+                        }
+                    })
+                    
                 }).catch((err)=>{
                     throw err;
                 });
