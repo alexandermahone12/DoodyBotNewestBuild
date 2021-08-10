@@ -17,7 +17,7 @@ module.exports = {
             {name: "Command 5:", value: "/skip: skips the current queued song"},
             {name: "Command 6:", value: "/stop: stops the song and kicks DoodyBot out of the vc"},
             {name: "Command 7:", value: "/mute: mutes the person you @ after the message(only for admin)"},
-            {name: "Command 8:", value: "/unmute: unmutes the person you @after the message(only for admin)!!!!YOU NEED TO CREATE A member AND Muted ROLE BEFORE USING THIS COMMAND!!!!"},
+            {name: "Command 8:", value: "/unmute: unmutes the person you @after the message(only for admin)"},
             {name: "Command 9:", value: "/suggest:Creates a suggestion in the suggestions channel!"},
             {name: "Command 10:", value: "/botinvite: Creates an invite for the bot!"},
             {name: "Command 11:", value: "/avatar: Shows the avatar/profile pic of the person @ after the command!"},
@@ -25,7 +25,6 @@ module.exports = {
             {name: "PREFIX IS [/]", value: "/"},
             
         )
-        .setImage('https://i.postimg.cc/zftSmvqt/shadow.png')
         .setFooter('DoodyBot version 1.1', 'https://i.postimg.cc/zftSmvqt/shadow.png');
         message.channel.send(commandsEmbed);
     }   
