@@ -35,7 +35,7 @@ module.exports = {
                     if (reaction.message.id == ticketMessage.id) {
 
                         // Check correct emoji
-                        if (reaction.emoji.name == ":redcolor:") {
+                        if (reaction.emoji.name == "<:redcolor:874703436241838202>") {
                             console.log('WORKINGGGGGGGGGGG')
                         }
 
