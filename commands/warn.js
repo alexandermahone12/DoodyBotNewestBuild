@@ -13,7 +13,7 @@ module.exports = {
 
         dUser.send(`${dUser}, You have been warned for doing ${dMessage} in the server ${message.guild.name}`)
 
-        message.channel.send(`${dUser} has been warned for doing ${dMessage} :thumbsdown:`)
+        message.channel.send(`${dUser} has been warned for doing ${dMessage} :thumbsdown: !`)
         }
  
 }
