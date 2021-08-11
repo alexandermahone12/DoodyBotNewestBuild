@@ -4,8 +4,7 @@ module.exports = {
     description: "None",
     execute(message, args, cmd, client, Discord) {
 
-        var role = message.member.roles.cache.find(role => role.name === "verified");
-        message.member.roles.add(role);
+        message.member.roles.add('874736823488901180');
         message.reply('Youve been verified!')
         
     }
