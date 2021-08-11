@@ -29,7 +29,7 @@ module.exports = {
             if(!invite.code) return message.channel.send("error while starting a youtube together.")
             const e = new Discord.MessageEmbed()
             .setDescription(`[Click me to start youtube together!](https://discord.com/invite/${invite.code})`)
-            .setFooter('DoodyBot version 1.1', 'https://i.postimg.cc/zftSmvqt/shadow.png');
+            .setFooter('DoodyBot version 1.2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
             message.channel.send(e)
         })
         }

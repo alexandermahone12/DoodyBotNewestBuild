@@ -15,7 +15,7 @@ module.exports = {
             {name: "Upcoming:", value: "[Link shortener](https://bitly.com/). A new  fast music player (this will replace the old slow one), server Nickname changer, suggestions channel + warn command"},
             
         )
-        .setFooter('DoodyBot version 1.1', 'https://i.postimg.cc/zftSmvqt/shadow.png');
+        .setFooter('DoodyBot version 1.2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
         message.channel.send(commandsEmbed);
 
     }
