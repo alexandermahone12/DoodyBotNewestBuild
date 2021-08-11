@@ -12,7 +12,7 @@ module.exports = {
         .addFields(
             {name: "Bugs:", value: "The music player command was removed, isaid command was removed, marryme commmand was removed, member commands was removed, goodbye command was removed, mute & unmute commands are being improved, admin panel was removed."},
             {name: "Features:", value: "New website![click here](https://doodybot2021.wixsite.com/doodybot). Avatar command was enhanced, Doodybot is not out of the BETA phase, DoodyBot is being hosted on a heroku server, Meaning doodybot is online 24/7"},
-            {name: "Upcoming:", value: "[Link shortener](https://bitly.com/). A new  fast music player (this will replace the old slow one), server Nickname changer + Automatic role color changer, suggestions channel + warn command"},
+            {name: "Upcoming:", value: "[Link shortener](https://bitly.com/). A new  fast music player (this will replace the old slow one), server Nickname changer, suggestions channel + warn command"},
             
         )
         .setFooter('DoodyBot version 1.1', 'https://i.postimg.cc/zftSmvqt/shadow.png');
