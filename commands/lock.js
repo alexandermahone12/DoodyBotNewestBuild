@@ -4,7 +4,7 @@ module.exports = {
     description: "Locks a channel!",
     execute(message, args, cmd, client, Discord) {
         if(message.member.permissions.has("ADMINISTRATOR")){
-            const role2 = message.guild.roles.cache.find(role => role.name === 'member') 
+            const role2 = message.guild.roles.cache.find(role => role.name === 'Member') 
             message.channel.updateOverwrite(role2,{ 'SEND_MESSAGES': false}) 
             message.channel.send(`locked **${message.channel.name}**`)
     
