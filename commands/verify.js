@@ -6,7 +6,7 @@ module.exports = {
 
         var role = message.member.roles.cache.find(role => role.name === "verified");
         if (!role) return;
-        message.member.guild.roles.add(role);
+        message.member.roles.add(role);
         message.reply('Youve been verified!')
         
     }
