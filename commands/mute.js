@@ -7,17 +7,7 @@ module.exports = {
             const target = message.mentions.users.first();
             const wantedtime = args[1] * 60000
             if (target) {
-                if (args[0]==="createrole1"){
-                    guild.roles.create({
-                        data: {
-                          name: 'mute',
-                          color: 'SILVER',
-                        },
-                        reason: 'Role for the mute command to work!',
-                      })
-                        .then(console.log)
-                        .catch(console.error);
-                }
+    
                 let mainRole = message.guild.roles.cache.find(role => role.name === 'Member');
                 let muteRole = message.guild.roles.cache.find(role => role.name === 'mute');
                 if (!mainRole){
@@ -29,7 +19,7 @@ module.exports = {
                 }else if (!muteRole){
                     const commandsEmbed5 = new Discord.MessageEmbed()
                     .setColor('#0000')
-                    .setDescription("Error: mute role wasn't created. use '!mute createrole1' to create the mute role.")
+                    .setDescription("Error: mute role wasn't created.")
                     .setFooter('DoodyBot version 1.2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
                     return message.channel.send(commandsEmbed5)
                 }
