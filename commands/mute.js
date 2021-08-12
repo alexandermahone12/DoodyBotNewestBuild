@@ -1,6 +1,6 @@
 module.exports = {
 
-    name: 'timedmute',
+    name: 'mute',
     description: "None",
     execute(message, args, cmd, client, Discord) {
         const target = message.mentions.users.first();
