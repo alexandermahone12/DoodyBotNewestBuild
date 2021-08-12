@@ -3,31 +3,33 @@ module.exports = {
     name: 'mute',
     description: "None",
     execute(message, args, cmd, client, Discord) {
-        const target = message.mentions.users.first();
-        const wantedtime = args[1] * 60000
-        if (target) {
- 
-            let mainRole = message.guild.roles.cache.find(role => role.name === 'Member');
-            let muteRole = message.guild.roles.cache.find(role => role.name === 'mute');
- 
-            let memberTarget = message.guild.members.cache.get(target.id);
- 
-            if (!args[1]) {
+        if (message.member.permissions.has("ADMINISTRATOR")){
+            const target = message.mentions.users.first();
+            const wantedtime = args[1] * 60000
+            if (target) {
+    
+                let mainRole = message.guild.roles.cache.find(role => role.name === 'Member');
+                let muteRole = message.guild.roles.cache.find(role => role.name === 'mute');
+    
+                let memberTarget = message.guild.members.cache.get(target.id);
+    
+                if (!args[1]) {
+                    memberTarget.roles.remove(mainRole.id);
+                    memberTarget.roles.add(muteRole.id);
+                    message.channel.send(`<@${memberTarget.user.id}> has been muted`);
+                    return
+                }
                 memberTarget.roles.remove(mainRole.id);
                 memberTarget.roles.add(muteRole.id);
-                message.channel.send(`<@${memberTarget.user.id}> has been muted`);
-                return
+                message.channel.send(`<@${memberTarget.user.id}> has been muted for ${args[1]}`);
+    
+                setTimeout(function () {
+                    memberTarget.roles.remove(muteRole.id);
+                    memberTarget.roles.add(mainRole.id);
+                },wantedtime);
+            } else {
+                message.channel.send('Cant find that member!');
             }
-            memberTarget.roles.remove(mainRole.id);
-            memberTarget.roles.add(muteRole.id);
-            message.channel.send(`<@${memberTarget.user.id}> has been muted for ${args[1]}`);
- 
-            setTimeout(function () {
-                memberTarget.roles.remove(muteRole.id);
-                memberTarget.roles.add(mainRole.id);
-            },wantedtime);
-        } else {
-            message.channel.send('Cant find that member!');
         }
     }
 }
