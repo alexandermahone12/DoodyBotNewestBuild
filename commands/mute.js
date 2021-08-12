@@ -4,6 +4,7 @@ module.exports = {
     description: "None",
     execute(message, args, cmd, client, Discord) {
         const target = message.mentions.users.first();
+        const wantedtime = args[1] * 60000
         if (target) {
  
             let mainRole = message.guild.roles.cache.find(role => role.name === 'Member');
@@ -24,7 +25,7 @@ module.exports = {
             setTimeout(function () {
                 memberTarget.roles.remove(muteRole.id);
                 memberTarget.roles.add(mainRole.id);
-            }, args[1]);
+            },wantedtime);
         } else {
             message.channel.send('Cant find that member!');
         }
