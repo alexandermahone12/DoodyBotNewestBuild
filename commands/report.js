@@ -15,7 +15,7 @@ module.exports = {
             let messageArgs = args.join(' ');
             const channel = message.guild.channels.cache.find(c => c.id === '875513870360395867');
             if(!channel){
-                message.channel.send("This command can only be used on Doody's server.")
+                return message.channel.send("This command can only be used on Doody's server.")
             }
             const embed = new Discord.MessageEmbed()
             .setColor("0000")
