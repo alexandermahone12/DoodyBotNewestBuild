@@ -19,7 +19,7 @@ module.exports = {
             }
             const embed = new Discord.MessageEmbed()
             .setColor("0000")
-            .setDescription(`<@${memberTarget.user.id}> has been reported for ${messageArgs}`)
+            .setDescription(`Report: ${messageArgs}`)
             channel.send(embed)
             
         }
