@@ -16,19 +16,31 @@ module.exports = {
                 if (!args[1]) {
                     memberTarget.roles.remove(mainRole.id);
                     memberTarget.roles.add(muteRole.id);
-                    message.channel.send(`<@${memberTarget.user.id}> has been muted`);
+                    const commandsEmbed1 = new Discord.MessageEmbed()
+                    .setColor('#0000')
+                    .setDescription(`<@${memberTarget.user.id}> has been muted`)
+                    .setFooter('DoodyBot version 1.2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
+                    message.channel.send(commandsEmbed1)
                     return
                 }
                 memberTarget.roles.remove(mainRole.id);
                 memberTarget.roles.add(muteRole.id);
-                message.channel.send(`<@${memberTarget.user.id}> has been muted for ${args[1]}`);
+                const commandsEmbed2 = new Discord.MessageEmbed()
+                .setColor('#0000')
+                .setDescription(`<@${memberTarget.user.id}> has been muted for ${args[1]}`)
+                .setFooter('DoodyBot version 1.2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
+                message.channel.send(commandsEmbed2)
     
                 setTimeout(function () {
                     memberTarget.roles.remove(muteRole.id);
                     memberTarget.roles.add(mainRole.id);
                 },wantedtime);
             } else {
-                message.channel.send('Cant find that member!');
+                const commandsEmbed3 = new Discord.MessageEmbed()
+                .setColor('#0000')
+                .setDescription(`Can't find that member!`)
+                .setFooter('DoodyBot version 1.2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
+                message.channel.send(commandsEmbed3)
             }
         }
     }
