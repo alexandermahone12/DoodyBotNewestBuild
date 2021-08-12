@@ -8,7 +8,19 @@ module.exports = {
             if(target){
                 let mainRole = message.guild.roles.cache.find(role => role.name === 'Member');
                 let muteRole = message.guild.roles.cache.find(role => role.name === 'mute');
-    
+                if (!mainRole){
+                    const commandsEmbed4 = new Discord.MessageEmbed()
+                    .setColor('#0000')
+                    .setDescription("Error: Member role wasn't created.")
+                    .setFooter('DoodyBot version 1.2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
+                    return message.channel.send(commandsEmbed4)
+                }else if (!muteRole){
+                    const commandsEmbed5 = new Discord.MessageEmbed()
+                    .setColor('#0000')
+                    .setDescription("Error: mute role wasn't created.")
+                    .setFooter('DoodyBot version 1.2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
+                    return message.channel.send(commandsEmbed5)
+                }
                 let memberTarget= message.guild.members.cache.get(target.id);
                 const commandsEmbed1 = new Discord.MessageEmbed()
                 .setColor('#0000')
