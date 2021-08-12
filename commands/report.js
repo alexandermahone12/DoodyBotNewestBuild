@@ -2,7 +2,7 @@
 module.exports = {
 
     name: 'report',
-    description: "reports the mentioned person",
+    description: "reports the mentioned person!",
     execute(message, args, cmd, client, Discord) {
         const target = message.mentions.users.first();
         if (target){
