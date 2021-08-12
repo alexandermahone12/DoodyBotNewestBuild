@@ -17,9 +17,6 @@ module.exports = {
             if(!channel){
                 message.channel.send("This command can only be used on Doody's server.")
             }
-            if (!channel){
-                message.channel.send("Channel doesnt exist")
-            }
             const embed = new Discord.MessageEmbed()
             .setColor("0000")
             .setDescription(`Report: ${messageArgs}`)
