@@ -23,7 +23,9 @@ module.exports = {
             const embed = new Discord.MessageEmbed()
             .setColor("0000")
             .setDescription(`Report: ${messageArgs}`)
+            .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
             channel.send(embed)
+            message.delete();
             
         }
 
