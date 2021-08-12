@@ -8,7 +8,7 @@ module.exports = {
             const wantedtime = args[1] * 60000
             if (target) {
     
-                let mainRole = message.guild.roles.cache.find(role => role.name === 'Member');
+                let mainRole = message.guild.roles.cache.find(role => role.name === 'verified');
                 let muteRole = message.guild.roles.cache.find(role => role.name === 'mute');
                 if (!mainRole){
                     const commandsEmbed4 = new Discord.MessageEmbed()
