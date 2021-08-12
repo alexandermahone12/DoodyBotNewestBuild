@@ -13,7 +13,10 @@ module.exports = {
         }else{
             let memberTarget = message.guild.members.cache.get(target.id);
             let messageArgs = args.join(' ');
-            const channel = message.guild.channels.cache.find(c => c.id === '874348107314384996');
+            const channel = message.guild.channels.cache.find(c => c.id === '875513870360395867');
+            if(!channel){
+                message.channel.send("This command can only be used on Doody's server.")
+            }
             if (!channel){
                 message.channel.send("Channel doesnt exist")
             }
