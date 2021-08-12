@@ -1,16 +1,35 @@
 module.exports = {
 
-    name: 'mute',
-    description: "creates an invite for the bot",
+    name: 'timedmute',
+    description: "None",
     execute(message, args, cmd, client, Discord) {
-        const commandsEmbed = new Discord.MessageEmbed()
-        .setColor('#0000')
-        .setTitle('Add DoodyBot to your server!')
-        .setDescription('[Click here!](https://discord.com/oauth2/authorize?client_id=858809681518002187&scope=bot&permissions=8589934591)')
-        .addFields({ name: "Important", value: "When adding doodybot, it will ask you to authorize some permissions. You do not have to tick all the boxes.", inline: true })
-        .setFooter('DoodyBot version 1.2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
-        message.channel.send(commandsEmbed);
-
-    }
+        const target = message.mentions.users.first();
+        if (target) {
  
+            let mainRole = message.guild.roles.cache.find(role => role.name === 'Member');
+            let muteRole = message.guild.roles.cache.find(role => role.name === 'mute');
+ 
+            let memberTarget = message.guild.members.cache.get(target.id);
+ 
+            if (!args[1]) {
+                memberTarget.roles.remove(mainRole.id);
+                memberTarget.roles.add(muteRole.id);
+                message.channel.send(`<@${memberTarget.user.id}> has been muted`);
+                return
+            }
+            memberTarget.roles.remove(mainRole.id);
+            memberTarget.roles.add(muteRole.id);
+            message.channel.send(`<@${memberTarget.user.id}> has been muted for ${ms(ms(args[1]))}`);
+ 
+            setTimeout(function () {
+                memberTarget.roles.remove(muteRole.id);
+                memberTarget.roles.add(mainRole.id);
+            }, ms(args[1]));
+        } else {
+            message.channel.send('Cant find that member!');
+        }
+    }
 }
+
+    
+
