@@ -38,7 +38,7 @@ module.exports = {
             } else {
                 const commandsEmbed3 = new Discord.MessageEmbed()
                 .setColor('#0000')
-                .setDescription(`Can't find that member!`)
+                .setDescription(`Error: Cant find that member!`)
                 .setFooter('DoodyBot version 1.2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
                 message.channel.send(commandsEmbed3)
             }
