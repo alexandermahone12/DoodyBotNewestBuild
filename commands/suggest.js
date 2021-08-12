@@ -4,8 +4,8 @@ module.exports = {
     permissions: [],
     description: 'creates a suggestion!',
     execute(message, args, cmd, client, Discord){
-        const channel = message.guild.channels.cache.find(c => c.name === 'suggestions');
-        if(!channel) return message.channel.send('suggestions channel does not exist!');
+        const channel = message.guild.channels.cache.find(c => c.name === '〖❓〗Suggestions');
+        if(!channel) return message.channel.send('suggestions channel does not exist!, to solve this create a channel named〖❓〗Suggestions');
 
         let messageArgs = args.join(' ');
         const embed = new Discord.MessageEmbed()
