@@ -24,7 +24,7 @@ module.exports = {
             setTimeout(function () {
                 memberTarget.roles.remove(muteRole.id);
                 memberTarget.roles.add(mainRole.id);
-            }, ms(args[1]));
+            }, (args[1]));
         } else {
             message.channel.send('Cant find that member!');
         }
