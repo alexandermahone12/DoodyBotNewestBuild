@@ -7,7 +7,6 @@ module.exports = {
         const commandsEmbed = new Discord.MessageEmbed()
         .setColor('#554846')
         .setTitle('Commands list')
-        .setURL('https://doodybot2021.wixsite.com/doodybot')
         .setDescription("these are the DoodyBot commands")
         .addFields(
             {name: "Command 1:", value: "!clear: Clears 1-100 messages (only admin roles can use this)"},
