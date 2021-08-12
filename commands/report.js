@@ -12,13 +12,14 @@ module.exports = {
                 return message.channel.send("What do you want to report the person for?")
         }else{
             let memberTarget = message.guild.members.cache.get(target.id);
+            let messageArgs = args.join(' ');
             const channel = message.guild.channels.cache.find(c => c.id === '874348107314384996');
             if (!channel){
                 message.channel.send("Channel doesnt exist")
             }
             const embed = new Discord.MessageEmbed()
             .setColor("0000")
-            .setDescription(`<@${memberTarget.user.id}> has been reported for ${args[1]}`)
+            .setDescription(`<@${memberTarget.user.id}> has been reported for ${messageArgs}`)
             channel.send(embed)
             
         }
