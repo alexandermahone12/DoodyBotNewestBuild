@@ -7,6 +7,7 @@ module.exports = {
         if(message.member.roles.cache.has('874736823488901180')){
             message.reply("You are already verified! Please don't spam this command.")
         }else{
+            member.roles.remove('875704950804578304');
             message.member.roles.add('874736823488901180');
             message.reply('Youve been verified!')
         }
