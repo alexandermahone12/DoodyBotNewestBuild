@@ -4,6 +4,8 @@ module.exports = {
     description: "Shows a list of the available commands!",
     execute(message, args, cmd, client, Discord) {
         if (message.channel instanceof Discord.DMChannel){
+            return message.channel.send("You cannot use this command is DMs")
+        }else{
             console.log("Working");
             const commandsEmbed = new Discord.MessageEmbed()
             .setColor('#554846')
@@ -26,8 +28,6 @@ module.exports = {
             )
             .setFooter('DoodyBot version 1.2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
             message.channel.send(commandsEmbed);
-    }else{
-        message.channel.send("You cannot use this command in DMS")
     }   }
     
 }
