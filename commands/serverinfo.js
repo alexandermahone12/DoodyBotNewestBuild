@@ -4,6 +4,9 @@ module.exports = {
     name: 'serverinfo',
     description: "says hi",
     execute(message, args, cmd, client, Discord) {
+      if (message.channel instanceof Discord.DMChannel){
+        return message.channel.send("You cannot use this command in DMs")
+    }else{
         const ServerLogo = message.guild.iconURL();
         const ServerInfoEmbed = new Discord.MessageEmbed()
             .setColor('#b700ff')
@@ -19,5 +22,5 @@ module.exports = {
             .addField("**Server Logo**", "**Downlaod Server Logo**")
             .setURL(ServerLogo)
             message.channel.send(ServerInfoEmbed)
-          }    
+          }    }
         }
