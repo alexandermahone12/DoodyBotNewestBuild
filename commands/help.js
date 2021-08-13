@@ -23,7 +23,7 @@ module.exports = {
             {name: "PREFIX IS [!]", value: "!"},
             
         )
-        .setFooter('DoodyBot version 1.2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
+        .setFooter('DoodyBot version 2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
         message.channel.send(commandsEmbed);
     }   
     
