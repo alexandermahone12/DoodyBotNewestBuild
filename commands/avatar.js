@@ -7,6 +7,7 @@ module.exports = {
         const discord = require('discord.js'); //Define the discord.js module
         const Client = new discord.Client(); //Creating discord.js client (constructor)
         require('discord-buttons')(Client);
+        const disbut = require("discord-buttons");
         if (message.channel instanceof Discord.DMChannel){
             return message.channel.send("You cannot use this command in DMs")
         }else{
