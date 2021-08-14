@@ -17,7 +17,7 @@ module.exports = {
             .setTitle(`${member.username}'s avatar`)
             .setImage(avatar)
             .setColor("RANDOM")
-            let button = new disbut.MessageButton()
+            let button = new Discord.MessageButton()
             .setStyle('url') //default: blurple
             .setLabel('Download avatar') //default: NO_LABEL_PROVIDED
             .setURL(avatar) //note: if you use the style "url" you must provide url using .setURL('https://example.com')
