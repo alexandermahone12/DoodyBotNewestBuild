@@ -4,6 +4,8 @@ module.exports = {
     name: 'avatar',
     description: "shows the profile pic",
     execute(message, args, cmd, client, Discord) {
+        const disbut = require('discord-buttons');
+        disbut(client);
         if (message.channel instanceof Discord.DMChannel){
             return message.channel.send("You cannot use this command in DMs")
         }else{
@@ -12,7 +14,7 @@ module.exports = {
 
             let avatar = member.displayAvatarURL({dynamic : true, size: 1024})
 
-            let button = new Discord.MessageButton()
+            let button = new disbut.MessageButton()
             .setStyle('blurple') //default: blurple
             .setLabel('Dwadwadadadad') //default: NO_LABEL_PROVIDED
             .setID('https://www.google.com/') //note: if you use the style "url" you must provide url using .setURL('https://example.com')
