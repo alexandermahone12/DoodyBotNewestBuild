@@ -12,13 +12,21 @@ module.exports = {
 
             let avatar = member.displayAvatarURL({format : "gif"|| "png", size: 1024})
 
-
-            const embed = new Discord.MessageEmbed()
-            .setTitle(`${member.username}'s avatar`)
-            .setImage(avatar)
-            .setColor("RANDOM")
-
-            message.channel.send(embed);
+            if(!avatar){
+                const embed = new Discord.MessageEmbed()
+                .setTitle(`${member.username}'s avatar`)
+                .setImage(member.displayAvatarURL({size: 1024}))
+                .setColor("RANDOM")
+    
+                message.channel.send(embed);
+            }else{
+                const embed = new Discord.MessageEmbed()
+                .setTitle(`${member.username}'s avatar`)
+                .setImage(avatar)
+                .setColor("RANDOM")
+    
+                message.channel.send(embed);
+            }
         }
     }
  
