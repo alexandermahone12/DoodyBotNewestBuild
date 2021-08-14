@@ -4,7 +4,7 @@ module.exports = {
     name: 'avatar',
     description: "shows the profile pic",
     execute(message, args, cmd, client, Discord) {
-        const disbut = require("discord-buttons");
+        const disbut = require("discord-buttons")(client);
         if (message.channel instanceof Discord.DMChannel){
             return message.channel.send("You cannot use this command in DMs")
         }else{
