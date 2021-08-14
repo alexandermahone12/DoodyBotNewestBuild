@@ -19,7 +19,7 @@ module.exports = {
             .setImage(avatar)
             .setColor("RANDOM")
 
-            const button = disbut.MessageButton()
+            const button = new disbut.MessageButton()
             .setStyle('url') //default: blurple
             .setLabel('Download avatar') //default: NO_LABEL_PROVIDED
             .setURL(avatar) //note: if you use the style "url" you must provide url using .setURL('https://example.com')
