@@ -18,7 +18,7 @@ module.exports = {
                 .setImage(member.displayAvatarURL({size: 1024}))
                 .setColor("RANDOM")
     
-                message.channel.send(embed);
+                return message.channel.send(embed);
             }else{
                 const embed = new Discord.MessageEmbed()
                 .setTitle(`${member.username}'s avatar`)
