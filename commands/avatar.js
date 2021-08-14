@@ -17,12 +17,13 @@ module.exports = {
             .setTitle(`${member.username}'s avatar`)
             .setImage(avatar)
             .setColor("RANDOM")
+            message.channel.send(embed);
             const button = new Discord.MessageButton()
             .setStyle('url') //default: blurple
             .setLabel('Download avatar') //default: NO_LABEL_PROVIDED
             .setURL(avatar) //note: if you use the style "url" you must provide url using .setURL('https://example.com')
             .setDisabled(false); //disables the button | default: false
-            message.channel.send(embed, button);
+            message.channel.send(button);
         }
     }
  
