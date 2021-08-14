@@ -4,6 +4,7 @@ module.exports = {
     name: 'avatar',
     description: "shows the profile pic",
     execute(message, args, cmd, client, Discord) {
+        const disbut = require("discord-buttons");
         if (message.channel instanceof Discord.DMChannel){
             return message.channel.send("You cannot use this command in DMs")
         }else{
@@ -17,13 +18,13 @@ module.exports = {
             .setTitle(`${member.username}'s avatar`)
             .setImage(avatar)
             .setColor("RANDOM")
-            message.channel.send(embed);
-            const button = new Discord.MessageButton()
+
+            const button = disbut.MessageButton()
             .setStyle('url') //default: blurple
             .setLabel('Download avatar') //default: NO_LABEL_PROVIDED
             .setURL(avatar) //note: if you use the style "url" you must provide url using .setURL('https://example.com')
             .setDisabled(false); //disables the button | default: false
-            message.channel.send(button);
+            message.channel.send(embed,button);
         }
     }
  
