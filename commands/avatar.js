@@ -10,7 +10,7 @@ module.exports = {
 
             let member = message.mentions.users.first() || message.author
 
-            let avatar = member.displayAvatarURL({format : "gif", size: 1024})
+            let avatar = member.displayAvatarURL({format : "gif"|| "png", size: 1024})
 
 
             const embed = new Discord.MessageEmbed()
