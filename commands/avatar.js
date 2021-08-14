@@ -18,12 +18,13 @@ module.exports = {
                 .setLabel("This is a button!")
                 .setID("myid")
                 .setStyle("blurple");
+            message.channel.send("HLooooo", button)
             const embed = new Discord.MessageEmbed()
             .setTitle(`${member.username}'s avatar`)
             .setImage(avatar)
             .setColor("RANDOM")
             
-            message.channel.send(embed, button);
+            message.channel.send(embed);
         }
     }
  
