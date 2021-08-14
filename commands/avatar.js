@@ -15,10 +15,9 @@ module.exports = {
             let avatar = member.displayAvatarURL({dynamic : true, size: 1024})
 
             let button = new disbut.MessageButton()
-            .setStyle('blurple') //default: blurple
-            .setLabel('Dwadwadadadad') //default: NO_LABEL_PROVIDED
-            .setID('https://www.google.com/') //note: if you use the style "url" you must provide url using .setURL('https://example.com')
-            .setDisabled(false); //disables the button | default: false
+                .setLabel("This is a button!")
+                .setID("myid")
+                .setStyle("blurple");
             const embed = new Discord.MessageEmbed()
             .setTitle(`${member.username}'s avatar`)
             .setImage(avatar)
