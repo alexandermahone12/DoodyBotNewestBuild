@@ -1,13 +1,10 @@
+const { MessageButton } = require("discord-buttons");
 
 module.exports = {
 
     name: 'avatar',
     description: "shows the profile pic",
     execute(message, args, cmd, client, Discord) {
-        const discord = require('discord.js'); //Define the discord.js module
-        const Client = new discord.Client(); //Creating discord.js client (constructor)
-        require('discord-buttons')(Client);
-        const disbut = require("discord-buttons");
         if (message.channel instanceof Discord.DMChannel){
             return message.channel.send("You cannot use this command in DMs")
         }else{
@@ -16,11 +13,12 @@ module.exports = {
 
             let avatar = member.displayAvatarURL({dynamic : true, size: 1024})
 
-            let button = new disbut.MessageButton()
-                .setLabel("This is a button!")
-                .setID("myid")
-                .setStyle("blurple");
-            message.channel.send("HLooooo", button)
+            let button = new MessageButton()
+                .setStyle('red')
+                .setLabel('My First Button!') 
+                .setID('click_to_function');
+
+            message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', button);
             const embed = new Discord.MessageEmbed()
             .setTitle(`${member.username}'s avatar`)
             .setImage(avatar)
