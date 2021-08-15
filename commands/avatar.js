@@ -15,9 +15,8 @@ module.exports = {
 
             const embed = new Discord.MessageEmbed()
             .setTitle("Avatar command!")
-            .setDescription(`${member.username}'s avatar`)
+            .setDescription(`${member.username}'s [avatar](${download})`)
             .setImage(avatar)
-            .setFooter(`[Download](${download}) ${member.username}'s avatar`)
             .setColor("RANDOM")
 
             message.channel.send(embed);
