@@ -1,4 +1,3 @@
-const { MessageButton } = require("discord-buttons");
 
 module.exports = {
 
@@ -13,17 +12,12 @@ module.exports = {
 
             let avatar = member.displayAvatarURL({dynamic : true, size: 1024})
 
-            let button = new MessageButton()
-                .setStyle('red')
-                .setLabel('My First Button!') 
-                .setID('click_to_function');
 
-            message.channel.send('Hey, i am powered by https://npmjs.com/discord-buttons', button);
             const embed = new Discord.MessageEmbed()
             .setTitle(`${member.username}'s avatar`)
             .setImage(avatar)
             .setColor("RANDOM")
-            
+
             message.channel.send(embed);
         }
     }
