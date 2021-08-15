@@ -74,6 +74,7 @@ module.exports = {
     }else if(args[0] === 'close'){
         channel.send("Deleting this channel in 5 seconds!");
         setTimeout(() => channel.delete(), 5000);
+        break;
     }
   },
 };
