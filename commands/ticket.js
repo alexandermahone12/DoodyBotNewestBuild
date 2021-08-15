@@ -11,7 +11,7 @@ module.exports = {
             if(message.member.permissions.has("KICK_MEMBERS")){
                 const channel = await message.guild.channels.create(`ticket: ${message.author.tag}`);
                 
-                channel.setParent("820276801652916270");
+                channel.setParent("876290307422048266");
 
 
                 channel.updateOverwrite(message.guild.id, {
