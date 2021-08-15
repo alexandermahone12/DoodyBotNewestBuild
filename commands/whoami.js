@@ -1,6 +1,6 @@
 module.exports = {
 
-    name: 'avatar',
+    name: 'whoami',
     description: "shows the profile pic",
     execute(message, args, cmd, client, Discord) {
         if (message.channel instanceof Discord.DMChannel){
