@@ -9,7 +9,7 @@ module.exports = {
             let user = message.mentions.users.first() || message.author;
             const embed = new Discord.MessageEmbed()
             .setAuthor(user.tag, user.displayAvatarURL({ dynamic: true }))
-            .setDescription(`You are ${user.tag}, you joined ${message.guild} in ${user.joinedAt}, you have the following roles: ${user.roles}.`)
+            .setDescription(`You are ${user.tag}, you joined ${message.guild} in ${message.member.joinedTimestamp}, you have the following roles: ${user.roles}.`)
             .setColor("RANDOM")
 
             message.channel.send(embed);
