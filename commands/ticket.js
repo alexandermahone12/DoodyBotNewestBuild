@@ -3,7 +3,7 @@ module.exports = {
   aliases: [],
   permissions: [],
   description: "open a ticket!",
-  async execute(message, args, cmd, client, discord) {
+  async execute(message, args, cmd, client, Discord) {
     if (message.channel instanceof Discord.DMChannel){
         return message.channel.send("You cannot use this command in DMs")
     }else{
