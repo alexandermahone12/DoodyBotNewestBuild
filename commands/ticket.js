@@ -33,10 +33,7 @@ module.exports = {
                 throw err;
                 }
 
-                const collector = reactionMessage.createReactionCollector(
-                (reaction, user) => message.guild.members.cache.find((member) => member.id === user.id).hasPermission("ADMINISTRATOR"),
-                { dispose: true }
-                );
+                const collector = reactionMessage.createReactionCollector();
 
                 collector.on("collect", (reaction, user) => {
                 switch (reaction.emoji.name) {
@@ -71,10 +68,6 @@ module.exports = {
                 });
             }      
         }
-    }else if(args[0] === 'close'){
-        channel.send("Deleting this channel in 5 seconds!");
-        setTimeout(() => channel.delete(), 5000);
-        
     }
   },
 };
