@@ -9,7 +9,6 @@ module.exports = {
             const embed = new Discord.MessageEmbed()
             .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(`You are ${message.author.tag}, you joined ${message.guild} in ${message.guild.member.joinedAt}, you have the following roles: ${message.guild.member.roles}.`)
-            .setImage(avatar)
             .setColor("RANDOM")
 
             message.channel.send(embed);
