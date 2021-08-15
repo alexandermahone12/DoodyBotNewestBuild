@@ -10,7 +10,8 @@ module.exports = {
         if(message.member.permissions.has("KICK_MEMBERS")){
             const channel = await message.guild.channels.create(`ticket: ${message.author.tag}`);
             
-            channel.setParent("820276801652916270");
+            const catagory = channel.setParent("820276801652916270");
+            if (!catagory) return message.channel.send("Ticket command can only be used in doodys server.")
 
             channel.updateOverwrite(message.guild.id, {
             SEND_MESSAGE: false,
