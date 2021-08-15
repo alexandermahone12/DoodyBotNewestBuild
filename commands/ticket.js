@@ -58,8 +58,15 @@ module.exports = {
                 throw err;
             });
         }else{
-            const unavailable = message.reply("Tickets are unavailable right now.")
-            setTimeout(() => unavailable.delete(), 5000);
+            message.channel
+            .send(`Tickets are unavailable right now.`)
+            .then((msg1) => {
+                setTimeout(() => msg1.delete(), 7000);
+                setTimeout(() => message.delete(), 3000);
+            })
+            .catch((err) => {
+                throw err;
+            });
             
         }
     }
