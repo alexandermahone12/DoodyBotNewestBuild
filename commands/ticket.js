@@ -72,15 +72,8 @@ module.exports = {
             }      
         }
     }else if(args[0] === 'close'){
-        message.channel
-            .send(`Closing ticket!`)
-            .then((msg2) => {
-                setTimeout(() => msg2.delete(), 3000);
-                setTimeout(() => channel.delete(), 7000);
-            })
-            .catch((err) => {
-                throw err;
-            });
+        channel.send("Deleting this channel in 5 seconds!");
+        setTimeout(() => channel.delete(), 5000);
     }
   },
 };
