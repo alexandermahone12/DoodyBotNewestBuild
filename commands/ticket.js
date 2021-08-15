@@ -59,11 +59,6 @@ module.exports = {
                 .catch((err) => {
                     throw err;
                 });
-                if(args[0] === 'close'){
-                    console.log(`Ticket ${channel} was closed`)
-                    channel.send("Deleting this channel in 5 seconds!");
-                    setTimeout(() => channel.delete(), 5000);
-                }
             }else{
                 message.channel
                 .send(`Tickets are unavailable right now.`)
@@ -76,6 +71,9 @@ module.exports = {
                 });
             }      
         }
+    }else if(args[0] === 'close'){
+        channel.send("Deleting this channel in 5 seconds!");
+        setTimeout(() => channel.delete(), 5000);
         
     }
   },
