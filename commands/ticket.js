@@ -60,6 +60,7 @@ module.exports = {
                     throw err;
                 });
                 if(args[0] === 'close'){
+                    console.log(`Ticket ${channel} was closed`)
                     channel.send("Deleting this channel in 5 seconds!");
                     setTimeout(() => channel.delete(), 5000);
                 }
