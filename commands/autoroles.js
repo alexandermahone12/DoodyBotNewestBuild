@@ -10,8 +10,8 @@ module.exports = {
         const channel = '876685781077479454';
         const malerole = message.guild.roles.cache.find(role => role.name === "male");
         const femalerole = message.guild.roles.cache.find(role => role.name === "female");
-        const artistrole = message.guild.roles.cache.find(role => role.name === "YOUR_ROLE");
-        const programmerrole = message.guild.roles.cache.find(role => role.name === "YOUR_ROLE");
+        const artistrole = message.guild.roles.cache.find(role => role.name === "artist");
+        const programmerrole = message.guild.roles.cache.find(role => role.name === "programmer");
 
  
         const maleroleEmoji = '♂️';
@@ -43,6 +43,12 @@ module.exports = {
                 if (reaction.emoji.name === femaleroleEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.add(femalerole);
                 }
+                if (reaction.emoji.name === artistroleEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(artistrole);
+                }
+                if (reaction.emoji.name === programmerroleEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(programmerrole);
+                }
             } else {
                 return;
             }
@@ -63,6 +69,12 @@ module.exports = {
                 }
                 if (reaction.emoji.name === femaleroleEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove(femalerole);
+                }
+                if (reaction.emoji.name === artistroleEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.remove(artistrole);
+                }
+                if (reaction.emoji.name === programmerroleEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.remove(programmerrole);
                 }
             } else {
                 return;
