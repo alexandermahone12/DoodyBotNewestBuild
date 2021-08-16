@@ -1,7 +1,7 @@
 
 module.exports = {
 
-    name: 'serverinfo',
+    name: 'autoroles',
     description: "says hi",
     async execute(message, args, cmd, client, Discord) {
       if (message.channel instanceof Discord.DMChannel){
