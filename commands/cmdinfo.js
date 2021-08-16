@@ -73,7 +73,7 @@ module.exports = {
                 const commandsEmbed5 = new Discord.MessageEmbed()
                 .setColor('#554846')
                 .setTitle("unlock command info")
-                .setDescription("redoes lock command")
+                .setDescription("redoes lock command.")
                 .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
                 message.channel.send(commandsEmbed5);
             }
