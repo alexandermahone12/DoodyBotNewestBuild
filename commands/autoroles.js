@@ -1,7 +1,7 @@
 
 module.exports = {
 
-    name: 'autoroles',
+    name: 'selfroles',
     description: "says hi",
     async execute(message, args, cmd, client, Discord) {
       if (message.channel instanceof Discord.DMChannel){
@@ -22,18 +22,20 @@ module.exports = {
 
         🏅<@&876871980253577307>
 
+        📱<@&876872978795741184>
+
         📚<@&876873782978048083>
         
         `
         const channel = '876685781077479454';
-        const malerole = message.guild.roles.cache.find(role => role.name === "male");
-        const femalerole = message.guild.roles.cache.find(role => role.name === "female");
-        const artistrole = message.guild.roles.cache.find(role => role.name === "artist");
-        const programmerrole = message.guild.roles.cache.find(role => role.name === "programmer");
-        const gamerrole = message.guild.roles.cache.find(role => role.name === "gamer");
-        const athleterole = message.guild.roles.cache.find(role => role.name === "athlete");
-        const influencerrole = message.guild.roles.cache.find(role => role.name === "influencer");
-        const bookwormrole = message.guild.roles.cache.find(role => role.name === "bookworm");
+        const malerole = message.guild.roles.cache.find(role => role.name === "Male");
+        const femalerole = message.guild.roles.cache.find(role => role.name === "Female");
+        const artistrole = message.guild.roles.cache.find(role => role.name === "Artist");
+        const programmerrole = message.guild.roles.cache.find(role => role.name === "Programmer");
+        const gamerrole = message.guild.roles.cache.find(role => role.name === "Gamer");
+        const athleterole = message.guild.roles.cache.find(role => role.name === "Athlete");
+        const influencerrole = message.guild.roles.cache.find(role => role.name === "Influencer");
+        const bookwormrole = message.guild.roles.cache.find(role => role.name === "Bookworm");
 
 
 
@@ -49,7 +51,7 @@ module.exports = {
  
         let embed = new Discord.MessageEmbed()
             .setColor('#554846')
-            .setTitle('Auto roles')
+            .setTitle('Self roles!')
             .setDescription(multilineString)
             .setFooter('If you would like a new role to be added please contact me or ego!');
  
