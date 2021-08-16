@@ -9,11 +9,16 @@ module.exports = {
     }else{
         const multilineString = `
         React to an emoji to get the wanted role!
+
         ♂️ <@&876688146576867398>
+
         ♀️ <@&876688254257233952>
+
         🎨<@&876690301828341760>
+
         🖥️<@&876690398062452737>
 
+        
         `
         const channel = '876685781077479454';
         const malerole = message.guild.roles.cache.find(role => role.name === "male");
@@ -28,9 +33,10 @@ module.exports = {
         const programmerroleEmoji = '🖥️';
  
         let embed = new Discord.MessageEmbed()
-            .setColor('#e42643')
+            .setColor('#554846')
             .setTitle('Auto roles')
-            .setDescription(multilineString);
+            .setDescription(multilineString)
+            .setFooter('If you want a new role to be added please contact me or ego');
  
         let messageEmbed = await message.channel.send(embed);
         messageEmbed.react(maleroleEmoji);
