@@ -12,7 +12,7 @@ module.exports = {
 
             let messageArgs = args.join(' ');
             const embed = new Discord.MessageEmbed()
-            .setColor('FADF2E')
+            .setColor('#554846')
             .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
             .setDescription(messageArgs);
 

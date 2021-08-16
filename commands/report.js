@@ -21,7 +21,7 @@ module.exports = {
                     return message.channel.send("This command can only be used on Doody's server.")
                 }
                 const embed = new Discord.MessageEmbed()
-                .setColor("0000")
+                .setColor("#554846")
                 .setDescription(`Report: ${messageArgs}`)
                 .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                 channel.send(embed)

@@ -18,7 +18,7 @@ module.exports = {
             .setDescription(`${member.username}'s [avatar](${download})`)
             .setImage(avatar)
             .setFooter(`${message.author.tag} || To get your friend's avatar, tag them after the command!`)
-            .setColor("RANDOM")
+            .setColor("#554846")
 
             message.channel.send(embed);
         }

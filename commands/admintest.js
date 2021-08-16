@@ -12,7 +12,7 @@ module.exports = {
     
     }else{
         const commandsEmbed = new Discord.MessageEmbed()
-        .setColor('#0000')
+        .setColor('#554846')
         .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription('You do not have perms :(');
         message.channel.send(commandsEmbed);

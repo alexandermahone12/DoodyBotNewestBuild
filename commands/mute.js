@@ -15,13 +15,13 @@ module.exports = {
                     let muteRole = message.guild.roles.cache.find(role => role.name === 'mute');
                     if (!mainRole){
                         const commandsEmbed4 = new Discord.MessageEmbed()
-                        .setColor('#0000')
+                        .setColor('#554846')
                         .setDescription("Error: verified role wasn't created.")
                         .setFooter('DoodyBot version 2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
                         return message.channel.send(commandsEmbed4)
                     }else if (!muteRole){
                         const commandsEmbed5 = new Discord.MessageEmbed()
-                        .setColor('#0000')
+                        .setColor('#554846')
                         .setDescription("Error: mute role wasn't created.")
                         .setFooter('DoodyBot version 2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
                         return message.channel.send(commandsEmbed5)
@@ -34,7 +34,7 @@ module.exports = {
                         memberTarget.roles.remove(mainRole.id);
                         memberTarget.roles.add(muteRole.id);
                         const commandsEmbed1 = new Discord.MessageEmbed()
-                        .setColor('#0000')
+                        .setColor('#554846')
                         .setDescription(`<@${memberTarget.user.id}> has been muted`)
                         .setFooter('DoodyBot version 2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
                         message.channel.send(commandsEmbed1)
@@ -43,7 +43,7 @@ module.exports = {
                     memberTarget.roles.remove(mainRole.id);
                     memberTarget.roles.add(muteRole.id);
                     const commandsEmbed2 = new Discord.MessageEmbed()
-                    .setColor('#0000')
+                    .setColor('#554846')
                     .setDescription(`<@${memberTarget.user.id}> has been muted for ${args[1]} mins!`)
                     .setFooter('DoodyBot version 2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
                     message.channel.send(commandsEmbed2)
@@ -54,7 +54,7 @@ module.exports = {
                     },wantedtime);
                 } else {
                     const commandsEmbed3 = new Discord.MessageEmbed()
-                    .setColor('#0000')
+                    .setColor('#554846')
                     .setDescription(`Error: Cant find that member!`)
                     .setFooter('DoodyBot version 2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
                     message.channel.send(commandsEmbed3)

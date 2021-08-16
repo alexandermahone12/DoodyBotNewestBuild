@@ -9,7 +9,7 @@ module.exports = {
     }else{
         const ServerLogo = message.guild.iconURL();
         const ServerInfoEmbed = new Discord.MessageEmbed()
-            .setColor('#b700ff')
+            .setColor('#554846')
             .setTitle("Server Info")
             .setImage(ServerLogo)
             .setDescription(`About **${message.guild}**`)
