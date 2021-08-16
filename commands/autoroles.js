@@ -58,10 +58,10 @@ module.exports = {
  
  
             if (reaction.message.channel.id == channel) {
-                if (reaction.emoji.name === yellowTeamEmoji) {
+                if (reaction.emoji.name === maleroleEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove(malerole);
                 }
-                if (reaction.emoji.name === blueTeamEmoji) {
+                if (reaction.emoji.name === femaleroleEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove(femalerole);
                 }
             } else {
