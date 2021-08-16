@@ -7,6 +7,14 @@ module.exports = {
       if (message.channel instanceof Discord.DMChannel){
         return message.channel.send("You cannot use this command in DMs")
     }else{
+        const multilineString = `
+        React to an emoji to get the wanted role!
+        ♂️ <@&876688146576867398>
+        ♀️ <@&876688254257233952>
+        🎨<@&876690301828341760>
+        🖥️<@&876690398062452737>
+
+        `
         const channel = '876685781077479454';
         const malerole = message.guild.roles.cache.find(role => role.name === "male");
         const femalerole = message.guild.roles.cache.find(role => role.name === "female");
@@ -22,7 +30,7 @@ module.exports = {
         let embed = new Discord.MessageEmbed()
             .setColor('#e42643')
             .setTitle('Auto roles')
-            .setDescription('React to a reaction to get the wanted role!');
+            .setDescription(multilineString);
  
         let messageEmbed = await message.channel.send(embed);
         messageEmbed.react(maleroleEmoji);
