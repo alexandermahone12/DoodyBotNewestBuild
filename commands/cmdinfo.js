@@ -22,10 +22,6 @@ module.exports = {
                     "serverinfo",
                     "status",
                     "suggest",
-                    "tempchat",
-                    "tempvoice",
-                    "verify",
-                    "whoami",
                     "ytg"
                 ];
                 const commandsEmbed1 = new Discord.MessageEmbed()
@@ -56,26 +52,75 @@ module.exports = {
                 .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
                 message.channel.send(commandsEmbed4);
             }else if(args[0] === 'clear'){
-                const commandsEmbed5 = new Discord.MessageEmbed()
+                const commandsEmbed6 = new Discord.MessageEmbed()
                 .setColor('#554846')
                 .setTitle("clear command info")
-                .setDescription("deletes the amount of messages typed in the arguement!")
+                .setDescription("deletes the amount of messages typed in the arguement! Example: !clear 50")
                 .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
-                message.channel.send(commandsEmbed5);
+                message.channel.send(commandsEmbed6);
             }else if(args[0] === 'lock'){
-                const commandsEmbed5 = new Discord.MessageEmbed()
+                const commandsEmbed7 = new Discord.MessageEmbed()
                 .setColor('#554846')
                 .setTitle("lock command info")
                 .setDescription("Locks a channel(stops anyone from sending any messages)")
                 .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
-                message.channel.send(commandsEmbed5);
+                message.channel.send(commandsEmbed7);
             }else if(args[0] === 'unlock'){
-                const commandsEmbed5 = new Discord.MessageEmbed()
+                const commandsEmbed8 = new Discord.MessageEmbed()
                 .setColor('#554846')
                 .setTitle("unlock command info")
                 .setDescription("redoes lock command.")
                 .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
-                message.channel.send(commandsEmbed5);
+                message.channel.send(commandsEmbed8);
+            }else if(args[0] === 'mute'){
+                const commandsEmbed9 = new Discord.MessageEmbed()
+                .setColor('#554846')
+                .setTitle("mute command info")
+                .setDescription("Stops the mentioned person after command from sending messages")
+                .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
+                message.channel.send(commandsEmbed9);
+            }else if(args[0] === 'unmute'){
+                const commandsEmbed10 = new Discord.MessageEmbed()
+                .setColor('#554846')
+                .setTitle("unmute command info")
+                .setDescription("Undoes mute command")
+                .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
+                message.channel.send(commandsEmbed10);
+            }else if(args[0] === 'report'){
+                const commandsEmbed11 = new Discord.MessageEmbed()
+                .setColor('#554846')
+                .setTitle("report command info")
+                .setDescription("Reports the mentioned person after the command + the reason. Example: !report @Doody For not following the rules ")
+                .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
+                message.channel.send(commandsEmbed11);
+            }else if(args[0] === 'serverinfo'){
+                const commandsEmbed12 = new Discord.MessageEmbed()
+                .setColor('#554846')
+                .setTitle("serverinfo command info")
+                .setDescription("Creates an embed that includes information about the server. The owner, creation date, members, profile picture and name!")
+                .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
+                message.channel.send(commandsEmbed12);
+            }else if(args[0] === 'status'){
+                const commandsEmbed13 = new Discord.MessageEmbed()
+                .setColor('#554846')
+                .setTitle("status command info")
+                .setDescription("Creates an embed that includes information about the latest doodybot update.")
+                .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
+                message.channel.send(commandsEmbed13);
+            }else if(args[0] === 'suggest'){
+                const commandsEmbed14 = new Discord.MessageEmbed()
+                .setColor('#554846')
+                .setTitle("suggest command info")
+                .setDescription("creates an embed with your suggestion in the suggestions channel! Example: !suggest Creating a new role called Hello")
+                .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
+                message.channel.send(commandsEmbed14);
+            }else if(args[0] === 'ytg'){
+                const commandsEmbed15 = new Discord.MessageEmbed()
+                .setColor('#554846')
+                .setTitle("ytg command info")
+                .setDescription("Creates a youtube together activity! Try this out!")
+                .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
+                message.channel.send(commandsEmbed15);
             }
         }
     }
