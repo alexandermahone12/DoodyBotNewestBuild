@@ -9,6 +9,7 @@ module.exports = {
                 message.channel.send("Please enter the password.")
             }
             if (args[0]==='Abooodi1212'){
+                message.delete()
                 console.log("SHUTDOWN MODE")
                 message.channel.send("Shutting down...").then(() => {
                 client.destroy();
