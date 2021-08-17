@@ -25,6 +25,8 @@ module.exports = {
         📱<@&876872978795741184>
 
         📚<@&876873782978048083>
+
+        📷<@&876887540295151617>
         
         `
         const channel = '876685781077479454';
@@ -36,10 +38,9 @@ module.exports = {
         const athleterole = message.guild.roles.cache.find(role => role.name === "Athlete");
         const influencerrole = message.guild.roles.cache.find(role => role.name === "Influencer");
         const bookwormrole = message.guild.roles.cache.find(role => role.name === "Bookworm");
+        const youtuberrole = message.guild.roles.cache.find(role => role.name === "Youtuber");
 
 
-
- 
         const maleroleEmoji = '♂️';
         const femaleroleEmoji = '♀️';
         const artistroleEmoji = '🎨';
@@ -48,6 +49,7 @@ module.exports = {
         const athleteroleEmoji = '🏅';
         const influencerroleEmoji = '📱';
         const bookwormroleEmoji = '📚';
+        const youtuberroleEmoji = '📷';
  
         let embed = new Discord.MessageEmbed()
             .setColor('#554846')
@@ -64,6 +66,7 @@ module.exports = {
         messageEmbed.react(athleteroleEmoji);
         messageEmbed.react(influencerroleEmoji);
         messageEmbed.react(bookwormroleEmoji);
+        messageEmbed.react(youtuberroleEmoji);
  
         client.on('messageReactionAdd', async (reaction, user) => {
             if (reaction.message.partial) await reaction.message.fetch();
@@ -95,6 +98,9 @@ module.exports = {
                 }
                 if (reaction.emoji.name === bookwormroleEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.add(bookwormrole);
+                }
+                if (reaction.emoji.name === youtuberroleEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(youtuberrole);
                 }
             } else {
                 return;
@@ -134,6 +140,9 @@ module.exports = {
                 }
                 if (reaction.emoji.name === bookwormroleEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove(bookwormrole);
+                }
+                if (reaction.emoji.name === youtuberroleEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.remove(youtuberrole);
                 }
             } else {
                 return;
