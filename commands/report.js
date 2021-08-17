@@ -25,7 +25,6 @@ module.exports = {
                 .setDescription(`Report: ${messageArgs}`)
                 .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                 channel.send(embed)
-                message.delete();
                 const embed1 = new Discord.MessageEmbed()
                 .setColor("#554846")
                 .setTitle('Your report has been sent!')
