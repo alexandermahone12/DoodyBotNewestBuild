@@ -26,6 +26,12 @@ module.exports = {
                 .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                 channel.send(embed)
                 message.delete();
+                const embed1 = new Discord.MessageEmbed()
+                .setColor("#554846")
+                .setTitle('Your report has been sent!')
+                .setDescription(`Your report has been successfully sent to the server mods. report was: ${messageArgs}`)
+                .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+                message.author.send(embed1)
                 
             }
 
