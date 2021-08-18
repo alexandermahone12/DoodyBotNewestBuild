@@ -16,7 +16,7 @@ module.exports = {
                 const commandsEmbed = new Discord.MessageEmbed()
                 .setColor('#554846')
                 .setTitle('Welcome to **Realm**!')
-                .setDescription(`Hey ${message.author.name}, welcome to **Realm**! We're delighted to have you here! Please follow the rules and enjoy!`)
+                .setDescription(`Hey ${message.author.tag}, welcome to **Realm**! We're delighted to have you here! Please follow the rules and enjoy!`)
                 .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                 message.author.send(commandsEmbed);
             }
