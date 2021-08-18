@@ -13,6 +13,12 @@ module.exports = {
                 message.member.roles.remove('875704950804578304');
                 message.member.roles.add('874736823488901180');
                 message.reply('Youve been verified!')
+                const commandsEmbed = new Discord.MessageEmbed()
+                .setColor('#554846')
+                .setTitle('Welcome to **Realm**!')
+                .setDescription(`Hey ${message.author.name}, welcome to **Realm**! We're delighted to have you here! Please follow the rules and enjoy!`)
+                .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+                message.author.send(commandsEmbed);
             }
         }else{
             message.reply("You can only use this command in Doody's server / verify channel.")
