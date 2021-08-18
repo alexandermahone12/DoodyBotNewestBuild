@@ -27,6 +27,14 @@ module.exports = {
         📚<@&876873782978048083>
 
         📷<@&876887540295151617>
+
+        🎸<@&877482780093743135>
+
+        👶13-14<@&877486269628825610>
+
+        🧒15-16<@&877486363522502696>
+
+        👴18+<@&877486423450742805>
         
         `
         const channel = '876685781077479454';
@@ -39,6 +47,11 @@ module.exports = {
         const influencerrole = message.guild.roles.cache.find(role => role.name === "Influencer");
         const bookwormrole = message.guild.roles.cache.find(role => role.name === "Bookworm");
         const youtuberrole = message.guild.roles.cache.find(role => role.name === "Youtuber");
+        const musicianrole = message.guild.roles.cache.find(role => role.name === "Musician");
+        const babyrole = message.guild.roles.cache.find(role => role.name === "13-14");
+        const midbabyrole = message.guild.roles.cache.find(role => role.name === "15-16");
+        const oneeightrole = message.guild.roles.cache.find(role => role.name === "18+");
+
 
 
         const maleroleEmoji = '♂️';
@@ -50,6 +63,10 @@ module.exports = {
         const influencerroleEmoji = '📱';
         const bookwormroleEmoji = '📚';
         const youtuberroleEmoji = '📷';
+        const musicianroleEmoji = '🎸';
+        const babyroleEmoji = '👶';
+        const midbabyroleEmoji = '🧒';
+        const oneeightroleEmoji = '👴';
  
         let embed = new Discord.MessageEmbed()
             .setColor('#554846')
@@ -67,6 +84,10 @@ module.exports = {
         messageEmbed.react(influencerroleEmoji);
         messageEmbed.react(bookwormroleEmoji);
         messageEmbed.react(youtuberroleEmoji);
+        messageEmbed.react(musicianroleEmoji);
+        messageEmbed.react(babyroleEmoji);
+        messageEmbed.react(midbabyroleEmoji);
+        messageEmbed.react(oneeightroleEmoji);
  
         client.on('messageReactionAdd', async (reaction, user) => {
             if (reaction.message.partial) await reaction.message.fetch();
@@ -101,6 +122,18 @@ module.exports = {
                 }
                 if (reaction.emoji.name === youtuberroleEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.add(youtuberrole);
+                }
+                if (reaction.emoji.name === musicianroleEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(musicianrole);
+                }
+                if (reaction.emoji.name === babyroleEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(babyrole);
+                }
+                if (reaction.emoji.name === midbabyroleEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(midbabyrole);
+                }
+                if (reaction.emoji.name === oneeightroleEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(oneeightrole);
                 }
             } else {
                 return;
@@ -143,6 +176,18 @@ module.exports = {
                 }
                 if (reaction.emoji.name === youtuberroleEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove(youtuberrole);
+                }
+                if (reaction.emoji.name === musicianroleEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.remove(musicianrole);
+                }
+                if (reaction.emoji.name === babyroleEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.remove(babyrole);
+                }
+                if (reaction.emoji.name === midbabyroleEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.remove(midbabyrole);
+                }
+                if (reaction.emoji.name === oneeightroleEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.remove(oneeightrole);
                 }
             } else {
                 return;
