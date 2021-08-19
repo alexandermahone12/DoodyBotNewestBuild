@@ -30,11 +30,7 @@ module.exports = {
             const commandsEmbed3 = new Discord.MessageEmbed()
                 .setColor('#554846')
                 .setTitle("Withdraw:")
-                .setDescription(`You withdrew ${amount} coins into your wallet! Current balance:`)
-                .addFields(
-                    {name: "Wallet:", value: `${profiledata.coins} coins`},
-                    {name: "Bank:", value: `${profiledata.bank} coins`},
-                )
+                .setDescription(`You withdrew ${amount} coins into your wallet!`)
                 .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
             return message.channel.send(commandsEmbed3)
         }catch(err){
