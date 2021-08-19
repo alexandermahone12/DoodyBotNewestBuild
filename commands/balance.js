@@ -8,7 +8,7 @@ module.exports = {
             .setColor('#554846')
             .addFields(
                 {name: "Wallet:", value: `${profiledata.coins} coins`},
-                {name: "Bank:", value: `${profiledata.bank}`},
+                {name: "Bank:", value: `${profiledata.bank} coins`},
             )
             .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
             message.channel.send(commandsEmbed1);
