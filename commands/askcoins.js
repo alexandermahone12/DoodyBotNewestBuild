@@ -1,6 +1,7 @@
 const profileModel = require('../models/profileSchema')
 module.exports = {
     name: "ask",
+    cooldown: 15,
     description: "Asks for coins",
     async execute(message, args, cmd, client, Discord, profiledata){
         const randomNumber = Math.floor(Math.random() * 500) + 1;

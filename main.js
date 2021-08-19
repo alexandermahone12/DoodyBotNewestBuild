@@ -24,7 +24,7 @@ mongoose.connect('mongodb+srv://Alexandermahone:Abooodi1212@discordbot.ge5ay.mon
   useUnifiedTopology: true,
   useFindAndModify: false
 }).then(()=>{
-  console.log("Connected to database")
+  console.log("Connected to database. No errors found")
 }).catch((err) =>{
   console.log(err);
 });

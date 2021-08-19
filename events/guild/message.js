@@ -1,4 +1,5 @@
 const profileModel = require('../../models/profileSchema');
+const cooldowns = new Map();
 module.exports = async (Discord, client, message) => {
     const prefix = '!';
     if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -23,6 +24,27 @@ module.exports = async (Discord, client, message) => {
     const cmd = args.shift().toLowerCase();
 
     const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
+
+    if(!cooldowns.has(command.name)){
+        cooldowns.set(command.name, new Discord.Collection());
+    }
+
+    const CurrentTime = Date.now();
+    const time_stamps = cooldowns.get(command.name);
+    const cooldown_amount = (command.cooldown) * 1000;
+
+    if(time_stamps.has(message.author.id)){
+        const expiration_time = time_stamps.get(message.author.id) + cooldown_amount;
+        if(CurrentTime < expiration_time){
+            const time_left = (expiration_time - CurrentTime) / 1000;
+            const embed = new Discord.MessageEmbed()
+            .setTitle("Cooldown!")
+            .setDescription(`Please wait ${time_left.toFixed(1)} more seconds before using the ${command.name} command!`)
+            .setColor('#FF0000')
+            return message.channel.send(embed)
+        }
+    }
+    time_stamps.set(message.author.id, CurrentTime);
 
     if(command) command.execute(message, args, cmd, client, Discord, profiledata);
 }
