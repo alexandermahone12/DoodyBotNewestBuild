@@ -30,7 +30,7 @@ module.exports = {
             const commandsEmbed3 = new Discord.MessageEmbed()
                 .setColor('#554846')
                 .setTitle("Withdraw:")
-                .setDescription(`You've withdrew ${amount} coins into your wallet! Current balance:`)
+                .setDescription(`You withdrew ${amount} coins into your wallet! Current balance:`)
                 .addFields(
                     {name: "Wallet:", value: `${profiledata.coins} coins`},
                     {name: "Bank:", value: `${profiledata.bank} coins`},
