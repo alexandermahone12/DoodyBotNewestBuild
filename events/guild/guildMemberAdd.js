@@ -1,6 +1,6 @@
 const profileModel = require('../../models/profileSchema');
 
-module.exports = async(Discord, client, message) =>{
+module.exports = async(client, Discord, message) =>{
     let profile = await profileModel.create({
         userID: message.member.id,
         serverID: message.guild.id,
