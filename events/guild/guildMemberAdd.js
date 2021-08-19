@@ -1,4 +1,4 @@
-const profileModel = require('../../models/profileSchema')
+const profileModel = require('../../models/profileSchema');
 
 module.exports = async(Discord, client, message) =>{
     let profile = await profileModel.create({
@@ -8,4 +8,4 @@ module.exports = async(Discord, client, message) =>{
         bank: 0
     });
     profile.save();
-}
+};
