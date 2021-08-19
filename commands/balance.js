@@ -6,9 +6,11 @@ module.exports = {
                 
         const commandsEmbed1 = new Discord.MessageEmbed()
             .setColor('#554846')
-            .setTitle(`**${message.author.tag}'s** balance!`)
-            .setDescription(`Your wallet balance is ${profiledata.coins}, your bank balance is ${profiledata.bank}!`)
-            .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
+            .addFields(
+                {name: "Wallet:", value: `${profiledata.coins} coins`},
+                {name: "Bank:", value: `${profiledata.bank}`},
+            )
+            .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
             message.channel.send(commandsEmbed1);
     }
 }
