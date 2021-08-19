@@ -15,7 +15,7 @@ module.exports = {
                 client.destroy();
             })
         }else{
-            console.log("INCORRECT PASSWORD!")
+            console.log(`INCORRECT PASSWORD! User ${message.author.tag} tried to shutdown the bot`)
             message.channel.send("Password incorrect. reporting to server.")
         }
         }

@@ -19,7 +19,7 @@ module.exports = {
             .addField("**Emoji Count**", "This Server Has ` " + `${message.guild.emojis.cache.size}` + " ` **Emojis**")
             .addField("**Roles Count**", "This Server Has ` " + `${message.guild.roles.cache.size}` + " ` **Roles**")
             .addField("**Channels Count**", "This Server Has ` " + `${message.guild.channels.cache.size}` + " ` **Channels**")
-            .addField("**Server Logo**", "**Downlaod Server Logo**")
+            .addField("**Server Logo**", `**[Downlaod Server Logo](${ServerLogo})**`)
             .setURL(ServerLogo)
             message.channel.send(ServerInfoEmbed)
           }    }
