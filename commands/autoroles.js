@@ -3,7 +3,7 @@ module.exports = {
 
     name: 'selfroles',
     description: "says hi",
-    async execute(message, args, cmd, client, Discord) {
+    async execute(message, args, cmd, client, Discord, profiledata) {
       if (message.channel instanceof Discord.DMChannel){
         return message.channel.send("You cannot use this command in DMs")
     }else{

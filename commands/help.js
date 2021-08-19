@@ -2,7 +2,7 @@ module.exports = {
 
     name: 'help',
     description: "Shows a list of the available commands!",
-    execute(message, args, cmd, client, Discord) {
+    execute(message, args, cmd, client, Discord, profiledata) {
         console.log("Working");
         const commandsEmbed = new Discord.MessageEmbed()
         .setColor('#554846')

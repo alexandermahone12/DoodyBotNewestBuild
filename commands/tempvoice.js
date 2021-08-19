@@ -2,7 +2,7 @@
 module.exports = {
     name: 'tempvoice',
     description: "creates a temp chat",
-    execute(message, args, cmd, client, Discord) {
+    execute(message, args, cmd, client, Discord, profiledata) {
         if (message.channel instanceof Discord.DMChannel){
             return message.channel.send("You cannot use this command in DMs")
         }else{

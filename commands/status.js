@@ -3,7 +3,7 @@ module.exports = {
     name: 'status',
     aliases: ['botstatus', 'developmentstatus'],
     description: "says the status of the bot",
-    execute(message, args, cmd, client, Discord) {
+    execute(message, args, cmd, client, Discord, profiledata) {
         message.reply('DoodyBot version 1.1. for suggestions / report bugs contact @doody!');
         const commandsEmbed = new Discord.MessageEmbed()
         .setColor('#554846')

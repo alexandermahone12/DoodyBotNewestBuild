@@ -2,7 +2,7 @@ module.exports = {
 
     name: 'hi',
     description: "says hi",
-    execute(message, args, cmd, client, Discord) {
+    execute(message, args, cmd, client, Discord, profiledata) {
         const commandsEmbed = new Discord.MessageEmbed()
         .setColor('#554846')
         .setDescription('Hello! This is [DoodyBot](https://doodybot2021.wixsite.com/doodybot)! To find out what i can do, use the command /commands.')

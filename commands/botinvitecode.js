@@ -2,7 +2,7 @@ module.exports = {
 
     name: 'botinvite',
     description: "creates an invite for the bot",
-    execute(message, args, cmd, client, Discord) {
+    execute(message, args, cmd, client, Discord, profiledata) {
         const commandsEmbed = new Discord.MessageEmbed()
         .setColor('#554846')
         .setTitle('Add DoodyBot to your server!')
