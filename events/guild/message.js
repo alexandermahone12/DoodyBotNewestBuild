@@ -5,7 +5,7 @@ module.exports = async (Discord, client, message) => {
 
     let profiledata;
     try{
-        profiledata: await profileModel.findOne({ userID: message.author.id });
+        profiledata = await profileModel.findOne({ userID: message.author.id });
         if(!profiledata){
             let profile = await profileModel.create({
                 userID: message.author.id,
