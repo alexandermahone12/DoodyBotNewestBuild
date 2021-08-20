@@ -7,14 +7,17 @@ module.exports = {
         reddit.FetchRandomMeme(args[0]).then((data) => {
             const commandsEmbed1 = new Discord.MessageEmbed()
             .setColor('#554846')
-            .setTitle(`[${data.title}](${data.postLink})`)
+            .setDescription(`[${data.title}](${data.postLink})`)
             .setImage(data.image)
             .setFooter(`👍${data.upvotes} || 👎${data.downvotes}`)
-            message.channel.send(commandsEmbed1);
             const thumbsup = '👍';
             const thumbsdown = '👎';
-            commandsEmbed1.react(thumbsup);
-            commandsEmbed1.react(thumbsdown);
+            message.channel.send(commandsEmbed1).then(embedMsg => {
+                embedMsg.react(thumbsup)
+                embedMsg.react(thumbsdown)
+            }).catch((err)=>{
+                console.log(err)
+            })
         });   
     }
 }
