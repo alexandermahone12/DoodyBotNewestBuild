@@ -27,7 +27,7 @@ module.exports = async (Discord, client, message) => {
     if (!command){
         const embed1 = new Discord.MessageEmbed()
             .setTitle("Error:")
-            .setDescription(`Command ${message} doesn't exit. Use command !info for help!`)
+            .setDescription(`Command ${message} doesn't exist. Use command !info for help!`)
             .setColor('#FF0000')
         return message.channel.send(embed1)
     }
