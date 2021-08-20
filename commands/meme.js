@@ -3,8 +3,7 @@ module.exports = {
     description: "Creates account in database",
     execute(message, args, cmd, client, Discord, profiledata){
         const { reddit } = require("reddit.images");
-        if (!args.length) return message.channel.send("Use the search bar to search for a specific topic ")
-        reddit.FetchRandomMeme(args[0]).then((data) => {
+        reddit.FetchRandomMeme("top").then((data) => {
             const commandsEmbed1 = new Discord.MessageEmbed()
             .setColor('#554846')
             .setDescription(`[${data.title}](${data.postLink})`)
