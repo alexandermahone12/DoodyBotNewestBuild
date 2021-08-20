@@ -19,11 +19,11 @@ module.exports = {
                 .setFooter(`${message.author.tag} || To get your friend's avatar, tag them after the command!`)
                 .setColor("#554846")
             const download_button = new MessageButton()
-            .setStyle("url")
-            .setLabel("Download")
-            .setID("download")
-            .setURL(avatar)
-            message.channel.send(embed);
+                .setStyle("url")
+                .setLabel("Download")
+                .setID("download")
+                .setURL(avatar)
+            message.channel.send(embed, download_button);
         }
     }
  
