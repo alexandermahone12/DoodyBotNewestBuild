@@ -22,7 +22,12 @@ module.exports = {
                     "`serverinfo`",
                     "`status`",
                     "`suggest`",
-                    "`ytg`"
+                    "`ytg`",
+                    "`meme`",
+                    "`bankaccount`",
+                    "`balance`",
+                    "`deposit`",
+                    "`withdraw`"
                 ];
                 const commandsEmbed1 = new Discord.MessageEmbed()
                 .setColor('#554846')
@@ -121,6 +126,41 @@ module.exports = {
                 .setDescription("Creates a youtube together activity! Try this out!")
                 .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
                 message.channel.send(commandsEmbed15);
+            }else if(args[0] === 'meme'){
+                const commandsEmbed16 = new Discord.MessageEmbed()
+                .setColor('#554846')
+                .setTitle("meme command info")
+                .setDescription("Sends a random meme from reddit")
+                .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
+                message.channel.send(commandsEmbed16);
+            }else if(args[0] === 'bankaccount'){
+                const commandsEmbed17 = new Discord.MessageEmbed()
+                .setColor('#554846')
+                .setTitle("bankaccount command info")
+                .setDescription("Creates a bank account in the bank system")
+                .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
+                message.channel.send(commandsEmbed17);
+            }else if(args[0] === 'deposit'){
+                const commandsEmbed18 = new Discord.MessageEmbed()
+                .setColor('#554846')
+                .setTitle("deposit command info")
+                .setDescription("Deposits the wanted amount of coins from the bank to the wallet. Example: !deposit 10000")
+                .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
+                message.channel.send(commandsEmbed18);
+            }else if(args[0] === 'withdraw'){
+                const commandsEmbed19 = new Discord.MessageEmbed()
+                .setColor('#554846')
+                .setTitle("withdraw command info")
+                .setDescription("Withdraws the wanted amount of coins from the wallet to the bank. Example: !withdraw 10000")
+                .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
+                message.channel.send(commandsEmbed19);
+            }else if(args[0] === 'balance'){
+                const commandsEmbed20 = new Discord.MessageEmbed()
+                .setColor('#554846')
+                .setTitle("balance command info")
+                .setDescription("Checks the avalible amount of coins in the wallet & the bank")
+                .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png");
+                message.channel.send(commandsEmbed20);
             }
         }
     }
