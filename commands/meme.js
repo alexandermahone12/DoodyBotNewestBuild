@@ -7,9 +7,9 @@ module.exports = {
             const commandsEmbed1 = new Discord.MessageEmbed()
             .setColor('#554846')
             .setDescription(`[${data.title}](${data.postLink})`)
-            .setImage(data.image)
+            .setThumbnail(data.image)
             .setFooter(`👍${data.upvotes} || 👎${data.downvotes}`)
-            message.channel.send(commandsEmbed1)
+            message.channel.send(commandsEmbed1);
         });   
     }
 }
