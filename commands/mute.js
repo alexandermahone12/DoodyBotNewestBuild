@@ -51,6 +51,11 @@ module.exports = {
                     setTimeout(function () {
                         memberTarget.roles.remove(muteRole.id);
                         memberTarget.roles.add(mainRole.id);
+                        const commandsEmbed6 = new Discord.MessageEmbed()
+                        .setColor('#554846')
+                        .setDescription(`<@${memberTarget.user.id}> has been unmuted after being muted for ${args[1]} mins!`)
+                        .setFooter('DoodyBot version 2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
+                        message.channel.send(commandsEmbed6)
                     },wantedtime);
                 } else {
                     const commandsEmbed3 = new Discord.MessageEmbed()

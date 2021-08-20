@@ -45,6 +45,7 @@ module.exports = async (Discord, client, message) => {
         }
     }
     time_stamps.set(message.author.id, CurrentTime);
+    setTimeout(()=> time_stamps.delete(message.author.id), cooldown_amount);
 
     if(command) command.execute(message, args, cmd, client, Discord, profiledata);
 }
