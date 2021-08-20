@@ -21,7 +21,6 @@ module.exports = {
             const download_button = new MessageButton()
                 .setStyle("url")
                 .setLabel("Download")
-                .setID("download")
                 .setURL(avatar)
             message.channel.send(embed, download_button);
         }
