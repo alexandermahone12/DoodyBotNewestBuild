@@ -24,9 +24,8 @@ module.exports = async (Discord, client, message) => {
     const cmd = args.shift().toLowerCase();
 
     const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
-    if(!command.name){
-        return message.channel.send("Command does not exist. Use !info to get help!");
-    }
+    if (command.name === 'a') return message.channel.send("Command doesnt exist");
+
     if(!cooldowns.has(command.name)){
         cooldowns.set(command.name, new Discord.Collection());
     }
@@ -50,5 +49,4 @@ module.exports = async (Discord, client, message) => {
     setTimeout(()=> time_stamps.delete(message.author.id), cooldown_amount);
 
     if(command) command.execute(message, args, cmd, client, Discord, profiledata);
-
 }
