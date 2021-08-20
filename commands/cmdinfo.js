@@ -10,19 +10,19 @@ module.exports = {
                 return message.channel.send("The info command shows you info about a certain command, type the command name as an argument. If you dont know what the doodybotcommands are, use !info list.")
             }else if(args[0] === 'list'){
                 var Myarray = [
-                    "admintest",
-                    "avatar",
-                    "botinvite",
-                    "clear",
-                    "lock",
-                    "unlock",
-                    "mute",
-                    "unmute",
-                    "report",
-                    "serverinfo",
-                    "status",
-                    "suggest",
-                    "ytg"
+                    "`admintest`",
+                    "`avatar`",
+                    "`botinvite`",
+                    "`clear`",
+                    "`lock`",
+                    "`unlock`",
+                    "`mute`",
+                    "`unmute`",
+                    "`report`",
+                    "`serverinfo`",
+                    "`status`",
+                    "`suggest`",
+                    "`ytg`"
                 ];
                 const commandsEmbed1 = new Discord.MessageEmbed()
                 .setColor('#554846')

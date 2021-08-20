@@ -6,7 +6,7 @@ module.exports = {
                 
         const commandsEmbed1 = new Discord.MessageEmbed()
             .setColor('#554846')
-            .setTitle("You've created a bank account! Use !balance to check your balance!")
+            .setTitle("🪙You've created a bank account! Use !balance to check your balance!🪙")
             .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
         message.channel.send(commandsEmbed1);
     }

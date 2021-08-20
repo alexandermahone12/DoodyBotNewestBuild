@@ -5,12 +5,12 @@ module.exports = {
     async execute(message, args, cmd, client, Discord, profiledata){
         const commandsEmbed1 = new Discord.MessageEmbed()
             .setColor('#554846')
-            .setTitle("Deposit error:")
+            .setTitle("🪙Deposit error:")
             .setDescription(`Deposit amount must be a whole number!`)
             .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
         const commandsEmbed2 = new Discord.MessageEmbed()
             .setColor('#554846')
-            .setTitle("Deposit error:")
+            .setTitle("🪙Deposit error:")
             .setDescription(`You don't have that amount of coins to depoist!`)
             .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
         const amount = args[0];
@@ -29,7 +29,7 @@ module.exports = {
             );
             const commandsEmbed3 = new Discord.MessageEmbed()
                 .setColor('#554846')
-                .setTitle("Deposit:")
+                .setTitle("🪙Deposit:")
                 .setDescription(`You've deposited ${amount} coins into your bank!`)
                 .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
             return message.channel.send(commandsEmbed3)
