@@ -6,10 +6,17 @@ module.exports = {
         reddit.FetchRandomMeme("hot").then((data) => {
             const commandsEmbed1 = new Discord.MessageEmbed()
             .setColor('#554846')
-            .setDescription(`[${data.title}](${data.postLink})`)
-            .setThumbnail(data.image)
+            .setDescription(`**[${data.title}](${data.postLink})**`)
+            .setImage(data.image)
             .setFooter(`👍${data.upvotes} || 👎${data.downvotes}`)
-            message.channel.send(commandsEmbed1);
+            const thumbsup = '👍';
+            const thumbsdown = '👎';
+            message.channel.send(commandsEmbed1).then(embedMsg => {
+                embedMsg.react(thumbsup)
+                embedMsg.react(thumbsdown)
+            }).catch((err)=>{
+                console.log(err)
+            })
         });   
     }
 }
