@@ -1,5 +1,4 @@
 const memes = require("random-memes");
-const canvas = require("canvas") 
 module.exports = {
     name: "meme",
     description: "Generates a random meme",
