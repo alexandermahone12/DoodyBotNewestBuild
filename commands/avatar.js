@@ -20,7 +20,7 @@ module.exports = {
                 .setColor("#554846")
             const download_button = new MessageButton()
                 .setStyle("url")
-                .setLabel("Download")
+                .setLabel("Download avatar")
                 .setURL(avatar)
             message.channel.send(embed, download_button);
         }
