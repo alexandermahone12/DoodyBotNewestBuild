@@ -25,7 +25,7 @@ module.exports = async (Discord, client, message) => {
 
     const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
     if(!command.name){
-        message.channel.send("Command does not exist. Use !info to get help!");
+        return message.channel.send("Command does not exist. Use !info to get help!");
     }
     if(!cooldowns.has(command.name)){
         cooldowns.set(command.name, new Discord.Collection());
