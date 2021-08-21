@@ -10,7 +10,7 @@ module.exports = {
         var EmojiPermsEmojiPrice = 1000000;
         if (!args.length){
             const commandsEmbed2 = new Discord.MessageEmbed()
-            .setColor('#FF0000')
+            .setColor('#554846')
             .setTitle("shop commands list")
             .setDescription('buy: buys something from the store. Example: !shop buy stickersperms \n updateme: updates you everytime there is a new item added to the shop \n sell: sells an item youve already bought. Example: !shop sell stickersperms')
             .setFooter('If you want other items to be added use !suggest (suggestion)')
@@ -18,6 +18,14 @@ module.exports = {
         }
         if (args[0] ==='buy'){
             if (args[1] === 'stickersperms'){
+                if (message.member.roles.cache.has('878667764716408842')){
+                    const commandsEmbed100 = new Discord.MessageEmbed()
+                    .setColor('#FF0000')
+                    .setTitle("Error while purchasing the StickersPerms role:")
+                    .setDescription("You already purchased the role!")
+                    message.author.send(commandsEmbed100)
+                    return
+                }
                 if (profiledata.coins >= StickersPermsPrice){
                     await profileModel.findOneAndUpdate(
                         {
@@ -34,7 +42,7 @@ module.exports = {
                     const commandsEmbed3 = new Discord.MessageEmbed()
                     .setColor('#554846')
                     .setTitle("You've successfully purchased the StickersPerms role.")
-                    .setDescription("Thank you for purchasing the StickersPerms role. If you bought this by accident, just use the !shop sell StickersPerms command to refund it!. Note: For can only refund an item 3times so use it wisely!")
+                    .setDescription("Thank you for purchasing the StickersPerms role. If you bought this by accident, just use the !shop sell StickersPerms command to refund it!")
                     message.author.send(commandsEmbed3)
                     return
                 }else{
@@ -45,6 +53,14 @@ module.exports = {
                     message.author.send(commandsEmbed4)
                 }
             }else if(args[1] === 'emojiperms'){
+                if (message.member.roles.cache.has('878667541042569227')){
+                    const commandsEmbed1020 = new Discord.MessageEmbed()
+                    .setColor('#FF0000')
+                    .setTitle("Error while purchasing the EmojiPerms role:")
+                    .setDescription("You already purchased the role!")
+                    message.author.send(commandsEmbed1020)
+                    return
+                }
                 if (profiledata.coins >= StickersPermsPrice){
                     await profileModel.findOneAndUpdate(
                         {
@@ -61,7 +77,7 @@ module.exports = {
                     const commandsEmbed6 = new Discord.MessageEmbed()
                     .setColor('#554846')
                     .setTitle("You've successfully purchased the EmojiPerms role.")
-                    .setDescription("Thank you for purchasing the EmojiPerms role. If you bought this by accident, just use the !shop sell EmojiPerms command to refund it!. Note: For can only refund an item 3times so use it wisely!")
+                    .setDescription("Thank you for purchasing the EmojiPerms role. If you bought this by accident, just use the !shop sell EmojiPerms command to refund it!.")
                     message.author.send(commandsEmbed6)
                     return
                 }else{
@@ -75,8 +91,7 @@ module.exports = {
         }
         if (args[0] === 'sell'){
             if(args[1] === 'emojiperms'){
-                if (profiledata.sell > 0 && message.member.roles.cache.has('878667541042569227')){
-                    const sell = profiledata.sell - 1
+                if (message.member.roles.cache.has('878667541042569227')){
                     await profileModel.findOneAndUpdate(
                         {
                         userID: message.author.id,
@@ -84,7 +99,6 @@ module.exports = {
                         {
                         $inc: {
                             coins: EmojiPermsEmojiPrice,
-                            sell: sell,
                         },
                         }
                     );
@@ -92,7 +106,6 @@ module.exports = {
                     const commandsEmbed10 = new Discord.MessageEmbed()
                     .setColor('#554846')
                     .setTitle("You've successfully refunded the EmojiPerms role.")
-                    .setDescription(`Note that you've spent one of your refunds. You have ${profiledata.sell} refunds left!`)
                     message.author.send(commandsEmbed10)
                     return
                 }else{
@@ -104,8 +117,7 @@ module.exports = {
                 }
             }
             if(args[1] === 'stickersperms'){
-                if (profiledata.sell > 0 && message.member.roles.cache.has('878667764716408842')){
-                    const sell1 = profiledata.sell - 1
+                if (message.member.roles.cache.has('878667764716408842')){
                     await profileModel.findOneAndUpdate(
                         {
                         userID: message.author.id,
@@ -113,7 +125,6 @@ module.exports = {
                         {
                         $inc: {
                             coins: StickersPermsPrice,
-                            sell: sell1,
                         },
                         }
                     );
@@ -121,7 +132,6 @@ module.exports = {
                     const commandsEmbed10 = new Discord.MessageEmbed()
                     .setColor('#554846')
                     .setTitle("You've successfully refunded the StickersPerms role.")
-                    .setDescription(`Note that you've spent one of your refunds. You have ${profiledata.sell} refunds left!`)
                     message.author.send(commandsEmbed10)
                     return
                 }else{
@@ -138,9 +148,9 @@ module.exports = {
             const multilineString = `
             React to an emoji to buy the wanted item
 
-            🖼️<@&878667764716408842> Price: ${StickersPermsPrice} Coins
+            🖼️<@&878667764716408842> Price: ${StickersPermsPrice} Coins, Use !shop buy stickersperms to buy
 
-            🤑<@&878667541042569227> Price: ${EmojiPermsEmojiPrice} Coins
+            🤑<@&878667541042569227> Price: ${EmojiPermsEmojiPrice} Coins, Use !shop buy emojiperms to buy
 
             `
             const commandsEmbed1 = new Discord.MessageEmbed()
