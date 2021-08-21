@@ -4,12 +4,12 @@ module.exports = {
     description: "Tells you your coin balance",
     async execute(message, args, cmd, client, Discord, profiledata){
         const commandsEmbed1 = new Discord.MessageEmbed()
-            .setColor('#554846')
+            .setColor('#FF0000')
             .setTitle("🪙Deposit error:")
             .setDescription(`Deposit amount must be a whole number!`)
             .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
         const commandsEmbed2 = new Discord.MessageEmbed()
-            .setColor('#554846')
+            .setColor('#FF0000')
             .setTitle("🪙Deposit error:")
             .setDescription(`You don't have that amount of coins to depoist!`)
             .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))

@@ -4,12 +4,12 @@ module.exports = {
     description: "Tells you your coin balance",
     async execute(message, args, cmd, client, Discord, profiledata){
         const commandsEmbed1 = new Discord.MessageEmbed()
-            .setColor('#554846')
+            .setColor('#FF0000')
             .setTitle("🪙Withdraw error:")
             .setDescription(`Withdraw amount must be a whole number!`)
             .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
         const commandsEmbed2 = new Discord.MessageEmbed()
-            .setColor('#554846')
+            .setColor('#FF0000')
             .setTitle("🪙Withdraw error:")
             .setDescription(`You don't have that amount of coins in your bank to withdraw!`)
             .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))

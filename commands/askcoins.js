@@ -1,10 +1,10 @@
 const profileModel = require('../models/profileSchema')
 module.exports = {
-    name: "ask",
+    name: "beg",
     cooldown: 15,
-    description: "Asks for coins",
+    description: "Begs for coins",
     async execute(message, args, cmd, client, Discord, profiledata){
-        const randomNumber = Math.floor(Math.random() * 500) + 1;
+        const randomNumber = Math.floor(Math.random() * 300) + 1;
         const commandsEmbed1 = new Discord.MessageEmbed()
             .setColor('#554846')
             .setDescription(`You've been given ${randomNumber} coins!`)
