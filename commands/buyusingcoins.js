@@ -30,7 +30,7 @@ module.exports = {
                         }
                     );
                     const StickersPermsRole = message.guild.roles.cache.find(role => role.name === "StickersPerms")
-                    message.guild.members.cache.get(message.author.id).roles.add(StickersPermsRole);
+                    message.guild.members.cache.get(`${message.author.id}`).roles.add(StickersPermsRole);
                     const commandsEmbed3 = new Discord.MessageEmbed()
                     .setColor('#554846')
                     .setTitle("You've successfully purchased the StickersPerms role.")
@@ -56,8 +56,8 @@ module.exports = {
                         },
                         }
                     );
-                    const StickersPermsRole = message.guild.roles.cache.find(role => role.name === "EmojiPerms")
-                    message.guild.members.cache.get(message.author.id).roles.add(StickersPermsRole);
+                    const EmojiPermsRole = message.guild.roles.cache.find(role => role.name === "EmojiPerms")
+                    message.guild.members.cache.get(`${message.author.id}`).roles.add(EmojiPermsRole);
                     const commandsEmbed6 = new Discord.MessageEmbed()
                     .setColor('#554846')
                     .setTitle("You've successfully purchased the EmojiPerms role.")
