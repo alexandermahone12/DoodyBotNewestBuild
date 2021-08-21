@@ -44,8 +44,38 @@ module.exports = {
                     .setDescription("You don't have enough coins in your wallet!")
                     message.author.send(commandsEmbed4)
                 }
-            }else if(args[1] === 'EmojiPerms'){
+            }else if(args[1] === 'emojiperms'){
                 if (profiledata.coins >= StickersPermsPrice){
+                    await profileModel.findOneAndUpdate(
+                        {
+                        userID: message.author.id,
+                        },
+                        {
+                        $inc: {
+                            coins: -EmojiPermsEmojiPrice,
+                        },
+                        }
+                    );
+                    const EmojiPermsRole = message.guild.roles.cache.find(role => role.name === "EmojiPerms")
+                    message.member.roles.add(EmojiPermsRole);
+                    const commandsEmbed6 = new Discord.MessageEmbed()
+                    .setColor('#554846')
+                    .setTitle("You've successfully purchased the EmojiPerms role.")
+                    .setDescription("Thank you for purchasing the EmojiPerms role. If you bought this by accident, just use the !shop sell EmojiPerms command to refund it!. Note: For can only refund an item 3times so use it wisely!")
+                    message.author.send(commandsEmbed6)
+                    return
+                }else{
+                    const commandsEmbed5= new Discord.MessageEmbed()
+                    .setColor('#FF0000')
+                    .setTitle("Error while attempting to purchase the EmojiPerms role")
+                    .setDescription("You don't have enough coins in your wallet!")
+                    message.author.send(commandsEmbed5)
+                }
+            }
+        }
+        if (args[0] === 'sell'){
+            if(args[1] === 'emojiperms'){
+                if (profiledata.sell > 0){
                     await profileModel.findOneAndUpdate(
                         {
                         userID: message.author.id,
@@ -87,6 +117,7 @@ module.exports = {
             .setColor('#554846')
             .setTitle("Realm's shop!")
             .setDescription(multilineString)
+            .setFooter('If you want other items to be added use !suggest (suggestion)')
             message.channel.send(commandsEmbed1)
 
         }
