@@ -5,7 +5,7 @@ module.exports = {
     name: "task",
     description: "Generates a mathematical problem",
     cooldown: 5,
-    async execute(message, args, cmd, client, Discord, profiledata){
+    execute(message, args, cmd, client, Discord, profiledata){
         if (message.channel instanceof Discord.DMChannel){
             return message.channel.send("You cannot use this command in DMs")
         }else{
@@ -33,7 +33,7 @@ module.exports = {
                     }
                 })
 
-                collector.on('end', collected => {
+                collector.on('end', async collected => {
                     console.log(`Collected ${collected.size} messages!`)
 
                     let counter = 0
