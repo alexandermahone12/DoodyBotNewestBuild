@@ -36,7 +36,7 @@ module.exports = {
      
             if (reaction.message.channel.id == channel) {
                 if (reaction.emoji.name === StickersPermsEmoji) {
-                    if(profiledata.coins < StickersPermsPrice){
+                    if(StickersPermsPrice < profiledata.coins){
                         const response = await profileModel.findOneAndUpdate(
                             {
                                 userID: message.author.id,
@@ -53,7 +53,7 @@ module.exports = {
                             .setTitle("You've been given the StickerPerms role!")
                             .setDescription("Thank you for purchasing the StickerPermsRole from the Realm shop!")
                         await reaction.message.guild.members.cache.get(user.id).roles.add(StickersPermsRole);
-                        await reaction.user.send(embed2)
+                        return
                             
 
                     }else{

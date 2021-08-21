@@ -17,6 +17,7 @@ module.exports = {
                 {
                     $inc: {
                         coins: -profiledata.coins,
+                        bank: -profiledata.bank
                     },
                 }
             );  
