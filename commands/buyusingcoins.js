@@ -36,7 +36,7 @@ module.exports = {
      
             if (reaction.message.channel.id == channel) {
                 if (reaction.emoji.name === StickersPermsEmoji) {
-                    if(StickersPermsPrice < profiledata.coins){
+                    if(StickersPermsPrice < '2'){
                         const response = await profileModel.findOneAndUpdate(
                             {
                                 userID: message.author.id,
