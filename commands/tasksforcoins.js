@@ -1,4 +1,11 @@
-const problems = require('maths-problems')
+function question() {
+    this.a = Math.round(Math.random()*10);
+    this.b = Math.round(Math.random()*10);
+    this.result = this.a + this.b;
+    this.checkResult = function(givenResultString) {
+        return (""+result == givenResultString);
+    }
+}
 module.exports = {
     name: "task",
     description: "Generates a mathematical problem",
@@ -11,16 +18,11 @@ module.exports = {
                 message.channel.send("What kind of game would you like to play?")
             }
             if (args[0] === 'math'){
-                var additionProblem = {
-                    "question" : "What is {x=randomInt(1,10)} + {y=randomInt(1,10)}?",
-                    "answer" : ["{x}+{y}"],
-                    "answerFormat" : "0"
-                }
-                const question = problems.generateQuestions(additionProblem, [5,5])
-                var result = problems.markQuestion(question, additionProblem)
+                var q = new question();
                 const questions = [
-                    `What is ${question}`
+                    `What is ${q.content}`
                 ]
+                var response = q.checkResult(someString) ? "Correct!" : "FALSE!";
                 let counter = 0
                 const filter = m => m.author.id === message.author.id
                 const collector = new Discord.MessageCollector(message.channel, filter, {
@@ -41,7 +43,7 @@ module.exports = {
                     let counter = 0
                     collected.forEach((value) => {
                         console.log(questions[counter++], value.content)
-                        if (value.content === result){
+                        if (value.content === response){
                             message.channel.send("Correct!")
                             return
                         }else{
