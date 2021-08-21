@@ -11,6 +11,11 @@ module.exports = {
                 message.channel.send("What kind of game would you like to play?")
             }
             if (args[0] === 'math'){
+                var additionProblem = {
+                    "question" : "What is {x=randomInt(1,10)} + {y=randomInt(1,10)}?",
+                    "answer" : ["{x}+{y}"],
+                    "answerFormat" : "0"
+                }
                 const question = problems.generateQuestions([additionProblem, subtractionProblem], [5,5])
                 var result = problems.markQuestion(question, additionProblem)
                 const questions = [
