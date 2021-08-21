@@ -208,7 +208,7 @@ module.exports = {
         if (args[0] === 'init'){
             if (message.member.id != "462014203834662913") return message.channel.send(`Sorry only **Doody** can run this command 😔`);
             const multilineString = `
-            React to an emoji to buy the wanted item
+            Use the correct command to buy the wanted item
 
             🖼️<@&878667764716408842> Price: ${StickersPermsPrice} Coins, Use !shop buy stickersperms to buy
 
