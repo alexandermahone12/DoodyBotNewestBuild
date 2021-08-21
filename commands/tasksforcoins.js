@@ -33,11 +33,11 @@ module.exports = {
                     }
                 })
 
-                collector.on('end', async collected => {
+                collector.on('end', collected => {
                     console.log(`Collected ${collected.size} messages!`)
 
                     let counter = 0
-                    collected.forEach((value) => {
+                    collected.forEach(async(value) => {
                         console.log(questions[counter++], value.content)
                         console.log(`Result is ${result}`)
                         if (value.content === `${result}`){
