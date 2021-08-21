@@ -75,7 +75,7 @@ module.exports = {
         }
         if (args[0] === 'sell'){
             if(args[1] === 'emojiperms'){
-                if (profiledata.sell > 0 && message.member.roles.cache.has(EmojiPermsRole)){
+                if (profiledata.sell > 0 && message.member.roles.cache.has('878667541042569227')){
                     await profileModel.findOneAndUpdate(
                         {
                         userID: message.author.id,
