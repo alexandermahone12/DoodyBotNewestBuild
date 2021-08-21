@@ -41,8 +41,22 @@ module.exports = {
                         console.log(questions[counter++], value.content)
                         console.log(`Result is ${result}`)
                         if (value.content === `${result}`){
-                            message.channel.send("Correct!")
-                            return
+                            const prize = Math.floor(Math.random() * 500) + 1
+                            const commandsEmbed1 = new Discord.MessageEmbed()
+                            .setColor('#554846')
+                            .setDescription("Correct! You won `" + `${prize}` + "`Coins!" )
+                            .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+                            const response = await profileModel.findOneAndUpdate(
+                            {
+                                userID: message.author.id,
+                            }, 
+                            {
+                                $inc: {
+                                    coins: prize,
+                                },
+                            }
+                            );
+                            return message.channel.send(commandsEmbed1)
                         }else{
                             message.channel.send("Incorrect:(!")
                         }
