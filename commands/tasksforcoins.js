@@ -20,7 +20,7 @@ module.exports = {
             if (args[0] === 'math'){
                 var q = new question();
                 const questions = [
-                    `What is ${q.content}`
+                    `What is ${q}`
                 ]
                 let counter = 0
                 const filter = m => m.author.id === message.author.id
