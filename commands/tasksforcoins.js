@@ -22,7 +22,6 @@ module.exports = {
                 const questions = [
                     `What is ${q.content}`
                 ]
-                var response = q.checkResult(someString) ? "Correct!" : "FALSE!";
                 let counter = 0
                 const filter = m => m.author.id === message.author.id
                 const collector = new Discord.MessageCollector(message.channel, filter, {
@@ -42,6 +41,7 @@ module.exports = {
 
                     let counter = 0
                     collected.forEach((value) => {
+                        var response = q.checkResult(value.content) ? "Correct!" : "FALSE!";
                         console.log(questions[counter++], value.content)
                         if (value.content === response){
                             message.channel.send("Correct!")
