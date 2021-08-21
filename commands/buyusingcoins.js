@@ -21,7 +21,7 @@ module.exports = {
                 if (profiledata.coins >= StickersPermsPrice){
                     await profileModel.findOneAndUpdate(
                         {
-                        userID: target.id,
+                        userID: message.author.id,
                         },
                         {
                         $inc: {
@@ -48,7 +48,7 @@ module.exports = {
                 if (profiledata.coins >= StickersPermsPrice){
                     await profileModel.findOneAndUpdate(
                         {
-                        userID: target.id,
+                        userID: message.author.id,
                         },
                         {
                         $inc: {
