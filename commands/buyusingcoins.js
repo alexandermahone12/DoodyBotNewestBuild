@@ -75,31 +75,31 @@ module.exports = {
         }
         if (args[0] === 'sell'){
             if(args[1] === 'emojiperms'){
-                if (profiledata.sell > 0){
+                if (profiledata.sell > 0 && message.member.roles.cache.has(EmojiPermsRole)){
                     await profileModel.findOneAndUpdate(
                         {
                         userID: message.author.id,
                         },
                         {
                         $inc: {
-                            coins: -EmojiPermsEmojiPrice,
+                            coins: EmojiPermsEmojiPrice,
+                            sell: -1,
                         },
                         }
                     );
-                    const EmojiPermsRole = message.guild.roles.cache.find(role => role.name === "EmojiPerms")
-                    message.member.roles.add(EmojiPermsRole);
-                    const commandsEmbed6 = new Discord.MessageEmbed()
+                    message.member.roles.remove(EmojiPermsRole);
+                    const commandsEmbed10 = new Discord.MessageEmbed()
                     .setColor('#554846')
-                    .setTitle("You've successfully purchased the EmojiPerms role.")
-                    .setDescription("Thank you for purchasing the EmojiPerms role. If you bought this by accident, just use the !shop sell EmojiPerms command to refund it!. Note: For can only refund an item 3times so use it wisely!")
-                    message.author.send(commandsEmbed6)
+                    .setTitle("You've successfully refunded the EmojiPerms role.")
+                    .setDescription(`Note that you've spent one of your refunds. You have ${profiledata.sell} refunds left!`)
+                    message.author.send(commandsEmbed10)
                     return
                 }else{
-                    const commandsEmbed5= new Discord.MessageEmbed()
+                    const commandsEmbed44= new Discord.MessageEmbed()
                     .setColor('#FF0000')
-                    .setTitle("Error while attempting to purchase the EmojiPerms role")
-                    .setDescription("You don't have enough coins in your wallet!")
-                    message.author.send(commandsEmbed5)
+                    .setTitle("Error while attempting to refund the EmojiPerms role")
+                    .setDescription("You did not purchase the EmojiPerms role!")
+                    message.author.send(commandsEmbed44)
                 }
             }
         }
