@@ -75,7 +75,7 @@ module.exports = {
         }
         if (args[0] === 'sell'){
             if(args[1] === 'emojiperms'){
-                if (profiledata.sell > 0){
+                if (message.member.roles.cache.has('878667541042569227')){
                     await profileModel.findOneAndUpdate(
                         {
                         userID: message.author.id,
@@ -83,7 +83,7 @@ module.exports = {
                         {
                         $inc: {
                             coins: EmojiPermsEmojiPrice,
-                            sell: -1,
+                            sell: profiledata.sell - 1,
                         },
                         }
                     );
