@@ -40,7 +40,7 @@ module.exports = {
                     collected.forEach((value) => {
                         console.log(questions[counter++], value.content)
                         console.log(`Result is ${result}`)
-                        if (value.content === result){
+                        if (result === value.content){
                             message.channel.send("Correct!")
                             return
                         }else{
