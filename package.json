@@ -17,6 +17,7 @@
     "fs": "0.0.1-security",
     "google-images": "^2.1.0",
     "images-scraper": "^6.3.0",
+    "math-problem-generator": "^0.1.0",
     "mongoose": "^5.13.7",
     "opusscript": "0.0.8",
     "reddit.images": "^1.0.2",
