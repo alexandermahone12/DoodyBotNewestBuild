@@ -56,7 +56,7 @@ module.exports = {
                         return
                             
 
-                    }else{
+                    }else if (StickersPermsPrice > profiledata.coins){
                         let embed3 = new Discord.MessageEmbed()
                             .setColor('#554846')
                             .setTitle("Error while purchasing the StickerPermsRole:")
