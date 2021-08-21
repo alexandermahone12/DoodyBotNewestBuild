@@ -13,9 +13,9 @@ module.exports = {
                 message.channel.send("What kind of game would you like to play?")
             }
             if (args[0] === 'math'){
-                const a = Math.round(Math.random()*10);
-                const b = Math.round(Math.random()*10);
-                const result = a + b;
+                const a = Math.round(Math.random()*10)
+                const b = Math.round(Math.random()*10)
+                const result = a + b
                 const questions = [
                     `What is ${a} + ${b}`
                 ]
@@ -39,6 +39,7 @@ module.exports = {
                     let counter = 0
                     collected.forEach((value) => {
                         console.log(questions[counter++], value.content)
+                        console.log(`Result is ${result}`)
                         if (value.content === result){
                             message.channel.send("Correct!")
                             return
