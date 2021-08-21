@@ -1,11 +1,11 @@
 
-
+const profileModel = require('../models/profileSchema')
 
 module.exports = {
     name: "task",
     description: "Generates a mathematical problem",
     cooldown: 5,
-    execute(message, args, cmd, client, Discord, profiledata){
+    async execute(message, args, cmd, client, Discord, profiledata){
         if (message.channel instanceof Discord.DMChannel){
             return message.channel.send("You cannot use this command in DMs")
         }else{
