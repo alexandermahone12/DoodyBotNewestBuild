@@ -75,7 +75,8 @@ module.exports = {
         }
         if (args[0] === 'sell'){
             if(args[1] === 'emojiperms'){
-                if (message.member.roles.cache.has('878667541042569227')){
+                if (profiledata.sell > 0 && message.member.roles.cache.has('878667541042569227')){
+                    const sell = profiledata.sell - 1
                     await profileModel.findOneAndUpdate(
                         {
                         userID: message.author.id,
@@ -83,7 +84,7 @@ module.exports = {
                         {
                         $inc: {
                             coins: EmojiPermsEmojiPrice,
-                            sell: profiledata.sell - 1,
+                            sell: sell,
                         },
                         }
                     );
@@ -102,6 +103,35 @@ module.exports = {
                     message.author.send(commandsEmbed44)
                 }
             }
+            if(args[1] === 'stickersperms'){
+                if (profiledata.sell > 0 && message.member.roles.cache.has('878667764716408842')){
+                    const sell1 = profiledata.sell - 1
+                    await profileModel.findOneAndUpdate(
+                        {
+                        userID: message.author.id,
+                        },
+                        {
+                        $inc: {
+                            coins: StickersPermsPrice,
+                            sell: sell1,
+                        },
+                        }
+                    );
+                    message.member.roles.remove('878667764716408842');
+                    const commandsEmbed10 = new Discord.MessageEmbed()
+                    .setColor('#554846')
+                    .setTitle("You've successfully refunded the StickersPerms role.")
+                    .setDescription(`Note that you've spent one of your refunds. You have ${profiledata.sell} refunds left!`)
+                    message.author.send(commandsEmbed10)
+                    return
+                }else{
+                    const commandsEmbed44= new Discord.MessageEmbed()
+                    .setColor('#FF0000')
+                    .setTitle("Error while attempting to refund the StickersPerms role")
+                    .setDescription("You did not purchase the StickersPerms role!")
+                    message.author.send(commandsEmbed44)
+                }
+                }
         }
         if (args[0] === 'init'){
             if (message.member.id != "462014203834662913") return message.channel.send(`Sorry only **Doody** can run this command 😔`);
