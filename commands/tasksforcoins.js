@@ -16,7 +16,7 @@ module.exports = {
                     "answer" : ["{x}+{y}"],
                     "answerFormat" : "0"
                 }
-                const question = problems.generateQuestions([additionProblem, subtractionProblem], [5,5])
+                const question = problems.generateQuestions(additionProblem, [5,5])
                 var result = problems.markQuestion(question, additionProblem)
                 const questions = [
                     `What is ${question}`
