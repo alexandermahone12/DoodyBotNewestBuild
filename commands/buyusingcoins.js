@@ -5,7 +5,6 @@ module.exports = {
     description: "Buys something from the store using coins",
     cooldown: 10,
     async execute(message, args, cmd, client, Discord, profiledata){
-        if (message.member.id != "462014203834662913") return message.channel.send(`Sorry only **Doody** can run this command 😔`);
         var StickersPermsPrice = 1000000;
         var EmojiPermsEmojiPrice = 1000000;
         const multilineString = `
@@ -54,7 +53,7 @@ module.exports = {
                             .setTitle("You've been given the StickerPerms role!")
                             .setDescription("Thank you for purchasing the StickerPermsRole from the Realm shop!")
                         await reaction.message.guild.members.cache.get(user.id).roles.add(StickersPermsRole);
-                        await reaction.message.author.send(embed2)
+                        await reaction.user.send(embed2)
                             
 
                     }else{
