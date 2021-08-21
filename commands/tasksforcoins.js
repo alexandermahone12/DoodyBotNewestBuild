@@ -102,7 +102,7 @@ module.exports = {
                 collector2.on('collect', async (m2) => {
                     const commandsEmbed4 = new Discord.MessageEmbed()
                         .setColor('#554846')
-                        .setDescription("Correct! You won `" + `${prize2}` + "`Coins!" )
+                        .setDescription("You found`" + `${prize2}` + "`Coins!" )
                         .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                         const response2 = await profileModel.findOneAndUpdate(
                         {
