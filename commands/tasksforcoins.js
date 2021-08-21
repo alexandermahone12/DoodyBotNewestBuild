@@ -92,7 +92,7 @@ module.exports = {
                     return
                 }
 
-                const chosenLocations = locations.sort(() => Math.random()).slice(0, 3);
+                const chosenLocations = locations.sort(() => Math.random() - Math.random()).slice(0, 3);
                 const filter2 = ({ author , content}) => message.author == author && chosenLocations.some((location) => location.toLowerCase() == content.toLowerCase());
 
                 const collector2 = message.channel.createMessageCollector(filter2, {max: 1, time:10000});
