@@ -38,13 +38,12 @@ module.exports = {
 
                     let counter = 0
                     collected.forEach((value) => {
-                        var response = q.checkResult(value.content) ? "Correct!" : "FALSE!";
                         console.log(questions[counter++], value.content)
-                        if (value.content === response){
+                        if (value.content === result){
                             message.channel.send("Correct!")
                             return
                         }else{
-                            message.channel.send("Incorrect!")
+                            message.channel.send("Incorrect:(!")
                         }
                     })
                 })
