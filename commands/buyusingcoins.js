@@ -5,9 +5,9 @@ module.exports = {
     description: "Buys something from the store using coins",
     cooldown: 15,
     async execute(message, args, cmd, client, Discord, profiledata){
-        const selltimes = 3
         var StickersPermsPrice = 1000000;
         var EmojiPermsEmojiPrice = 1000000;
+        var YoutubeTogetherPrice = 500000;
         if (!args.length){
             const commandsEmbed2 = new Discord.MessageEmbed()
             .setColor('#554846')
@@ -17,6 +17,42 @@ module.exports = {
             message.channel.send(commandsEmbed2)
         }
         if (args[0] ==='buy'){
+            if (args[1] === 'ytg'){
+                if (message.member.roles.cache.has('878775928048713738')){
+                    const commandsEmbed15345 = new Discord.MessageEmbed()
+                    .setColor('#FF0000')
+                    .setTitle("Error while purchasing the Ytg role:")
+                    .setDescription("You already purchased the role!")
+                    message.author.send(commandsEmbed15345)
+                    return
+                }
+                if (profiledata.coins >= YoutubeTogetherPrice){
+                    await profileModel.findOneAndUpdate(
+                        {
+                        userID: message.author.id,
+                        },
+                        {
+                        $inc: {
+                            coins: -YoutubeTogetherPrice,
+                        },
+                        }
+                    );
+                    const YoutubeTogetherRole = message.guild.roles.cache.find(role => role.name === "YoutubeTogetherRole")
+                    message.member.roles.add(YoutubeTogetherRole);
+                    const commandsEmbed4325 = new Discord.MessageEmbed()
+                    .setColor('#554846')
+                    .setTitle("You've successfully purchased the YoutubeTogether role.")
+                    .setDescription("Thank you for purchasing the YoutubeTogether role. If you bought this by accident, just use the !shop sell ytg command to refund it!")
+                    message.author.send(commandsEmbed4325)
+                    return
+                }else{
+                    const commandsEmbed43434= new Discord.MessageEmbed()
+                    .setColor('#FF0000')
+                    .setTitle("Error while attempting to purchase the YoutubeTogether role")
+                    .setDescription("You don't have enough coins in your wallet!")
+                    message.author.send(commandsEmbed43434)
+                }
+            }
             if (args[1] === 'stickersperms'){
                 if (message.member.roles.cache.has('878667764716408842')){
                     const commandsEmbed100 = new Discord.MessageEmbed()
@@ -90,6 +126,32 @@ module.exports = {
             }
         }
         if (args[0] === 'sell'){
+            if(args[1] === 'ytg'){
+                if (message.member.roles.cache.has('878775928048713738')){
+                    await profileModel.findOneAndUpdate(
+                        {
+                        userID: message.author.id,
+                        },
+                        {
+                        $inc: {
+                            coins: YoutubeTogetherPrice,
+                        },
+                        }
+                    );
+                    message.member.roles.remove('878775928048713738');
+                    const commandsEmbed104344 = new Discord.MessageEmbed()
+                    .setColor('#554846')
+                    .setTitle("You've successfully refunded the YoutubeTogether role.")
+                    message.author.send(commandsEmbed104344)
+                    return
+                }else{
+                    const commandsEmbed3444= new Discord.MessageEmbed()
+                    .setColor('#FF0000')
+                    .setTitle("Error while attempting to refund the YoutubeTogether role")
+                    .setDescription("You did not purchase the YoutubeTogether role!")
+                    message.author.send(commandsEmbed3444)
+                }
+            }
             if(args[1] === 'emojiperms'){
                 if (message.member.roles.cache.has('878667541042569227')){
                     await profileModel.findOneAndUpdate(
@@ -152,6 +214,7 @@ module.exports = {
 
             🤑<@&878667541042569227> Price: ${EmojiPermsEmojiPrice} Coins, Use !shop buy emojiperms to buy
 
+            📷<@&878775928048713738> Price: ${YoutubeTogetherPrice} Coins, use !shop buy ytg to buy
             `
             const commandsEmbed1 = new Discord.MessageEmbed()
             .setColor('#554846')
