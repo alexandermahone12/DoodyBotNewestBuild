@@ -1,11 +1,6 @@
-function question() {
-    this.a = Math.round(Math.random()*10);
-    this.b = Math.round(Math.random()*10);
-    this.result = this.a + this.b;
-    this.checkResult = function(givenResultString) {
-        return (""+result == givenResultString);
-    }
-}
+
+
+
 module.exports = {
     name: "task",
     description: "Generates a mathematical problem",
@@ -18,9 +13,11 @@ module.exports = {
                 message.channel.send("What kind of game would you like to play?")
             }
             if (args[0] === 'math'){
-                var q = new question();
+                const a = Math.round(Math.random()*10);
+                const b = Math.round(Math.random()*10);
+                const result = a + b;
                 const questions = [
-                    `What is ${q}`
+                    `What is ${a} + ${b}`
                 ]
                 let counter = 0
                 const filter = m => m.author.id === message.author.id
