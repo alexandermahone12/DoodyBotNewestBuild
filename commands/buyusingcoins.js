@@ -87,7 +87,7 @@ module.exports = {
                         },
                         }
                     );
-                    message.member.roles.remove(EmojiPermsRole);
+                    message.member.roles.remove('878667541042569227');
                     const commandsEmbed10 = new Discord.MessageEmbed()
                     .setColor('#554846')
                     .setTitle("You've successfully refunded the EmojiPerms role.")
