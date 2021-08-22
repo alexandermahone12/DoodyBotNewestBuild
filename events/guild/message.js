@@ -1,7 +1,6 @@
 const profileModel = require('../../models/profileSchema');
 const cooldowns = new Map();
 const fs = require('fs')
-const env = require('../../dotenv')
 module.exports = async (Discord, client, message) => {
     let prefixes = JSON.parse(fs.readFileSync("./././prefixes.json", "utf-8"));
     if(!prefixes[message.guild.id]){
