@@ -10,7 +10,8 @@ module.exports = {
             .setTitle('ATM panel')
             .setDescription('This is the ATM command panel.')
             .addFields(
-                { name: '🛠️ATM normal commands', value:"`" + "withdraw" + "`:withdraws the wanted amount of coins from your bank to the wallet\n " + "`" + "deposit" + "`:deposits the wanted amount of coins from your wallet to the bank\n" + "`" + "balance" + "`:shows your coin balance in the wallet & bank\n"+ "`" + "transfer" + "`:transfers the wanted amount of coins to the mentioned person\n", inline: true }
+                { name: '🛠️ATM normal commands', value:"`" + "withdraw" + "`:withdraws the wanted amount of coins from your bank to the wallet\n " + "`" + "deposit" + "`:deposits the wanted amount of coins from your wallet to the bank\n" + "`" + "balance" + "`:shows your coin balance in the wallet & bank\n"+ "`" + "transfer" + "`:transfers the wanted amount of coins to the mentioned person\n", inline: true },
+                { name: '🚨ATM bad commands', value: "`" + "robatm" + "`:robs an atm. money prize ranges from 100-3000 and chance of getting caught is one in 5 tries\n" + "`" + "robbank" + "`:robs a bank. money prize ranges from 1000-30000 and chance of getting caught is 5 in 10 tries\n", inline: true}
             )
             message.channel.send(embed1)
         }
@@ -138,6 +139,45 @@ module.exports = {
             )
             .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
             message.channel.send(commandsEmbed1434);
+        }
+        if (args[0] === 'robatm'){
+            const charge = Math.floor(Math.random() * (5000 - 500 + 1)) + 500;
+            const chance = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+            const prize = Math.floor(Math.random() * (3000 - 100 + 1)) + 100;
+            if (chance === 1){
+                const commandsEmbed1434344 = new Discord.MessageEmbed()
+                .setColor('#FF0000')
+                .setDescription(`Oh no! You got caught while robbing the atm machine! You were charged `+`${charge}`+"Coins!")
+                .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+                message.channel.send(commandsEmbed1434344);
+                await profileModel.findOneAndUpdate(
+                    {
+                    userID: message.author.id,
+                    },
+                    {
+                    $inc: {
+                        coins: -charge,
+                    },
+                    }
+                );
+                return
+            }else{
+                const commandsEmbed1434344344 = new Discord.MessageEmbed()
+                .setColor('#FF0000')
+                .setDescription("Phew! You almost got caught! You sucsessfully robbed the atm machine and got `"+`${prize}`+"Coins!")
+                .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+                message.channel.send(commandsEmbed1434344344);
+                await profileModel.findOneAndUpdate(
+                    {
+                    userID: message.author.id,
+                    },
+                    {
+                    $inc: {
+                        coins: prize,
+                    },
+                    }
+                );
+            }
         }
     }
 }
