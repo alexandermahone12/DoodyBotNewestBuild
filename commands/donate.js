@@ -37,7 +37,7 @@ module.exports = {
         }
       );
 
-      return message.channel.send(`You donated ${amount} to <@&${target.id}>`);
+      return message.channel.send(`You donated ${amount} to <@${target.id}>`);
     } catch (err) {
       console.log(err);
     }
