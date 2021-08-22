@@ -151,7 +151,7 @@ module.exports = {
             if(chance === 'money'){
                 const commandsEmbed1434344344 = new Discord.MessageEmbed()
                 .setColor('#FF0000')
-                .setDescription("Phew! You almost got caught! You sucsessfully robbed the atm machine and got `"+`${prize}`+"`Coins!")
+                .setDescription("💰Phew! You almost got caught! You successfully robbed the atm machine and got `"+`${prize}`+"`Coins!💰")
                 .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                 message.channel.send(commandsEmbed1434344344);
                 await profileModel.findOneAndUpdate(
@@ -170,7 +170,7 @@ module.exports = {
             if (chance === 'Caught'){
                     const commandsEmbed1434344 = new Discord.MessageEmbed()
                     .setColor('#FF0000')
-                    .setDescription("Oh no! You got caught while robbing the atm machine! You were charged `"+`${charge}`+"`Coins!")
+                    .setDescription("🚨Oh no! You got caught while robbing the atm machine! You were charged `"+`${charge}`+"`Coins!🚨")
                     .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                     message.channel.send(commandsEmbed1434344);
                     await profileModel.findOneAndUpdate(
@@ -180,6 +180,53 @@ module.exports = {
                         {
                         $inc: {
                             coins: -charge,
+                        },
+                        }
+                    );
+                 
+             }
+        }
+        if(args[0] === 'robbank'){
+            var myArray1 = [
+                "Caught",
+                "money",
+              ];
+            var charge1 = Math.floor(Math.random() * (15000 - 5000 + 1)) + 500;
+            var chance1 = myArray1[Math.floor(Math.random()*myArray1.length)];
+            console.log(chance1)
+            var prize1 = Math.floor(Math.random() * (30000 - 1000 + 1)) + 100;
+            if(chance === 'money'){
+                const commandsEmbed1434344545344 = new Discord.MessageEmbed()
+                .setColor('#FF0000')
+                .setDescription("💰You robbed the bank successfully! But your on the police's watch list now! be careful next time! You got`"+`${prize1}`+"`Coins!💰")
+                .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+                message.channel.send(commandsEmbed1434344545344);
+                await profileModel.findOneAndUpdate(
+                    {
+                        userID: message.author.id,
+                    },
+                    {
+                    $inc: {
+                        coins: prize1,
+                    },
+                    }
+                ); 
+                return
+                    
+            }
+            if (chance === 'Caught'){
+                    const commandsEmbed1434343444 = new Discord.MessageEmbed()
+                    .setColor('#FF0000')
+                    .setDescription("🚨You got caught! You were charged `"+`${charge1}`+"`Coins!🚨")
+                    .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+                    message.channel.send(commandsEmbed1434343444);
+                    await profileModel.findOneAndUpdate(
+                        {
+                        userID: message.author.id,
+                        },
+                        {
+                        $inc: {
+                            coins: -charge1,
                         },
                         }
                     );
