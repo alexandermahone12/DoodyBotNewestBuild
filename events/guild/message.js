@@ -2,7 +2,7 @@ const profileModel = require('../../models/profileSchema');
 const cooldowns = new Map();
 const fs = require('fs')
 module.exports = async (Discord, client, message) => {
-    let prefixes = JSON.parse(fs.readFileSync("C:\Users\ale48\Desktop\Programming\Javascript\SERVER\DoodyBotNewestBuild\prefixes.json", "utf-8"));
+    let prefixes = JSON.parse(fs.readFileSync("../../prefixes.json", "utf-8"));
     if(!prefixes[message.guild.id]){
         prefixes[message.guild.id] = {
             prefixes: botconfig.prefix
