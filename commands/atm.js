@@ -170,7 +170,7 @@ module.exports = {
             if (chance === 'Caught'){
                     const commandsEmbed1434344 = new Discord.MessageEmbed()
                     .setColor('#FF0000')
-                    .setDescription(`Oh no! You got caught while robbing the atm machine! You were charged `+`${charge}`+"`Coins!")
+                    .setDescription("Oh no! You got caught while robbing the atm machine! You were charged `"+`${charge}`+"`Coins!")
                     .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                     message.channel.send(commandsEmbed1434344);
                     await profileModel.findOneAndUpdate(
