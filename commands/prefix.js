@@ -8,7 +8,8 @@ module.exports = {
             message.channel.send("What would you like to change the prefix to?")
             return
         }
-        prefix = args[0]
+        const changed = args[0]
+        prefix = changed
         const commandsEmbed = new Discord.MessageEmbed()
         .setColor('#554846')
         .setTitle(`Prefix changed to ${prefix}`)
