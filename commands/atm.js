@@ -143,11 +143,12 @@ module.exports = {
         if (args[0] === 'robatm'){
             const charge = Math.floor(Math.random() * (5000 - 500 + 1)) + 500;
             const chance = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+            console.log(chance)
             const prize = Math.floor(Math.random() * (3000 - 100 + 1)) + 100;
-            if (chance === 1){
+            if (chance === 1 || 4){
                 const commandsEmbed1434344 = new Discord.MessageEmbed()
                 .setColor('#FF0000')
-                .setDescription(`Oh no! You got caught while robbing the atm machine! You were charged `+`${charge}`+"Coins!")
+                .setDescription(`Oh no! You got caught while robbing the atm machine! You were charged `+`${charge}`+"`Coins!")
                 .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                 message.channel.send(commandsEmbed1434344);
                 await profileModel.findOneAndUpdate(
@@ -164,7 +165,7 @@ module.exports = {
             }else{
                 const commandsEmbed1434344344 = new Discord.MessageEmbed()
                 .setColor('#FF0000')
-                .setDescription("Phew! You almost got caught! You sucsessfully robbed the atm machine and got `"+`${prize}`+"Coins!")
+                .setDescription("Phew! You almost got caught! You sucsessfully robbed the atm machine and got `"+`${prize}`+"`Coins!")
                 .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                 message.channel.send(commandsEmbed1434344344);
                 await profileModel.findOneAndUpdate(
