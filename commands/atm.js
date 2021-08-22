@@ -195,12 +195,12 @@ module.exports = {
             var chance1 = myArray1[Math.floor(Math.random()*myArray1.length)];
             console.log(chance1)
             var prize1 = Math.floor(Math.random() * (30000 - 1000 + 1)) + 100;
-            if(chance === 'money'){
-                const commandsEmbed1434344545344 = new Discord.MessageEmbed()
-                .setColor('#FF0000')
-                .setDescription("💰You robbed the bank successfully! But your on the police's watch list now! be careful next time! You got`"+`${prize1}`+"`Coins!💰")
-                .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
-                message.channel.send(commandsEmbed1434344545344);
+            if(chance1 === 'money'){
+                const embed4 = new Discord.MessageEmbed()
+                    .setColor('#FF0000')
+                    .setDescription("💰You robbed the bank successfully! But your on the police's watch list now! be careful next time! You got`"+`${prize1}`+"`Coins!💰")
+                    .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+                message.channel.send(embed4);
                 await profileModel.findOneAndUpdate(
                     {
                         userID: message.author.id,
@@ -214,12 +214,12 @@ module.exports = {
                 return
                     
             }
-            if (chance === 'Caught'){
-                    const commandsEmbed1434343444 = new Discord.MessageEmbed()
-                    .setColor('#FF0000')
-                    .setDescription("🚨You got caught! You were charged `"+`${charge1}`+"`Coins!🚨")
-                    .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
-                    message.channel.send(commandsEmbed1434343444);
+            if (chance1 === 'Caught'){
+                    const embed45 = new Discord.MessageEmbed()
+                        .setColor('#FF0000')
+                        .setDescription("🚨You got caught! You were charged `"+`${charge1}`+"`Coins!🚨")
+                        .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+                    message.channel.send(embed45);
                     await profileModel.findOneAndUpdate(
                         {
                         userID: message.author.id,
