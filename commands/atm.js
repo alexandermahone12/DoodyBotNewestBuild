@@ -146,39 +146,41 @@ module.exports = {
             var prize = Math.floor(Math.random() * (3000 - 100 + 1)) + 100;
             if (profiledata.coins > charge){
                 if(chance.value = 4){
-                    const commandsEmbed1434344 = new Discord.MessageEmbed()
+                    const commandsEmbed1434344344 = new Discord.MessageEmbed()
                     .setColor('#FF0000')
-                    .setDescription(`Oh no! You got caught while robbing the atm machine! You were charged `+`${charge}`+"`Coins!")
+                    .setDescription("Phew! You almost got caught! You sucsessfully robbed the atm machine and got `"+`${prize}`+"`Coins!")
                     .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
-                    message.channel.send(commandsEmbed1434344);
+                    message.channel.send(commandsEmbed1434344344);
                     await profileModel.findOneAndUpdate(
                         {
-                        userID: message.author.id,
+                            userID: message.author.id,
                         },
                         {
                         $inc: {
-                            coins: -charge,
+                            coins: prize,
                         },
                         }
-                    );
+                    ); 
                     return
+                    
                 }
              }else{
-                const commandsEmbed1434344344 = new Discord.MessageEmbed()
+                const commandsEmbed1434344 = new Discord.MessageEmbed()
                 .setColor('#FF0000')
-                .setDescription("Phew! You almost got caught! You sucsessfully robbed the atm machine and got `"+`${prize}`+"`Coins!")
+                .setDescription(`Oh no! You got caught while robbing the atm machine! You were charged `+`${charge}`+"`Coins!")
                 .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
-                message.channel.send(commandsEmbed1434344344);
+                message.channel.send(commandsEmbed1434344);
                 await profileModel.findOneAndUpdate(
                     {
                     userID: message.author.id,
                     },
                     {
                     $inc: {
-                        coins: prize,
+                        coins: -charge,
                     },
                     }
-                ); }
+                );
+             }
         }
     }
 }
