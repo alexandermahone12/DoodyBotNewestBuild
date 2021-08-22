@@ -3,7 +3,7 @@ module.exports = {
     name: "atm",
     description: "Opens the atm panel",
     cooldown: 10,
-    async execute(message, args, cmd, client, Discord, profileData) {
+    async execute(message, args, cmd, client, Discord, profiledata) {
         if (!args.length){
             const embed1 = new Discord.MessageEmbed()
             .setColor('#554846')
@@ -12,6 +12,7 @@ module.exports = {
             .addFields(
                 { name: '🛠️ATM normal commands', value:"`" + "withdraw" + "`:withdraws the wanted amount of coins from your bank to the wallet\n " + "`" + "deposit" + "`:deposits the wanted amount of coins from your wallet to the bank\n" + "`" + "balance" + "`:shows your coin balance in the wallet & bank\n"+ "`" + "transfer" + "`:transfers the wanted amount of coins to the mentioned person\n", inline: true }
             )
+            message.channel.send(embed1)
         }
         if (args[0] === 'withdraw'){
             const commandsEmbed143242 = new Discord.MessageEmbed()
@@ -99,7 +100,7 @@ module.exports = {
             try {
             const targetData = await profileModel.findOne({ userID: target.id });
             if (!targetData) return message.channel.send(`This user does not have a bank account, tell them to use the !bankaccount command!`);
-            if (profileData.coins < amount3) return message.channel.send("You dont have enough coins in your wallet!")
+            if (profiledata.coins < amount3) return message.channel.send("You dont have enough coins in your wallet!")
 
             await profileModel.findOneAndUpdate(
                 {
