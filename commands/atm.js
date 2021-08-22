@@ -2,7 +2,6 @@ const profileModel = require('../models/profileSchema')
 module.exports = {
     name: "atm",
     description: "Opens the atm panel",
-    cooldown: 10,
     async execute(message, args, cmd, client, Discord, profiledata) {
         if (!args.length){
             const embed1 = new Discord.MessageEmbed()
