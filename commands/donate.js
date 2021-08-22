@@ -8,7 +8,7 @@ module.exports = {
     const amount = args[1];
     const target = message.mentions.users.first();
     if (!target) return message.channel.send("That user does not exist");
-    if (target === `<@${message.author.id}>`) return message.channel.send('You cant donate to yourself')
+    if (target.id === message.author.id) return message.channel.send('You cant donate to yourself')
 
     if (amount % 1 != 0 || amount <= 0) return message.channel.send("Deposit amount must be a whole number");
 
