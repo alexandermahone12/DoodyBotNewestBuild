@@ -3,7 +3,7 @@ module.exports = {
 
     name: 'ping',
     description: "says hi",
-    execute(message, args, cmd, client, Discord, profiledata) {
+    execute(message, args, cmd, client, Discord, profiledata, prefix) {
         const commandsEmbed2 = new Discord.MessageEmbed()
         .setColor('#554846')
         .setTitle("Your ping:")

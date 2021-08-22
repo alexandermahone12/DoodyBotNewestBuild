@@ -1,14 +1,19 @@
+
 module.exports = {
 
-    name: 'hi',
-    description: "says hi",
+    name: 'prefix',
+    description: "creates an invite for the bot",
     execute(message, args, cmd, client, Discord, profiledata, prefix) {
+        if (!args.length){
+            message.channel.send("What would you like to change the prefix to?")
+            return
+        }
+        prefix = args[0]
         const commandsEmbed = new Discord.MessageEmbed()
         .setColor('#554846')
-        .setDescription('Hello! This is [DoodyBot](https://doodybot2021.wixsite.com/doodybot)! To find out what i can do, use the command /commands.')
+        .setTitle(`Prefix changed to ${args[0]}`)
         .setFooter('DoodyBot version 2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
         message.channel.send(commandsEmbed);
-
 
     }
  

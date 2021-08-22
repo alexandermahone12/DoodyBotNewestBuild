@@ -2,7 +2,7 @@ module.exports = {
 
     name: 'lock',
     description: "Locks a channel!",
-    execute(message, args, cmd, client, Discord, profiledata) {
+    execute(message, args, cmd, client, Discord, profiledata, prefix) {
         if (message.channel instanceof Discord.DMChannel){
             return message.channel.send("You cannot use this command in DMs")
         }else{

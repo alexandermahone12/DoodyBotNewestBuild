@@ -4,7 +4,7 @@ module.exports = {
     name: "shop",
     description: "Buys something from the store using coins",
     cooldown: 15,
-    async execute(message, args, cmd, client, Discord, profiledata){
+    async execute(message, args, cmd, client, Discord, profiledata, prefix){
         var StickersPermsPrice = 1000000;
         var EmojiPermsEmojiPrice = 1000000;
         var YoutubeTogetherPrice = 500000;

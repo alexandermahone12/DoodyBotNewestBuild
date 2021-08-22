@@ -2,7 +2,7 @@ const profileModel = require('../models/profileSchema')
 module.exports = {
     name: "bankaccount",
     description: "Creates account in database",
-    async execute(message, args, cmd, client, Discord, profiledata){
+    async execute(message, args, cmd, client, Discord, profiledata, prefix){
         if (message.channel instanceof Discord.DMChannel){
             return message.channel.send("You cannot use this command in DMs")
         }else{

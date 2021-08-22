@@ -2,7 +2,7 @@ const profileModel = require('../models/profileSchema')
 module.exports = {
     name: "atm",
     description: "Opens the atm panel",
-    async execute(message, args, cmd, client, Discord, profiledata) {
+    async execute(message, args, cmd, client, Discord, profiledata, prefix) {
         if (!args.length){
             const embed1 = new Discord.MessageEmbed()
             .setColor('#554846')

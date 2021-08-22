@@ -2,7 +2,7 @@ module.exports = {
 
     name: 'admintest',
     description: "Clear messages!",
-    execute(message, args, cmd, client, Discord, profiledata) {
+    execute(message, args, cmd, client, Discord, profiledata, prefix) {
         if(message.member.permissions.has("KICK_MEMBERS")){
             const commandsEmbed = new Discord.MessageEmbed()
             .setColor('#0000')

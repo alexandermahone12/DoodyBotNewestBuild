@@ -5,7 +5,7 @@ module.exports = {
     name: "task",
     description: "Generates a mathematical problem",
     cooldown: 5,
-    execute(message, args, cmd, client, Discord, profiledata){
+    execute(message, args, cmd, client, Discord, profiledata, prefix){
         if (message.channel instanceof Discord.DMChannel){
             return message.channel.send("You cannot use this command in DMs")
         }else{
