@@ -166,7 +166,8 @@ module.exports = {
                 ); 
                 return
                     
-            }else if (chance === 'caught'){
+            }
+            if (chance === 'Caught'){
                     const commandsEmbed1434344 = new Discord.MessageEmbed()
                     .setColor('#FF0000')
                     .setDescription(`Oh no! You got caught while robbing the atm machine! You were charged `+`${charge}`+"`Coins!")
