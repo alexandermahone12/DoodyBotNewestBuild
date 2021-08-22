@@ -145,40 +145,41 @@ module.exports = {
             const chance = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
             console.log(chance)
             const prize = Math.floor(Math.random() * (3000 - 100 + 1)) + 100;
-            if (chance === 1 || 4){
-                const commandsEmbed1434344 = new Discord.MessageEmbed()
-                .setColor('#FF0000')
-                .setDescription(`Oh no! You got caught while robbing the atm machine! You were charged `+`${charge}`+"`Coins!")
-                .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
-                message.channel.send(commandsEmbed1434344);
-                await profileModel.findOneAndUpdate(
-                    {
-                    userID: message.author.id,
-                    },
-                    {
-                    $inc: {
-                        coins: -charge,
-                    },
-                    }
-                );
-                return
-            }else{
-                const commandsEmbed1434344344 = new Discord.MessageEmbed()
-                .setColor('#FF0000')
-                .setDescription("Phew! You almost got caught! You sucsessfully robbed the atm machine and got `"+`${prize}`+"`Coins!")
-                .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
-                message.channel.send(commandsEmbed1434344344);
-                await profileModel.findOneAndUpdate(
-                    {
-                    userID: message.author.id,
-                    },
-                    {
-                    $inc: {
-                        coins: prize,
-                    },
-                    }
-                );
-            }
+            if (profiledata.coins > charge){
+                if(chance = 4){
+                    const commandsEmbed1434344 = new Discord.MessageEmbed()
+                    .setColor('#FF0000')
+                    .setDescription(`Oh no! You got caught while robbing the atm machine! You were charged `+`${charge}`+"`Coins!")
+                    .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+                    message.channel.send(commandsEmbed1434344);
+                    await profileModel.findOneAndUpdate(
+                        {
+                        userID: message.author.id,
+                        },
+                        {
+                        $inc: {
+                            coins: -charge,
+                        },
+                        }
+                    );
+                    return
+                }else{
+                    const commandsEmbed1434344344 = new Discord.MessageEmbed()
+                    .setColor('#FF0000')
+                    .setDescription("Phew! You almost got caught! You sucsessfully robbed the atm machine and got `"+`${prize}`+"`Coins!")
+                    .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+                    message.channel.send(commandsEmbed1434344344);
+                    await profileModel.findOneAndUpdate(
+                        {
+                        userID: message.author.id,
+                        },
+                        {
+                        $inc: {
+                            coins: prize,
+                        },
+                        }
+                    );
+             } }
         }
     }
 }
