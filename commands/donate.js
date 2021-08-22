@@ -14,6 +14,7 @@ module.exports = {
     try {
       const targetData = await profileModel.findOne({ userID: target.id });
       if (!targetData) return message.channel.send(`This user does not have a bank account, tell them to use the !bankaccount command!`);
+      if (profileData.coins < amount) return message.channel.send("You dont have enough coins in your wallet!")
 
       await profileModel.findOneAndUpdate(
         {
@@ -37,7 +38,7 @@ module.exports = {
         }
       );
 
-      return message.channel.send(`You donated ${amount} to <@${target.id}>`);
+      return message.channel.send(`You donated ${amount}Coins to <@${target.id}>`);
     } catch (err) {
       console.log(err);
     }
