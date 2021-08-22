@@ -1,25 +1,15 @@
 const profileModel = require('../../models/profileSchema');
 const cooldowns = new Map();
-const jsonfile = '../../prefixes.json';
 const fs = require('fs')
 module.exports = async (Discord, client, message) => {
-    if(!fs.existsSync(jsonfile)) {
-        console.log("File not found");
+    let prefixes = JSON.parse(fs.readFileSync("./././prefixes.json", "utf-8"));
+    if(!prefixes[message.guild.id]){
+        prefixes[message.guild.id] = {
+            prefixes: botconfig.prefix
+        };
     }
-      
-      // The file *does* exist
-    else {
-        // Read the file and do anything you want
-        let prefixes = JSON.parse(fs.readFileSync(jsonfile, "utf-8"));
-
-        if(!prefixes[message.guild.id]){
-            prefixes[message.guild.id] = {
-                prefixes: botconfig.prefix
-            };
-        }
-        let prefix = prefixes[message.guild.id].prefixes;
-        console.log(prefix)
-    }
+    let prefix = prefixes[message.guild.id].prefixes;
+    console.log(prefix)
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     let profiledata;
