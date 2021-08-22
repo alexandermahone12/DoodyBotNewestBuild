@@ -145,7 +145,7 @@ module.exports = {
             console.log(chance)
             var prize = Math.floor(Math.random() * (3000 - 100 + 1)) + 100;
             if (profiledata.coins > charge){
-                if(chance.value = 4){
+                if(chance.value = '4'){
                     const commandsEmbed1434344344 = new Discord.MessageEmbed()
                     .setColor('#FF0000')
                     .setDescription("Phew! You almost got caught! You sucsessfully robbed the atm machine and got `"+`${prize}`+"`Coins!")
