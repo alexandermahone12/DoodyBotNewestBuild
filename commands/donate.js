@@ -3,7 +3,7 @@ module.exports = {
   name: "donate",
   aliases: [],
   description: "gives a player some coins",
-  async execute(message, args, cmd, client, discord, profileData) {
+  async execute(message, args, cmd, client, Discord, profileData) {
     if (!args.length) return message.channel.send("You need to mention a player to donate to them");
     const amount = args[1];
     const target = message.mentions.users.first();
