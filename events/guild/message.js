@@ -1,8 +1,9 @@
 const profileModel = require('../../models/profileSchema');
 const cooldowns = new Map();
+const jsonfile = require('../../prefixes.json')
 const fs = require('fs')
 module.exports = async (Discord, client, message) => {
-    let prefixes = JSON.parse(fs.readFileSync("../../prefixes.json", "utf-8"));
+    let prefixes = JSON.parse(fs.readFileSync(jsonfile, "utf-8"));
     if(!prefixes[message.guild.id]){
         prefixes[message.guild.id] = {
             prefixes: botconfig.prefix
