@@ -90,7 +90,7 @@ module.exports = {
         }
         if (args[0] === 'transfer'){
             if (!args.length) return message.channel.send("You need to mention a player to donate to them");
-            const amount3 = args[1];
+            const amount3 = args[2];
             const target = message.mentions.users.first();
             if (!target) return message.channel.send("That user does not exist");
             if (target.id === message.author.id) return message.channel.send('You cant donate to yourself')
