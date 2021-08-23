@@ -132,6 +132,12 @@ module.exports = {
                 .setDescription(`Type the location name in this channel\n \`${chosenLocations.join('` `')}\``)
                 .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                 message.channel.send(commandsEmbed6)
+            }else if(args[0] === 'heist'){
+                var myArray1 = [
+                    "Hack",
+                    "",
+                  ];
+                var job = myArray1[Math.floor(Math.random()*myArray1.length)];
             }
         }
     }
