@@ -1,5 +1,5 @@
 const TicTacToe = require('discord-tictactoe');
-const game = new TicTacToe({ language: 'en' })
+const game = new TicTacToe({ language: 'de' })
 module.exports = {
     name: "game",
     description: "Fun games to play",
@@ -15,7 +15,7 @@ module.exports = {
             return
         }
         if (args[0] === 'tictactoe'){
-
+            game.handleMessage(message);    
             
         }
 
