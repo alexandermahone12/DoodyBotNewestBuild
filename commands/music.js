@@ -43,6 +43,7 @@ module.exports = {
                     song = { title: video.title, url: video.url }
                 } else {
                      message.channel.send('Error finding video.');
+                     return
                 }
             }
 
