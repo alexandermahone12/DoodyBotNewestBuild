@@ -10,7 +10,7 @@ module.exports = {
             .setColor('#554846')
             .setTitle('What game would you like to play?')
             .setDescription("List of games: \n `tictactoe` \n new games will be added shortly!")
-            .setFooter("If you have any suggestions for other games use !suggest (suggestion)")
+            .setFooter("If you have any suggestions use !suggest (suggestion)")
             message.channel.send(embed1)
             return
         }
