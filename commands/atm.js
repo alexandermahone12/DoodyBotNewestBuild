@@ -264,32 +264,36 @@ module.exports = {
                 const response = await profileModel.findOneAndUpdate(
                     {
                         userID: message.author.id,
-                        job: 'Drug dealer'
                     }, 
+                    {
+                        $inc: {
+                            job: "Drug dealer"  
+                        },
+                    }
                 ); 
             }
-            if (args[1] === '2'){
+            if (args[1] === 'drugdealer'){
 
             }
-            if (args[1] === '3'){
+            if (args[1] === 'drugdealer'){
 
             }
-            if (args[1] === '4'){
+            if (args[1] === 'drugdealer'){
 
             }
-            if (args[1] === '5'){
+            if (args[1] === 'drugdealer'){
 
             }
-            if (args[1] === '6'){
+            if (args[1] === 'drugdealer'){
 
             }
-            if (args[1] === '7'){
+            if (args[1] === 'drugdealer'){
 
             }
-            if (args[1] === '8'){
+            if (args[1] === 'drugdealer'){
 
             }
-            if (args[1] === '9'){
+            if (args[1] === 'drugdealer'){
 
             }
             const embedJOB = new Discord.MessageEmbed()
