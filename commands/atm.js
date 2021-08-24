@@ -261,16 +261,17 @@ module.exports = {
         }
         if (args[0] === 'job'){
             if (args[1] === 'drugdealer'){
-                const response = await profileModel.findOneAndUpdate(
+                const response12 = await profileModel.findOneAndUpdate(
                     {
                         userID: message.author.id,
                         job: "Drug dealer"
                     }, 
 
-                ); 
+                );
+                message.channel.send("Done")
+                return 
             }
-            message.channel.send("Done")
-            return
+
             if (args[1] === 'drugdealer'){
 
             }
