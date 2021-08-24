@@ -260,14 +260,47 @@ module.exports = {
             
         }
         if (args[0] === 'job'){
+            if (args[1] === 'drugdealer'){
+                const response = await profileModel.findOneAndUpdate(
+                    {
+                        userID: message.author.id,
+                        job: 'Drug dealer'
+                    }, 
+                ); 
+            }
+            if (args[1] === '2'){
+
+            }
+            if (args[1] === '3'){
+
+            }
+            if (args[1] === '4'){
+
+            }
+            if (args[1] === '5'){
+
+            }
+            if (args[1] === '6'){
+
+            }
+            if (args[1] === '7'){
+
+            }
+            if (args[1] === '8'){
+
+            }
+            if (args[1] === '9'){
+
+            }
             const embedJOB = new Discord.MessageEmbed()
+            .setColor('#554846')
             .setTitle("available jobs:")
-            .setDescription("Please note that these most of these jobs only grant you a role and a salary everyday. When you get a job you don't have to do anything!")
+            .setDescription("Please note that these most of these jobs only grant you a role and a salary everyday. When you get a job you don't have to do anything!\n Use !atm job (job name without spaces or capitalization) \n")
             .addFields(
                 { name: "🚨Illegal jobs", value: "`Drug dealer`\n `Black hat hacker` \n `Robber`", inline: true},
-                { name: "👨‍⚕️Legal jobs", value: "`Doctor` \n `Engineer` \n `Nurse` \n `Pro Athlete", inline: true},
+                { name: "👨‍⚕️Legal jobs", value: "`Doctor` \n `Engineer` \n `Nurse`", inline: true},
                 { name: "🕴️Government jobs", value: "`Police officer` \n `Politican` \n `Minister`", inline: true},
-                { name: "❓Current Job:", value: `${profiledata.job}`, inline: true}
+                { name: "❓Current Job:", value: "`" + `${profiledata.job}` + "`", inline: true}
             )
             message.channel.send(embedJOB)
             return
