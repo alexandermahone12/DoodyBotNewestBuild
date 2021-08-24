@@ -264,14 +264,13 @@ module.exports = {
                 const response = await profileModel.findOneAndUpdate(
                     {
                         userID: message.author.id,
+                        job: "Drug dealer"
                     }, 
-                    {
-                        $inc: {
-                            job: "Drug dealer"  
-                        },
-                    }
+
                 ); 
             }
+            message.channel.send("Done")
+            return
             if (args[1] === 'drugdealer'){
 
             }
