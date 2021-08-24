@@ -9,7 +9,7 @@ module.exports = {
             .setTitle('ATM panel')
             .setDescription('This is the ATM command panel.')
             .addFields(
-                { name: '🛠️ATM normal commands', value:"`" + "withdraw" + "`:withdraws the wanted amount of coins from your bank to the wallet\n " + "`" + "deposit" + "`:deposits the wanted amount of coins from your wallet to the bank\n" + "`" + "balance" + "`:shows your coin balance in the wallet & bank\n"+ "`" + "transfer" + "`:transfers the wanted amount of coins to the mentioned person\n", inline: true },
+                { name: '🛠️ATM normal commands', value:"`" + "withdraw" + "`:withdraws the wanted amount of coins from your bank to the wallet\n " + "`" + "deposit" + "`:deposits the wanted amount of coins from your wallet to the bank\n" + "`" + "balance" + "`:shows your coin balance in the wallet & bank\n"+ "`" + "transfer" + "`:transfers the wanted amount of coins to the mentioned person\n"+ "`" + "bankaccount" + "`:This configures your bank account, current commands: reset (resets ur balance, be careful when using this command)\n", inline: true },
                 { name: '🚨ATM bad commands', value: "`" + "robatm" + "`:robs an atm. money prize ranges from 100-3000 and chance of getting caught is one in 5 tries\n" + "`" + "robbank" + "`:robs a bank. money prize ranges from 1000-30000 and chance of getting caught is 5 in 10 tries\n", inline: true}
             )
             message.channel.send(embed1)
@@ -198,7 +198,7 @@ module.exports = {
             if(chance1 === 'money'){
                 const embed4 = new Discord.MessageEmbed()
                     .setColor('#FF0000')
-                    .setDescription("💰You robbed the bank successfully! But your on the police's watch list now! be careful next time! You got`"+`${prize1}`+"`Coins!💰")
+                    .setDescription("💰You robbed the bank successfully! But you're on the police's watch list now! be careful next time! You got`"+`${prize1}`+"`Coins!💰")
                     .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
                 message.channel.send(embed4);
                 await profileModel.findOneAndUpdate(
@@ -232,6 +232,45 @@ module.exports = {
                     );
                  
              }
+        }
+        if(args[0] === 'bankaccount'){
+            if (args[1] === 'reset'){
+                const response = await profileModel.findOneAndUpdate(
+                    {
+                        userID: message.author.id,
+                    }, 
+                    {
+                        $inc: {
+                            coins: -profiledata.coins,
+                            bank: -profiledata.bank,
+                        },
+                    }
+                ); 
+                const commandsEmbed5345334 = new Discord.MessageEmbed()
+                .setTitle("You've successfully reset your bank account!")
+                .setFooter("if this was a mistake contact one of the server admins!")
+                message.channel.send(commandsEmbed5345334)
+                return
+            }
+            const embed434324 = new Discord.MessageEmbed()
+            .setColor('#554846')
+            .setTitle("You've successfully created a bank account! Use !atm for more information regarding the banking system")
+            message.channel.send(embed434324);
+            return
+            
+        }
+        if (args[0] === 'job'){
+            const embedJOB = new Discord.MessageEmbed()
+            .setTitle("available jobs:")
+            .setDescription("Please note that these most of these jobs only grant you a role and a salary everyday. When you get a job you don't have to do anything!")
+            .addFields(
+                { name: "🚨Illegal jobs", value: "`Drug dealer`\n `Black hat hacker` \n `Robber`", inline: true},
+                { name: "👨‍⚕️Legal jobs", value: "`Doctor` \n `Engineer` \n `Nurse` \n `Pro Athlete", inline: true},
+                { name: "🕴️Government jobs", value: "`Police officer` \n `Politican` \n `Minister`", inline: true},
+                { name: "❓Current Job:", value: `${profiledata.job}`, inline: true}
+            )
+            message.channel.send(embedJOB)
+            return
         }
     }
 }

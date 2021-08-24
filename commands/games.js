@@ -18,7 +18,5 @@ module.exports = {
             game.handleMessage(message);    
             
         }
-
-    }   
-
+    }
 }
