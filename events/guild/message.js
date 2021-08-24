@@ -21,7 +21,8 @@ module.exports = async (Discord, client, message) => {
                 userID: message.author.id,
                 serverID: message.guild.id,
                 coins: 1000,
-                bank: 0
+                bank: 0,
+                job: "unemployed"
             });
             profile.save();
         }
