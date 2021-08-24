@@ -259,55 +259,5 @@ module.exports = {
             return
             
         }
-        if (args[0] === 'job'){
-            if (args[1] === 'drugdealer'){
-                const response12 = await profileModel.findOneAndUpdate(
-                    {
-                        userID: message.author.id,
-                        job: "Drug dealer"
-                    }, 
-
-                );
-                message.channel.send("Done")
-                return 
-            }
-
-            if (args[1] === 'drugdealer'){
-
-            }
-            if (args[1] === 'drugdealer'){
-
-            }
-            if (args[1] === 'drugdealer'){
-
-            }
-            if (args[1] === 'drugdealer'){
-
-            }
-            if (args[1] === 'drugdealer'){
-
-            }
-            if (args[1] === 'drugdealer'){
-
-            }
-            if (args[1] === 'drugdealer'){
-
-            }
-            if (args[1] === 'drugdealer'){
-
-            }
-            const embedJOB = new Discord.MessageEmbed()
-            .setColor('#554846')
-            .setTitle("available jobs:")
-            .setDescription("Please note that these most of these jobs only grant you a role and a salary everyday. When you get a job you don't have to do anything!\n Use !atm job (job name without spaces or capitalization) \n")
-            .addFields(
-                { name: "🚨Illegal jobs", value: "`Drug dealer`\n `Black hat hacker` \n `Robber`", inline: true},
-                { name: "👨‍⚕️Legal jobs", value: "`Doctor` \n `Engineer` \n `Nurse`", inline: true},
-                { name: "🕴️Government jobs", value: "`Police officer` \n `Politican` \n `Minister`", inline: true},
-                { name: "❓Current Job:", value: "`" + `${profiledata.job}` + "`", inline: true}
-            )
-            message.channel.send(embedJOB)
-            return
-        }
     }
 }

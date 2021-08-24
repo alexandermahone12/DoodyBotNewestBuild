@@ -4,8 +4,7 @@ const profileSchema = new mongoose.Schema({
     userID: { type: String, require: true, unique: true},
     serverID: { type: String, require: true},
     coins: {type: Number, default: 1000},
-    bank: {type: Number},
-    job: {type: String, default: 'unemployed'}
+    bank: {type: Number}
 
 });
 
