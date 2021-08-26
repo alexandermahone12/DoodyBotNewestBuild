@@ -7,7 +7,7 @@ module.exports = {
     async execute(message, args, cmd, client, Discord, profiledata, commonjson){
 
         let mention = message.mentions.users.first() || message.author
-        let avatar = mention.displayAvatarURL({dynamic : true, size: 1024})
+        let avatar = mention.displayAvatarURL({dynamic : true, size: 800})
 
         // Get joined date for member        
         let joinDate = await moment(mention.joinedTimestamp).format('MMMM Do YYYY, HH:mm:ss');
@@ -18,7 +18,7 @@ module.exports = {
         .setColor(commonjson.defaultcolor)
         .setTitle("Who is"+"`"+`${mention.username}`+"`"+"?")
         .addFields(
-            { name: `Their username and tag:`, value: `${mention.tag}`, inline: true },
+            { name: `Their username and tag:`, value: "`"+ `${mention.tag}` + "`", inline: true },
             { name: `They created Their account at:`, value: "`"+ `${createDate}` + "`", inline: true },
             { name: `They joined **${message.guild.name}** at:`, value: "`"+ `${joinDate}` + "`", inline: true },
         )
