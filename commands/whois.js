@@ -9,7 +9,6 @@ module.exports = {
         let mention = message.mentions.users.first() || message.author
         let avatar = mention.displayAvatarURL({dynamic : true, size: 1024})
 
-        let roleCount = await mention.member.roles.cache.map(x => "<@&" + x.id + ">").join(" ");
         // Get joined date for member
         let joinDate = await moment(mention.joinedTimestamp).format('MMMM Do YYYY, HH:mm:ss');
         // Get user account create date
