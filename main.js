@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const mongo = require('./common.json')
 
 const client = new Discord.Client();
 require('discord-buttons')(client);
@@ -19,7 +20,7 @@ process.on('unhandledRejection', (error) => {
   // Or some other error logging process
 });
 
-mongoose.connect('mongodb+srv://Alexandermahone:Abooodi1212@discordbot.ge5ay.mongodb.net/Discordbot?retryWrites=true&w=majority', {
+mongoose.connect(mongo.MONGODB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false

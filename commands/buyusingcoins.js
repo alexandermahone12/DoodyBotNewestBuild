@@ -7,7 +7,7 @@ module.exports = {
     async execute(message, args, cmd, client, Discord, profiledata, prefix){
         var StickersPermsPrice = 1000000;
         var EmojiPermsEmojiPrice = 1000000;
-        var YoutubeTogetherPrice = 500000;
+        var YoutubeTogetherPrice = 50000;
         if (!args.length){
             const commandsEmbed2 = new Discord.MessageEmbed()
             .setColor('#554846')
@@ -17,6 +17,14 @@ module.exports = {
             message.channel.send(commandsEmbed2)
         }
         if (args[0] ==='buy'){
+            if(args[1] ==='house'){
+                const commandsEmbed1543345 = new Discord.MessageEmbed()
+                .setColor('#554846')
+                .setTitle("") 
+                .setDescription("")
+                message.author.send(commandsEmbed1543345)
+                return
+            }
             if (args[1] === 'ytg'){
                 if (message.member.roles.cache.has('878775928048713738')){
                     const commandsEmbed15345 = new Discord.MessageEmbed()

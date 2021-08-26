@@ -9,7 +9,7 @@ module.exports = {
     aliases: ['skip', 'stop'], //We are using aliases to run the skip and stop command follow this tutorial if lost: https://www.youtube.com/watch?v=QBUJ3cdofqc
     cooldown: 0,
     description: 'Advanced music bot',
-    async execute(message, args, cmd, client, Discord, profiledata, prefix){
+    async execute(message, args, cmd, client, Discord, profiledata, commonjson){
 
 
         //Checking for the voicechannel and permissions (you can add more permissions if you like).

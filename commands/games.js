@@ -4,7 +4,7 @@ module.exports = {
     name: "game",
     description: "Fun games to play",
     cooldown: 5,
-    execute(message, args, cmd, client, Discord, profiledata, prefix){
+    execute(message, args, cmd, client, Discord, profiledata, commonjson){
         if (!args.length){
             const embed1 = new Discord.MessageEmbed()
             .setColor('#554846')

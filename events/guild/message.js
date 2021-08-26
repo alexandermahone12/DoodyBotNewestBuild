@@ -1,12 +1,12 @@
 const profileModel = require('../../models/profileSchema');
 const cooldowns = new Map();
 const fs = require('fs')
-const botconfig = require('../../botconfig.json');
+const commonjson = require('../../common.json');
 module.exports = async (Discord, client, message) => {
     let prefixes = JSON.parse(fs.readFileSync("./././prefixes.json", "utf-8"));
     if(!prefixes[message.guild.id]){
         prefixes[message.guild.id] = {
-            prefixes: botconfig.prefix
+            prefixes: commonjson.prefix
         };
     }
     let prefix = prefixes[message.guild.id].prefixes;
@@ -62,5 +62,5 @@ module.exports = async (Discord, client, message) => {
     time_stamps.set(message.author.id, CurrentTime);
     setTimeout(()=> time_stamps.delete(message.author.id), cooldown_amount);
 
-    if(command) command.execute(message, args, cmd, client, Discord, profiledata, prefix);
+    if(command) command.execute(message, args, cmd, client, Discord, profiledata, commonjson);
 }

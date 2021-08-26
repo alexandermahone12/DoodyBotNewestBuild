@@ -2,7 +2,7 @@ module.exports = {
 
     name: 'clear',
     description: "Clear messages!",
-    async execute(message, args, cmd, client, Discord, profiledata, prefix) {
+    async execute(message, args, cmd, client, Discord, profiledata, commonjson) {
         if (message.channel instanceof Discord.DMChannel){
             return message.channel.send("You cannot use this command in DMs")
         }else{

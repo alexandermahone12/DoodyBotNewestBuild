@@ -1,0 +1,6 @@
+{
+    "defaultcolor": "#554846",
+    "failcolor": "#FF0000",
+    "prefix": "!",
+    "MONGODB": "mongodb+srv://Alexandermahone:Abooodi1212@discordbot.ge5ay.mongodb.net/Discordbot?retryWrites=true&w=majority"
+}

@@ -3,7 +3,7 @@ module.exports = {
 
     name: 'serverinfo',
     description: "says hi",
-    execute(message, args, cmd, client, Discord, profiledata, prefix) {
+    execute(message, args, cmd, client, Discord, profiledata, commonjson) {
       if (message.channel instanceof Discord.DMChannel){
         return message.channel.send("You cannot use this command in DMs")
     }else{
