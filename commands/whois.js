@@ -14,7 +14,7 @@ module.exports = {
         // Get user account create date
         let createDate = await moment(mention.createdAt).format('MMMM Do YYYY, HH:mm:ss');   
 
-        const embed = Discord.MessageEmbed()
+        const embed = new Discord.MessageEmbed()
         .setColor(commonjson.defaultcolor)
         .setTitle(`Who is ${mention.displayName}?`)
         .addFields(
