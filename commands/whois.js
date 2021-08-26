@@ -21,7 +21,7 @@ module.exports = {
             { name: `Their username and tag:`, value: `${mention.displayName}`, inline: true },
             { name: `They created Their account at:`, value: createDate, inline: true },
             { name: `They joined **${message.guild.name}** at:`, value: joinDate, inline: true },
-            { name: `Their roles are:`, value: roleCount, inline: true },
+            { name: `Their roles are:`, value: 'AWDDD', inline: true },
         )
         .setImage(avatar)
         const download_button = new MessageButton()
