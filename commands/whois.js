@@ -7,7 +7,7 @@ module.exports = {
     async execute(message, args, cmd, client, Discord, profiledata, commonjson){
 
         let mention = message.mentions.users.first() || message.author
-        let avatar = mention.displayAvatarURL({dynamic : true, size: 800})
+        let avatar = mention.displayAvatarURL({dynamic : true, size: 1024})
 
         // Get joined date for member        
         let joinDate = await moment(mention.joinedTimestamp).format('MMMM Do YYYY, HH:mm:ss');
