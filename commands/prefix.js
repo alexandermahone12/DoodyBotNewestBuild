@@ -9,7 +9,7 @@ module.exports = {
         }else{
             if(message.member.permissions.has("ADMINISTRATOR")){
                 if(!args.length) return message.channel.send("what would you like to change the prefix to?")
-
+                const doody = '<@&874736729540689932>'
                 let prefixes = JSON.parse(fs.readFileSync('././prefixes.json', "utf-8"));
                 prefixes[message.guild.id] = {
                     prefixes: args[0]
@@ -17,7 +17,7 @@ module.exports = {
                 fs.writeFile("././prefixes.json", JSON.stringify(prefixes),(err) => {
                     if (err) console.log(err)
                 });
-                await message.bot.setNickname(`DoodyBot(${args[0]})`).catch(err => console.log(err))
+                await doody.setNickname(`DoodyBot(${args[0]})`).catch(err => console.log(err))
 
                 const commandsEmbed = new Discord.MessageEmbed()
                 .setColor('#554846')
