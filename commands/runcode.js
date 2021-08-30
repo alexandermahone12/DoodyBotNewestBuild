@@ -1,3 +1,4 @@
+const request = request('requests')
 module.exports = {
     name: "code",
     description: "Runs code in python/c",
