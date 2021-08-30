@@ -1,4 +1,4 @@
-const request = request('requests')
+const request = require('request');
 module.exports = {
     name: "code",
     description: "Runs code in python/c",
