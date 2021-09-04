@@ -12,7 +12,7 @@ module.exports = {
                 .setColor('#554846')
                 .setDescription(`**[${data.title}](${data.postLink})**`)
                 .setImage(data.image)
-                .setFooter(`👍${data.upvotes} || 👎${data.downvotes}  Note: if the meme did not load then its because the meme is a video.`)
+                .setFooter(`👍${data.upvotes} || 👎${data.downvotes}`)
                 const thumbsup = '👍';
                 const thumbsdown = '👎';
                 message.channel.send(commandsEmbed1).then(embedMsg => {

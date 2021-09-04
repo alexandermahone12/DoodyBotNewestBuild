@@ -21,6 +21,7 @@
     "math-problem-generator": "^0.1.0",
     "maths-problems": "^1.1.2",
     "moment": "^2.29.1",
+    "moment-duration-format": "^2.3.2",
     "mongoose": "^5.13.7",
     "opusscript": "0.0.8",
     "reddit.images": "^1.0.2",
