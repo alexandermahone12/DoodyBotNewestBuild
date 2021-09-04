@@ -10,6 +10,7 @@ module.exports = {
         const commandsEmbed1 = new Discord.MessageEmbed()
         .setColor(commonjson.defaultcolor)
         .setDescription(`Last recorded downtime was ${duration} ago! Reason: ${reason}`)
+        message.channel.send(commandsEmbed1)
         
     }
 }
