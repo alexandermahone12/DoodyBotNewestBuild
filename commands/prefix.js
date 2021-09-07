@@ -22,8 +22,15 @@ module.exports = {
                 .setTitle(`Prefix changed to ${args[0]}`)
                 .setFooter('DoodyBot version 2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
                 message.channel.send(commandsEmbed);
+                return
     }else{
-        message.channel.send("you dont have the required permissions to change the prefix")
+        const MessageEmbed = new Discord.MessageEmbed()
+        .setColor(commonjson.failcolor)
+        .setTitle("Error")
+        .setDescription("You don't have the required permissions to change the prefix for this server. Please contact any of the server admins for help!")
+        .setFooter("DoodyBot version 2", "https://i.postimg.cc/zftSmvqt/shadow.png")
+        message.channel.send(MessageEmbed)
+        
     } }
     }
  
