@@ -1,3 +1,4 @@
+const TikTokScraper = require('tiktok-scraper')
 module.exports = {
     name: 'tiktok',
     description: 'searches for a tiktok account and returns the corresponding  information',
