@@ -1,4 +1,5 @@
 const TikTokScraper = require('tiktok-scraper')
+const number = require('easy-number-formatter')
 module.exports = {
     name: 'tiktok',
     description: 'searches for a tiktok account and returns the corresponding  information',
@@ -37,6 +38,7 @@ module.exports = {
             .setTitle(`Error`)
             .addField("An error has occured", "The tiktok command is under development")
             message.channel.send({embed: embederr })
+            console.log(error)
         }
     
     }
