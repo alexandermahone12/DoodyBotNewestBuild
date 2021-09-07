@@ -5,8 +5,6 @@ module.exports = {
     description: 'searches for a tiktok account and returns the corresponding  information',
     cooldown: 5,
     async execute(message, args, cmd, client, Discord, profiledata, commonjson) {
-        try 
-        {
             const user = await TikTokScraper.getUserProfileInfo(args[0]);
             const userbe = new Discord.MessageEmbed()
             .setColor(commonjson.defaultcolor)
@@ -30,16 +28,7 @@ module.exports = {
             .addField("Following", number.formatNumber(`${user.stats.followingCount}`),true)
             .addField("Hearts", number.formatNumber(`${user.stats.heartCount}`),true)
             message.channel.send({embed: userbe })
-        } 
-        catch (error) 
-        {
-            const embederr = new Discord.MessageEmbed()
-            .setColor(commonjson.failcolor)
-            .setTitle(`Error`)
-            .addField("An error has occured", "The tiktok command is under development")
-            message.channel.send({embed: embederr })
-            console.log(error)
-        }
+    
     
     }
 }
