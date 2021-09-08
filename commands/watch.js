@@ -33,7 +33,8 @@ module.exports = {
                 .setStyle("url")
                 .setLabel("Cast")
                 .setURL('https://www.imdb.com/title/tt4158110/')
-            message.channel.send(embed2, mrrobot_button, mrrobot_button2);
+            message.channel.send(embed2, mrrobot_button)
+            message.channel.send(mrrobot_button2)
         }
     }
 }
