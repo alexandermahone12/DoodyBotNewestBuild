@@ -1,3 +1,4 @@
+const { MessageButton } = require("discord-buttons")
 module.exports = {
     name: 'watch',
     description: "Sends a link for the wanted show",
