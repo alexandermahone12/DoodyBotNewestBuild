@@ -4,15 +4,15 @@ module.exports = {
     description: 'None',
     cooldown: 5,
     execute(message, args, cmd, client, Discord, profiledata, commonjson) {
-        if (os.type !== 'Window_NT'){
-            const commandsEmbed2 = new Discord.MessageEmbed()
-            .setColor(commonjson.failcolor)
-            .setTitle("Error:")
-            .setDescription("You can't use this command on mobile devices/macbooks")
-            .setFooter("This command will support MACOS devices soon!")
-            message.channel.send(commandsEmbed2)
-            return;
-        }
+        //*//if (os.type !== 'Window_NT'){
+            //*//const commandsEmbed2 = new Discord.MessageEmbed()
+            //*//.setColor(commonjson.failcolor)
+            //*//.setTitle("Error:")
+            //*//.setDescription("You can't use this command on mobile devices/macbooks")
+            //*//.setFooter("This command will support MACOS devices soon!")
+            //*//message.channel.send(commandsEmbed2)
+            //*//return;
+        //*//}
         const CPU = os.cpus()
         const NETWORK = os.networkInterfaces()
         const PLATFORM = os.platform()
