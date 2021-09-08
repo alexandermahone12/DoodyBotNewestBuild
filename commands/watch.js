@@ -21,7 +21,7 @@ module.exports = {
                 { name:"Description", value:"`Elliot, a cyber-security engineer suffering from anxiety, works for a corporation and hacks felons by night. Panic strikes him after Mr Robot, a cryptic anarchist, recruits him to ruin his company.`", inline: true },
                 { name:"Where to watch", value:"`Netflix` \n `Amazon prime` \n `weirdo sites (123movies.com)` ", inline: true},
                 { name:"Statistics", value:"`IMDb rating: 8.9/10 (350K)` \n `rottentomatoes rating: Liked by 94%`", inline: true},
-                { name:"Cast", value:"`" + `[click here](https://www.imdb.com/title/tt4158110/)` + "`", inline: true},
+                { name:"Cast", value:"`" + `Button below` + "`", inline: true},
             )
             .setFooter('Use `!watch list` to get the list of shows available')
             .setThumbnail('https://www.filmandtvnow.com/wp-content/uploads/2016/07/mrrobot-banner.jpg')
@@ -29,7 +29,11 @@ module.exports = {
                 .setStyle("url")
                 .setLabel("Watch here")
                 .setURL('https://www.netflix.com/browse?jbv=80045933')
-            message.channel.send(embed2, mrrobot_button);
+            const mrrobot_button2 = new MessageButton()
+                .setStyle("url")
+                .setLabel("Cast")
+                .setURL('https://www.imdb.com/title/tt4158110/')
+            message.channel.send(embed2, mrrobot_button, mrrobot_button2);
         }
     }
 }
