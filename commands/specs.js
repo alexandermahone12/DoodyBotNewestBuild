@@ -4,7 +4,7 @@ module.exports = {
     description: 'None',
     cooldown: 5,
     execute(message, args, cmd, client, Discord, profiledata, commonjson) {
-        if (os.type !== 'win32'){
+        if (os.type !== 'Window_NT'){
             const commandsEmbed2 = new Discord.MessageEmbed()
             .setColor(commonjson.failcolor)
             .setTitle("Error:")
