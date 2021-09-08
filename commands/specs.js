@@ -19,20 +19,20 @@ module.exports = {
         const PLATFORMARCH = os.arch()
         var bytesAvailable = os.totalmem()
         const MEMORY = "Total memory available MB :" + (bytesAvailable/1048576)
-        const CPUlog = console.log(CPU)
-        const NETWORKlog = console.log(NETWORK)
-        const PLATFORMlog = console.log(PLATFORM)
-        const PLATFORMARCHlog = console.log(PLATFORMARCH)
-        const MEMORYlog = console.log(MEMORY)
+        const CPUlog = `${CPU}`
+        const NETWORKlog = `${NETWORK}`
+        const PLATFORMlog = `${PLATFORM}`
+        const PLATFORMARCHlog = `${PLATFORMARCH}`
+        const MEMORYlog = `${MEMORY}`
         const embed = new Discord.MessageEmbed()
         .setColor(commonjson.defaultcolor)
         .setTitle(`${message.author.tag}'s PC specs`)
         .addFields(
-            { name: 'CPU:', value: `${CPUlog}`, inline: true},
-            { name: "Network:", value: `${NETWORKlog}`, inline: true},
-            { name: "Platform:", value: `${PLATFORMlog}`, inline: true},
-            { name: "Arch:", value: `${PLATFORMARCHlog}`, inline: true},
-            { name: "Memory:", value: `${MEMORYlog}`, inline: true}
+            { name: 'CPU:', value: CPUlog, inline: true},
+            { name: "Network:", value:NETWORKlog , inline: true},
+            { name: "Platform:", value: PLATFORMlog, inline: true},
+            { name: "Arch:", value: PLATFORMARCHlog, inline: true},
+            { name: "Memory:", value: MEMORYlog, inline: true}
 
         )
         .setThumbnail('http://logok.org/wp-content/uploads/2014/12/Windows-logo-2012-880x654.png')
