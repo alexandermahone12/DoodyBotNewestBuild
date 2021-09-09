@@ -5,7 +5,7 @@ module.exports = {
     cooldown: 3,
     async execute(message, args, cmd, client, Discord, profiledata, commonjson) {
         //EMBED
-        const embed = new Discord.MessageEmbed
+        const embed = new Discord.MessageEmbed()
         .setColor(commonjson.failcolor)
         .setTitle("Error")
         .setDescription("You cant translate nothing idiot.")
@@ -14,7 +14,7 @@ module.exports = {
         if(!query) return message.channel.send(embed);
 
         const translate = await translate(query, { to: 'en' });
-        const embed2 = new Discord.MessageEmbed
+        const embed2 = new Discord.MessageEmbed()
         .setColor(commonjson.defaultcolor)
         .setTitle(`Translate **${query}** to english`)
         .setDescription(`Translation: ${translate}`)
