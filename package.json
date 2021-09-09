@@ -17,6 +17,7 @@
     "free-google-image-search": "^1.0.0",
     "fs": "0.0.1-security",
     "google-images": "^2.1.0",
+    "google-translate": "^3.0.0",
     "images-scraper": "^6.3.0",
     "math-problem-generator": "^0.1.0",
     "maths-problems": "^1.1.2",
