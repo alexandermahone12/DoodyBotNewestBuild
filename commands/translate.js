@@ -19,6 +19,7 @@ module.exports = {
         .setTitle(`Translate **${query}** to english`)
         .setDescription(`Translation: ${translated.text}`)
         message.channel.send(embed2);
+        message.channel.send(translated.text)
         
     }
 }
