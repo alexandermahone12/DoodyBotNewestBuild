@@ -17,7 +17,7 @@ module.exports = {
         const embed2 = new Discord.MessageEmbed()
         .setColor(commonjson.defaultcolor)
         .setTitle(`Translate **${query}** to english`)
-        .setDescription(`Translation: ${translated}`)
+        .setDescription(`Translation: ${translated.text}`)
         message.channel.send(embed2);
         
     }
