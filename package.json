@@ -26,6 +26,7 @@
     "opusscript": "0.0.8",
     "reddit.images": "^1.0.2",
     "request": "^2.88.2",
+    "translate-google": "^1.4.3",
     "yt-search": "^2.9.0",
     "ytdl-core": "^4.9.1"
   }
