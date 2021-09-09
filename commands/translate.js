@@ -13,11 +13,11 @@ module.exports = {
         const query = args.join(' ');
         if(!query) return message.channel.send(embed);
 
-        const translate = await translate(query, { to: 'en' });
+        const translated = await translate(query, { to: 'en' });
         const embed2 = new Discord.MessageEmbed()
         .setColor(commonjson.defaultcolor)
         .setTitle(`Translate **${query}** to english`)
-        .setDescription(`Translation: ${translate}`)
+        .setDescription(`Translation: ${translated}`)
         message.channel.send(embed2);
         
     }
