@@ -3,6 +3,7 @@ const cooldowns = new Map();
 const fs = require('fs')
 const commonjson = require('../../common.json');
 module.exports = async (Discord, client, message) => {
+    if (message.content === 'doodybot sucks' || "Doodybot is trash") return message.delete(); && message.channel.send("DONT SAY THAT ABOUT ME!")
     let prefixes = JSON.parse(fs.readFileSync("./././prefixes.json", "utf-8"));
     if(!prefixes[message.guild.id]){
         prefixes[message.guild.id] = {
