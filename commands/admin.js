@@ -58,7 +58,6 @@ module.exports = {
             message.channel.send(embed10)
 
 
-            client.destroy()
         }
     }
 }
