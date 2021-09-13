@@ -10,6 +10,7 @@ module.exports = {
             if(message.member.roles.cache.has('874736823488901180')){
                 message.reply("You are already verified! Please don't spam this command.")
             }else{
+                if(profiledata.banned === "Yes") return message.channel.send("You've been banned. You cannot enter realm anymore.")
                 message.member.roles.remove('875704950804578304');
                 message.member.roles.add('874736823488901180');
                 message.reply('Youve been verified!')

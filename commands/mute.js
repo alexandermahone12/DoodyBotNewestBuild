@@ -1,8 +1,9 @@
+const profileModel = require("../models/profileSchema");
 module.exports = {
 
     name: 'mute',
     description: "None",
-    execute(message, args, cmd, client, Discord, profiledata, commonjson) {
+    async execute(message, args, cmd, client, Discord, profiledata, commonjson) {
         if (message.channel instanceof Discord.DMChannel){
             return message.channel.send("You cannot use this command in DMs")
         }else{
@@ -40,8 +41,16 @@ module.exports = {
                         message.channel.send(commandsEmbed1)
                         return
                     }
+                    await profileModel.findOneAndUpdate(
+                        {
+                          userID: target.id,
+                          banned: "Yes",
+
+                        },
+                    );
                     memberTarget.roles.remove(mainRole.id);
                     memberTarget.roles.add(muteRole.id);
+                    
                     const commandsEmbed2 = new Discord.MessageEmbed()
                     .setColor('#554846')
                     .setDescription(`<@${memberTarget.user.id}> has been muted for ${args[1]} mins!`)
