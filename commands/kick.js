@@ -16,19 +16,25 @@ module.exports = {
         }
 
 
-            target.kick()
-            const embed2 = new Discord.MessageEmbed()
-            .setColor(commonjson.defaultolor)
-            .setTitle(`Kicked!`)
-            .setDescription(`You've kicked ${target.tag} successfully`)
-            message.channel.send(embed2);
-            await profileModel.findOneAndUpdate(
-                {
-                  userID: target.id,
-                  banned: "Yes",
+            target.kick().then((target) => {
+                
+                const embed2 = new Discord.MessageEmbed()
+                .setColor(commonjson.defaultolor)
+                .setTitle(`Kicked!`)
+                .setDescription(`You've kicked ${target.tag} successfully`)
+                message.channel.send(embed2);
+                await profileModel.findOneAndUpdate(
+                    {
+                    userID: target.id,
+                    banned: "Yes",
 
-                },
-            );
+                    },
+                );
+            }).catch(() => {
+                // Failmessage
+                message.channel.send("Error");
+            });
+            
 
 
 
