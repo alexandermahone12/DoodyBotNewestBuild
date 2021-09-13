@@ -5,7 +5,7 @@ module.exports = {
     cooldown: 5,
     async execute(message, args, cmd, client, Discord, profiledata, commonjson) {
 
-        const target = message.mentions.users.first();
+        const target = message.mentions.users.first() || client.users.cache.get(args[0]);
         if (!target) {
             const embed1 = new Discord.MessageEmbed()
             .setColor(commonjson.failcolor)
