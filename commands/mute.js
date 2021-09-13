@@ -57,7 +57,7 @@ module.exports = {
                     .setFooter('DoodyBot version 2', 'https://i.postimg.cc/zftSmvqt/shadow.png');
                     message.channel.send(commandsEmbed2)
         
-                    setTimeout(function () {
+                    setTimeout(async function () {
                         await profileModel.findOneAndUpdate(
                             {
                               userID: target.id,
