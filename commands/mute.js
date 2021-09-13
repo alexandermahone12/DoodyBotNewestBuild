@@ -58,6 +58,13 @@ module.exports = {
                     message.channel.send(commandsEmbed2)
         
                     setTimeout(function () {
+                        await profileModel.findOneAndUpdate(
+                            {
+                              userID: target.id,
+                              banned: "No",
+    
+                            },
+                        );
                         memberTarget.roles.remove(muteRole.id);
                         memberTarget.roles.add(mainRole.id);
                         const commandsEmbed6 = new Discord.MessageEmbed()
