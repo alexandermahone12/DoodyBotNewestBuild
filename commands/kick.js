@@ -15,7 +15,7 @@ module.exports = {
             return
         }
 
-        try {
+
             target.kick()
             const embed2 = new Discord.MessageEmbed()
             .setColor(commonjson.defaultolor)
@@ -30,14 +30,7 @@ module.exports = {
                 },
             );
 
-        }
-        catch {
-            const embed3 = new Discord.MessageEmbed()
-            .setColor(commonjson.failcolor)
-            .setTitle('Error')
-            .setDescription(`An error has occurred while trying to kick ${target.tag}`)
-            message.channel.send(embed3)
-        }
+
         
 
     }
