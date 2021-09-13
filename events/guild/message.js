@@ -3,59 +3,6 @@ const cooldowns = new Map();
 const fs = require('fs')
 const commonjson = require('../../common.json');
 module.exports = async (Discord, client, message) => {
-    const validPermissions = [
-        "CREATE_INSTANT_INVITE",
-        "KICK_MEMBERS",
-        "BAN_MEMBERS",
-        "ADMINISTRATOR",
-        "MANAGE_CHANNELS",
-        "MANAGE_GUILD",
-        "ADD_REACTIONS",
-        "VIEW_AUDIT_LOG",
-        "PRIORITY_SPEAKER",
-        "STREAM",
-        "VIEW_CHANNEL",
-        "SEND_MESSAGES",
-        "SEND_TTS_MESSAGES",
-        "MANAGE_MESSAGES",
-        "EMBED_LINKS",
-        "ATTACH_FILES",
-        "READ_MESSAGE_HISTORY",
-        "MENTION_EVERYONE",
-        "USE_EXTERNAL_EMOJIS",
-        "VIEW_GUILD_INSIGHTS",
-        "CONNECT",
-        "SPEAK",
-        "MUTE_MEMBERS",
-        "DEAFEN_MEMBERS",
-        "MOVE_MEMBERS",
-        "USE_VAD",
-        "CHANGE_NICKNAME",
-        "MANAGE_NICKNAMES",
-        "MANAGE_ROLES",
-        "MANAGE_WEBHOOKS",
-        "MANAGE_EMOJIS",
-      ]
-
-    if(command.permissions.length){
-        let invalidPerms = []
-        for(const perm of command.permissions){
-          if(!validPermissions.includes(perm)){
-            return console.log(`Invalid Permissions ${perm}`);
-          }
-          if(!message.member.hasPermission(perm)){
-            invalidPerms.push(perm);
-          }
-        }
-        if (invalidPerms.length){
-          const embed11 = new Discord.MessageEmbed()
-          .setColor(commonjson.failcolor)
-          .setTitle("Error")
-          .setDescription(`❌ || You don't have the required permissions: ${invalidPerms}`)
-          message.channel.send(embed11)
-          return
-        }
-    }
 
     let prefixes = JSON.parse(fs.readFileSync("./././prefixes.json", "utf-8"));
     if(!prefixes[message.guild.id]){
@@ -108,7 +55,7 @@ module.exports = async (Discord, client, message) => {
         if(CurrentTime < expiration_time){
             const time_left = (expiration_time - CurrentTime) / 1000;
             const embed = new Discord.MessageEmbed()
-            .setTitle("❌ || Cooldown")
+            .setTitle("Cooldown!")
             .setDescription(`Please wait ${time_left.toFixed(1)} more seconds before using the ${command.name} command!`)
             .setColor('#FF0000')
             return message.channel.send(embed)
