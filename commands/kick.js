@@ -16,7 +16,8 @@ module.exports = {
         }
 
 
-            target.kick().then(async(target) => {
+            target.kick('not cool man')
+            .then(async(target) => {
                 
                 const embed2 = new Discord.MessageEmbed()
                 .setColor(commonjson.defaultolor)
