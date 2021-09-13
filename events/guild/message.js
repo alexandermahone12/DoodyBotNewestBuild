@@ -75,25 +75,7 @@ module.exports = async (Discord, client, message) => {
             .setColor('#FF0000')
         return message.channel.send(embed1)
     }
-    if(command.permissions.length){
-        let invalidPerms = []
-        for(const perm of command.permissions){
-          if(!validPermissions.includes(perm)){
-            return console.log(`Invalid Permissions ${perm}`);
-          }
-          if(!message.member.hasPermission(perm)){
-            invalidPerms.push(perm);
-          }
-        }
-        if (invalidPerms.length){
-          const embed11 = new Discord.MessageEmbed()
-          .setColor(commonjson.failcolor)
-          .setTitle("Error")
-          .setDescription(`❌ || You don't have the required permissions: ${invalidPerms}`)
-          message.channel.send(embed11)
-          return
-        }
-    }
+
 
     if(!cooldowns.has(command.name)){
         cooldowns.set(command.name, new Discord.Collection());
