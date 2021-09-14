@@ -45,6 +45,7 @@ module.exports = async (Discord, client, message) => {
     }
     let prefix = prefixes[message.guild.id].prefixes;
     console.log(`${message.author.tag} sent a message`);
+    
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     let profiledata;

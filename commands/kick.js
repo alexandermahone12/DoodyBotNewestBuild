@@ -22,7 +22,7 @@ module.exports = {
                 const embed2 = new Discord.MessageEmbed()
                 .setColor(commonjson.defaultolor)
                 .setTitle(`Kicked!`)
-                .setDescription(`You've kicked ${target.DisplayName} successfully`)
+                .setDescription(`You've kicked ${target.tag} successfully`)
                 message.channel.send(embed2);
                 await profileModel.findOneAndUpdate(
                     {
@@ -32,7 +32,7 @@ module.exports = {
                     },
                 );
             }).catch(() => {
-                // Failmessage
+                
             });
             
 
