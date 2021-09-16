@@ -44,7 +44,7 @@ module.exports = async (Discord, client, message) => {
         };
     }
     let prefix = prefixes[message.guild.id].prefixes;
-    console.log(`${message.author.tag} sent a message in server (${message.guild}) message was (${message.content}) at time ${Date.now()}`);
+    const channel = message.guild.channels.cache.find(c => c.id === '888048804761305149');
     
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -75,21 +75,6 @@ module.exports = async (Discord, client, message) => {
             .setDescription("❌ || You've entered an invalid command. Use `!info` for help!")
             .setColor('#FF0000')
         return message.channel.send(embed1)
-    }
-
-    if(command.permissions.length){
-        let invalidPerms = []
-        for(const perm of command.permissions){
-          if(!validPermissions.includes(perm)){
-            return console.log(`Invalid Permissions ${perm}`);
-          }
-          if(!message.member.hasPermission(perm)){
-            invalidPerms.push(perm);
-          }
-        }
-        if (invalidPerms.length){
-          return message.channel.send(`Missing Permissions: \`${invalidPerms}\``);
-        }
     }
 
     if(!cooldowns.has(command.name)){
