@@ -45,6 +45,7 @@ module.exports = async (Discord, client, message) => {
     }
     let prefix = prefixes[message.guild.id].prefixes;
     const channel = message.guild.channels.cache.find(c => c.id === '888048804761305149');
+    channel.send(`${message.author.tag} sent a message in server (${message.guild}) message was (${message.content}) at time ${Date.now()}`)
     
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
