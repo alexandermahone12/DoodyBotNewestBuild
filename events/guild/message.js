@@ -77,6 +77,20 @@ module.exports = async (Discord, client, message) => {
         return message.channel.send(embed1)
     }
 
+    if(command.permissions.length){
+        let invalidPerms = []
+        for(const perm of command.permissions){
+          if(!validPermissions.includes(perm)){
+            return console.log(`Invalid Permissions ${perm}`);
+          }
+          if(!message.member.hasPermission(perm)){
+            invalidPerms.push(perm);
+          }
+        }
+        if (invalidPerms.length){
+          return message.channel.send(`Missing Permissions: \`${invalidPerms}\``);
+        }
+    }
 
     if(!cooldowns.has(command.name)){
         cooldowns.set(command.name, new Discord.Collection());
