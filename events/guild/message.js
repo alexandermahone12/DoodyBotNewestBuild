@@ -44,11 +44,20 @@ module.exports = async (Discord, client, message) => {
         };
     }
     let prefix = prefixes[message.guild.id].prefixes;
+    try{
     if(message.author.bot) return;
     const channel = message.guild.channels.cache.find(c => c.id === '888048804761305149');
     channel.send(`${message.author.tag} sent a message in server (${message.guild}) in channel (${message.channel}), message was (${message.content}) at time ${Date.now() / 1000}`)
     if(!message.content.startsWith(prefix) || message.author.bot) return;
-    
+    }
+    catch(e) {
+        const embdddded = new Discord.MessageEmbed()
+        .setColor(commonjson.failcolor)
+        .setTitle("Error")
+        .setDescription(`There was an error while connecting to server, error: ${e}`)
+        .setTimestamp()
+        message.channel.send(embdddded)
+    }
 
     let profiledata;
     try{
