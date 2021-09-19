@@ -44,7 +44,7 @@ module.exports = async (Discord, client, message) => {
         };
     }
     let prefix = prefixes[message.guild.id].prefixes;
-
+    if (!message.content.startsWith(prefix) || message.author.bot) return
 
     let profiledata;
     try{
