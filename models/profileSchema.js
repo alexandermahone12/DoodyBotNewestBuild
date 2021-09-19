@@ -5,7 +5,8 @@ const profileSchema = new mongoose.Schema({
     serverID: { type: String, require: true},
     coins: {type: Number, default: 1000},
     bank: {type: Number},
-    banned: { type: String, default:"No" }
+    banned: { type: String, default:"No" },
+    message: { type: Number, default: 0}
 
 });
 

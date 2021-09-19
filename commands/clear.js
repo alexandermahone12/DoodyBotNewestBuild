@@ -15,6 +15,9 @@ module.exports = {
         
                 await message.channel.messages.fetch({limit: args[0]}).then(messages =>{
                     message.channel.bulkDelete(messages);
+                    const embed1 = new Discord.MessageEmbed()
+                    .setColor(commonjson.defaultcolor)
+                    .setTitle(`I cleared ${args[0]} messages!`)
                     message.channel.send(`I cleared ${args} messages!`);
                 })
             }else {

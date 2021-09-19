@@ -56,12 +56,24 @@ module.exports = async (Discord, client, message) => {
                 coins: 1000,
                 bank: 0,
                 banned: "No",
+                message: 0
             });
             profile.save();
         }
     }catch(err){
         console.log(err)
     }
+    const upMessage = 1
+    const messages = await profileModel.findOneAndUpdate(
+        {
+            userID: message.author.id,
+        }, 
+        {
+            $inc: {
+                message: upMessage,
+            },
+        }
+    );
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
