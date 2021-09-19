@@ -51,12 +51,7 @@ module.exports = async (Discord, client, message) => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     }
     catch(e) {
-        const embdddded = new Discord.MessageEmbed()
-        .setColor(commonjson.failcolor)
-        .setTitle("Error")
-        .setDescription(`There was an error while connecting to server, error: ${e}`)
-        .setTimestamp()
-        message.channel.send(embdddded)
+
     }
 
     let profiledata;
