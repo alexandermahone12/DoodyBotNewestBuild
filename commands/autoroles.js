@@ -11,6 +11,8 @@ module.exports = {
         const multilineString = `
         React to an emoji to get the wanted role!
 
+        🎤<@&889923507134296145>
+
         ♂️ <@&876688146576867398>
 
         ♀️ <@&876688254257233952>
@@ -52,6 +54,7 @@ module.exports = {
         const babyrole = message.guild.roles.cache.find(role => role.name === "13-14");
         const midbabyrole = message.guild.roles.cache.find(role => role.name === "15-16");
         const oneeightrole = message.guild.roles.cache.find(role => role.name === "18+");
+        const eventsrole = message.guild.roles.cache.find(role => role.name === "events");
 
 
 
@@ -68,6 +71,7 @@ module.exports = {
         const babyroleEmoji = '👶';
         const midbabyroleEmoji = '🧒';
         const oneeightroleEmoji = '👴';
+        const eventsroleemoji = '🎤';
  
         let embed = new Discord.MessageEmbed()
             .setColor('#554846')
@@ -76,6 +80,7 @@ module.exports = {
             .setFooter('If you would like a new role to be added please contact me or ego!');
  
         let messageEmbed = await message.channel.send(embed);
+        messageEmbed.react(eventsroleemoji);
         messageEmbed.react(maleroleEmoji);
         messageEmbed.react(femaleroleEmoji);
         messageEmbed.react(artistroleEmoji);
@@ -89,6 +94,7 @@ module.exports = {
         messageEmbed.react(babyroleEmoji);
         messageEmbed.react(midbabyroleEmoji);
         messageEmbed.react(oneeightroleEmoji);
+        
  
         client.on('messageReactionAdd', async (reaction, user) => {
             if (reaction.message.partial) await reaction.message.fetch();
@@ -97,6 +103,9 @@ module.exports = {
             if (!reaction.message.guild) return;
  
             if (reaction.message.channel.id == channel) {
+                if (reaction.emoji.name === eventsroleemoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(eventsrole);
+                }
                 if (reaction.emoji.name === maleroleEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.add(malerole);
                 }
@@ -151,6 +160,9 @@ module.exports = {
  
  
             if (reaction.message.channel.id == channel) {
+                if (reaction.emoji.name === eventsroleemoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.remove(eventsrole);
+                }
                 if (reaction.emoji.name === maleroleEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove(malerole);
                 }
