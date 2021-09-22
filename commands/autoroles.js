@@ -54,7 +54,7 @@ module.exports = {
         const babyrole = message.guild.roles.cache.find(role => role.name === "13-14");
         const midbabyrole = message.guild.roles.cache.find(role => role.name === "15-16");
         const oneeightrole = message.guild.roles.cache.find(role => role.name === "18+");
-        const eventsrole = message.guild.roles.cache.find(role => role.name === "events");
+        const eventsrole = message.guild.roles.cache.find(role => role.name === "Events");
 
 
 
