@@ -7,7 +7,7 @@ module.exports = {
         const channel = '891393063249932329';
         const emoji = '✅';
         let embed = new Discord.MessageEmbed()
-            .setColor('#554846')
+            .setColor('#00FF00')
             .setTitle('Verify!')
             .setDescription("React to the embed to get access to rest of the server!")
         let messageEmbed = await message.channel.send(embed);
