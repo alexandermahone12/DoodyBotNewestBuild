@@ -2,29 +2,31 @@ module.exports = {
 
     name: 'verify',
     description: "None",
-    execute(message, args, cmd, client, Discord, profiledata, commonjson) {
-        if (message.channel instanceof Discord.DMChannel){
-            return message.channel.send("You cannot use this command in DMs")
-        }else{
-            if(message.channel.id === "875059824457560154"){
-            if(message.member.roles.cache.has('874736823488901180')){
-                message.reply("You are already verified! Please don't spam this command.")
-            }else{
-                if(profiledata.banned === "Yes") return message.channel.send("You've been banned. You cannot enter realm anymore.")
-                message.member.roles.remove('875704950804578304');
-                message.member.roles.add('874736823488901180');
-                message.reply('Youve been verified!')
-                const commandsEmbed = new Discord.MessageEmbed()
-                .setColor('#554846')
-                .setTitle('Welcome to **Realm**!')
-                .setDescription(`Hey ${message.author.tag}, welcome to **Realm**! We're delighted to have you here! Please follow the rules and enjoy!`)
-                .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
-                message.author.send(commandsEmbed);
-            }
-        }else{
-            message.reply("You can only use this command in Doody's server / verify channel.")
-        }
-            
+    async execute(message, args, cmd, client, Discord, profiledata, commonjson) {
 
-    }}
+        const channel = '891393063249932329';
+        const emoji = '✅';
+        let embed = new Discord.MessageEmbed()
+            .setColor('#554846')
+            .setTitle('Verify!')
+            .setDescription("React to the embed to get access to rest of the server!")
+        let messageEmbed = await message.channel.send(embed);
+        messageEmbed.react(emoji);
+
+        client.on('messageReactionAdd', async (reaction, user) => {
+            if (reaction.message.partial) await reaction.message.fetch();
+            if (reaction.partial) await reaction.fetch();
+            if (user.bot) return;
+            if (!reaction.message.guild) return;
+ 
+            if (reaction.message.channel.id == channel) {
+                if (reaction.emoji.name === emoji) {
+                    if(profiledata.banned === "Yes") return message.author.send("You've been banned. You cannot enter realm anymore.")
+                    if (message.member.roles.cache.find(r => r.id === "875704950804578304")) return message.author.send("You are already verified")
+                    await reaction.message.guild.members.cache.get(user.id).roles.remove('875704950804578304');
+                    await reaction.message.guild.members.cache.get(user.id).roles.add('874736823488901180');
+                }
+            }})
+
+    }
 }
