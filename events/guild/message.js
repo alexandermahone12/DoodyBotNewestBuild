@@ -37,6 +37,7 @@ module.exports = async (Discord, client, message) => {
         "MANAGE_EMOJIS",
       ]
 
+    if (message.content.startsWith("Fags") || message.content.startsWith("Nigga") || message.content.startsWith("Faggot")) return message.delete()
     let prefixes = JSON.parse(fs.readFileSync("./././prefixes.json", "utf-8"));
     if(!prefixes[message.guild.id]){
         prefixes[message.guild.id] = {
