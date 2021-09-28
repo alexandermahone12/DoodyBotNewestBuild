@@ -21,7 +21,6 @@ module.exports = {
  
             if (reaction.message.channel.id == channel) {
                 if (reaction.emoji.name === emoji) {
-                    if(profiledata.banned === "Yes") return message.author.send("You've been banned.. You cannot enter realm anymore.")
                     if (message.member.roles.cache.find(r => r.id === "875704950804578304")) return message.author.send("You are already verified")
                     await reaction.message.guild.members.cache.get(user.id).roles.remove('875704950804578304');
                     await reaction.message.guild.members.cache.get(user.id).roles.add('874736823488901180');
