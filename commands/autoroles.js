@@ -11,6 +11,8 @@ module.exports = {
         const multilineString = `
         React to an emoji to get the wanted role!
 
+        🤝<@&892670776866664468>
+
         🎤<@&889923507134296145>
 
         ♂️ <@&876688146576867398>
@@ -38,6 +40,7 @@ module.exports = {
         🧒<@&877486363522502696>
 
         👴<@&877486423450742805>
+
         
         `
         const channel = '876685781077479454';
@@ -55,6 +58,7 @@ module.exports = {
         const midbabyrole = message.guild.roles.cache.find(role => role.name === "15-16");
         const oneeightrole = message.guild.roles.cache.find(role => role.name === "18+");
         const eventsrole = message.guild.roles.cache.find(role => role.name === "Events");
+        const partnerrole = message.guild.roles.cache.find(role => role.name === "PartnerPing");
 
 
 
@@ -72,6 +76,7 @@ module.exports = {
         const midbabyroleEmoji = '🧒';
         const oneeightroleEmoji = '👴';
         const eventsroleemoji = '🎤';
+        const partnerroleEmoji = '🤝';
  
         let embed = new Discord.MessageEmbed()
             .setColor('#554846')
@@ -81,6 +86,7 @@ module.exports = {
  
         let messageEmbed = await message.channel.send(embed);
         messageEmbed.react(eventsroleemoji);
+        messageEmbed.react(partnerroleEmoji);
         messageEmbed.react(maleroleEmoji);
         messageEmbed.react(femaleroleEmoji);
         messageEmbed.react(artistroleEmoji);
@@ -103,6 +109,9 @@ module.exports = {
             if (!reaction.message.guild) return;
  
             if (reaction.message.channel.id == channel) {
+                if (reaction.emoji.name === partnerroleEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(partnerrole);
+                }
                 if (reaction.emoji.name === eventsroleemoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.add(eventsrole);
                 }
@@ -160,6 +169,9 @@ module.exports = {
  
  
             if (reaction.message.channel.id == channel) {
+                if (reaction.emoji.name === partnerroleEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.remove(partnerrole);
+                }
                 if (reaction.emoji.name === eventsroleemoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove(eventsrole);
                 }
