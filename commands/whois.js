@@ -25,7 +25,7 @@ module.exports = {
         .setImage(avatar)
         const download_button = new MessageButton()
             .setStyle("url")
-            .setLabel(`Download ${mention.username}'s avatar`)
+            .setLabel(`Download ${mention.username}'s avatar.`)
             .setURL(avatar)
         message.channel.send(embed, download_button);
     }
