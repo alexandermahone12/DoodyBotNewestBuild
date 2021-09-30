@@ -32,6 +32,11 @@ mongoose.connect(mongo.MONGODB, {
 });
 
 
+client.on('guildMemberAdd', member => {
+  const channel = message.guild.channels.cache.find(c => c.id === '875710227998191646');
+  if(!channel) return;
+  channel.send(`User ${member.user.tag} has joined Realm and is member number ${message.guild.memberCount + 1}`)  
+});
 
 
 

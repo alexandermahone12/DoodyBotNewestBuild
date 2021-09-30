@@ -1,6 +1,6 @@
 module.exports = {
 
-    name: 'info',
+    name: 'help',
     description: "Info about certain command",
     execute(message, args, cmd, client, Discord, profiledata, commonjson) {
         if (message.channel instanceof Discord.DMChannel){
