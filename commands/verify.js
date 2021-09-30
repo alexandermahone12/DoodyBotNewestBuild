@@ -3,7 +3,7 @@ module.exports = {
     name: 'verify',
     description: "None",
     async execute(message, args, cmd, client, Discord, profiledata, commonjson) {
-
+        if (!message.member.permissions.has("ADMINISTRATOR")) return;
         const channel = '891393063249932329';
         const emoji = '✅';
         let embed = new Discord.MessageEmbed()

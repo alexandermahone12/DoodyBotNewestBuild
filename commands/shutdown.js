@@ -7,6 +7,7 @@ module.exports = {
         if (message.channel instanceof Discord.DMChannel){
             return message.channel.send("You cannot use this command in DMs")
         }else{
+            if (!message.member.permissions.has("ADMINISTRATOR")) return;
             if (!args.length){
                 message.channel.send("Please enter the password.")
             }

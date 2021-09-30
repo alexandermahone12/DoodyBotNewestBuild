@@ -8,6 +8,7 @@ module.exports = {
       if (message.channel instanceof Discord.DMChannel){
         return message.channel.send("You cannot use this command in DMs")
     }else{
+        if (!message.member.permissions.has("ADMINISTRATOR")) return;
         const multilineString = `
         React to an emoji to get the wanted role!
 

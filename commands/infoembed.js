@@ -3,6 +3,7 @@ module.exports = {
     description: "Send info about realm",
     cooldown: 5,
     execute(message, args, cmd, client, Discord, profiledata, commonjson){
+        if (!message.member.permissions.has("ADMINISTRATOR")) return;
         const embed0 = new Discord.MessageEmbed()
         .setColor(commonjson.defaultcolor)
         .setImage('https://i.postimg.cc/0ydy2Y1D/Info-banner.jpg')

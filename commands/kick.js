@@ -4,7 +4,7 @@ module.exports = {
     permissions: ["KICK_MEMBERS"],
     cooldown: 5,
     async execute(message, args, cmd, client, Discord, profiledata, commonjson) {
-
+        if (!message.member.permissions.has("ADMINISTRATOR")) return;
         const target = message.mentions.members.first()
         if (!target) {
             const embed1 = new Discord.MessageEmbed()
