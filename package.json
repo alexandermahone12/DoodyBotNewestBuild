@@ -9,6 +9,7 @@
   "author": "Doody",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.25.0",
     "cheerio": "^1.0.0-rc.10",
     "discord-buttons": "^4.0.0",
     "discord-tictactoe": "^2.1.1",
